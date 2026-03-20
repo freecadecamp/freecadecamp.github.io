@@ -10,339 +10,364 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- custom style.css -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Intro video fullscreen overlay */
+        #introVideoContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: #000;
+            transition: opacity 0.8s ease;
+        }
+        #introVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Initially hide main content */
+        .main-content {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        /* Background video styling (already in hero) */
+        .video-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .video-bg video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+        }
+        .modal-content iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        .close-modal:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        @media (max-width: 768px) {
+            .modal-content iframe {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-800 font-sans antialiased">
+<body>
 
-    <!-- header loaded via js (includes navbar) -->
-    <div id="header"></div>
+    <!-- ========== INTRO VIDEO OVERLAY ========== -->
+    <div id="introVideoContainer">
+        <video id="introVideo" autoplay muted playsinline>
+            <!-- Replace with your own intro video file -->
+            <source src="hello1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
-    <!-- HERO SECTION - Green + Orange Energy Theme -->
-    <section class="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden" style="background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #F57C00 100%);">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row lg:items-center gap-12">
-                <!-- left text -->
-                <div class="lg:w-3/5">
-                    <div class="inline-block px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-semibold mb-6">🔥 Advanced Gasification Since 2012</div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
-                        Convert Biomass Waste into <span class="text-orange-300">Clean Energy</span>
-                    </h1>
-                    <p class="mt-6 text-lg md:text-xl text-white/90 max-w-2xl">
-                        Biomass Gasifier that converts solid biomass into combustible gas. Instead of directly burning fuel, our technology converts it into clean-burning Producer Gas (CO, H₂, CH₄) for cooking, heating, and power generation.
-                    </p>
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg shadow-black/20 transition duration-300">Get a Quote</a>
-                        <a href="products.html" class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 px-8 py-4 rounded-full text-base font-semibold text-white transition">Explore Products</a>
+    <!-- ========== MAIN CONTENT (initially hidden) ========== -->
+    <div class="main-content">
+        <!-- header loaded via js (includes navbar) -->
+        <div id="header"></div>
+
+        <!-- HERO SECTION with video background -->
+        <section class="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden video-bg" style="min-height: 100vh;">
+            <!-- Background Video (replace src with your own) -->
+            <video autoplay loop muted playsinline>
+                <source src="hello2.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 hero-content">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-12">
+                    <!-- left text -->
+                    <div class="lg:w-3/5">
+                        <div class="inline-block px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-semibold mb-6">🔥 Advanced Gasification Since 2012</div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                            Convert Biomass Waste into <span class="text-orange-300">Clean Energy</span>
+                        </h1>
+                        <p class="mt-6 text-lg md:text-xl text-white/90 max-w-2xl">
+                            Biomass Gasifier that converts solid biomass into combustible gas. Instead of directly burning fuel, our technology converts it into clean-burning Producer Gas (CO, H₂, CH₄) for cooking, heating, and power generation.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg shadow-black/20 transition duration-300">Get a Quote</a>
+                            <a href="products.html" class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 px-8 py-4 rounded-full text-base font-semibold text-white transition">Explore Products</a>
+                            <button id="introVideoBtn" class="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 px-8 py-4 rounded-full text-base font-semibold text-white transition flex items-center gap-2">
+                                <i class="fas fa-play-circle"></i> Watch Intro
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <!-- right stats with orange/green theme -->
-                <div class="lg:w-2/5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-5">
-                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition duration-300 flex items-center gap-4">
-                        <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-industry"></i></div>
-                        <div><div class="text-orange-300 text-4xl font-black counter" data-target="50">0</div>
-                        <div class="text-sm uppercase tracking-wider text-white/80">+ installations</div>
-                        <div class="text-xs text-white/60">across India</div></div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition duration-300 flex items-center gap-4">
-                        <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-chart-line"></i></div>
-                        <div><div class="text-orange-300 text-4xl font-black counter" data-target="70">0</div>
-                        <div class="text-sm uppercase tracking-wider text-white/80">% fuel savings</div>
-                        <div class="text-xs text-white/60">vs traditional methods</div></div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition duration-300 flex items-center gap-4">
-                        <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-bolt"></i></div>
-                        <div><div class="text-orange-300 text-4xl font-black counter" data-target="100">0</div>
-                        <div class="text-sm uppercase tracking-wider text-white/80">% clean flame</div>
-                        <div class="text-xs text-white/60">smokeless combustion</div></div>
+                    <!-- right stats -->
+                    <div class="lg:w-2/5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-5">
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition duration-300 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-industry"></i></div>
+                            <div><div class="text-orange-300 text-4xl font-black counter" data-target="50">0</div>
+                            <div class="text-sm uppercase tracking-wider text-white/80">+ installations</div>
+                            <div class="text-xs text-white/60">across India</div></div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition duration-300 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-chart-line"></i></div>
+                            <div><div class="text-orange-300 text-4xl font-black counter" data-target="70">0</div>
+                            <div class="text-sm uppercase tracking-wider text-white/80">% fuel savings</div>
+                            <div class="text-xs text-white/60">vs traditional methods</div></div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition duration-300 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-bolt"></i></div>
+                            <div><div class="text-orange-300 text-4xl font-black counter" data-target="100">0</div>
+                            <div class="text-sm uppercase tracking-wider text-white/80">% clean flame</div>
+                            <div class="text-xs text-white/60">smokeless combustion</div></div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Rest of your sections (unchanged) -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Understanding the Technology</span>
+                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">What is a Biomass Gasifier?</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
+                    <p class="mt-6 text-xl text-gray-700 font-semibold">A Biomass Gasifier is a machine that converts solid biomass into combustible gas.</p>
+                    <p class="mt-4 text-lg text-gray-600">Instead of directly burning the fuel, the gasifier converts it into a clean-burning gas called <span class="font-bold text-green-600">Producer Gas</span>.</p>
+                </div>
+
+                <div class="mt-16 grid md:grid-cols-2 gap-12 items-center">
+                    <div class="bg-gradient-to-br from-green-50 to-orange-50 p-8 rounded-2xl border-l-8 border-orange-500">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">How It Works</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-3"><div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div><p class="text-gray-700">Biomass fuel is loaded into the gasifier</p></div>
+                            <div class="flex gap-3"><div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div><p class="text-gray-700">A limited amount of air enters the chamber</p></div>
+                            <div class="flex gap-3"><div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div><p class="text-gray-700">Because oxygen is limited, the fuel does not burn completely — it undergoes <span class="font-semibold">gasification</span></p></div>
+                            <div class="flex gap-3"><div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div><p class="text-gray-700">Produces a mixture of gases: <span class="font-semibold">Carbon Monoxide, Hydrogen, Methane</span> — forming Producer Gas that burns with a clean blue flame</p></div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 p-6 rounded-xl">
+                            <i class="fas fa-flask text-orange-500 text-3xl mb-3"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Producer Gas Composition</h3>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">CO (Carbon Monoxide)</span>
+                                <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">H₂ (Hydrogen)</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">CH₄ (Methane)</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl">
+                            <i class="fas fa-recycle text-green-600 text-3xl mb-3"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Benefits at a Glance</h3>
+                            <ul class="mt-3 space-y-2">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Uses waste biomass as fuel</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Reduces LPG and diesel consumption</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Produces clean smokeless flame</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Low operating cost</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Environment friendly, reduces carbon emissions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT MODELS SECTION (same as before) -->
+        <section class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Our Products</span>
+                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">GE Series Biomass Gasifiers</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
+                    <p class="mt-6 text-lg text-gray-600">Choose the right gasifier for your needs — from home cooking to commercial kitchens</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- GE 5 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
+                        <div class="bg-gradient-to-r from-green-600 to-green-700 p-4"><h3 class="text-2xl font-bold text-white text-center">GE 5</h3></div>
+                        <div class="p-6">
+                            <div class="text-center mb-4"><span class="text-4xl font-black text-orange-500">Upto 3kg</span><span class="text-gray-500"> rice</span></div>
+                            <p class="text-gray-600 text-center mb-4">Perfect for domestic, home, travel, and picnic use</p>
+                            <div class="border-t border-gray-200 pt-4 mt-2">
+                                <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-green-500 w-5"></i> Compact and portable</div>
+                                <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-green-500 w-5"></i> Ideal for small families</div>
+                            </div>
+                            <div class="mt-6 text-center"><a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- GE 10 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
+                        <div class="bg-gradient-to-r from-green-600 to-green-700 p-4"><h3 class="text-2xl font-bold text-white text-center">GE 10</h3></div>
+                        <div class="p-6">
+                            <div class="text-center mb-4"><span class="text-4xl font-black text-orange-500">Upto 7kg</span><span class="text-gray-500"> rice</span></div>
+                            <p class="text-gray-600 text-center mb-4">Mini Commercial — Tea shops, Food carts</p>
+                            <div class="border-t border-gray-200 pt-4 mt-2">
+                                <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-green-500 w-5"></i> Perfect for small businesses</div>
+                                <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-green-500 w-5"></i> Continuous operation</div>
+                            </div>
+                            <div class="mt-6 text-center"><a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- GE 15 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
+                        <div class="bg-gradient-to-r from-green-600 to-green-700 p-4"><h3 class="text-2xl font-bold text-white text-center">GE 15</h3></div>
+                        <div class="p-6">
+                            <div class="text-center mb-4"><span class="text-4xl font-black text-orange-500">Upto 15kg</span><span class="text-gray-500"> rice</span></div>
+                            <p class="text-gray-600 text-center mb-4">Small Commercial — Food trucks, Restaurants, Cloud kitchen</p>
+                            <div class="border-t border-gray-200 pt-4 mt-2">
+                                <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-green-500 w-5"></i> High efficiency</div>
+                                <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-green-500 w-5"></i> Low fuel consumption</div>
+                            </div>
+                            <div class="mt-6 text-center"><a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- GE 20 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
+                        <div class="bg-gradient-to-r from-green-600 to-green-700 p-4"><h3 class="text-2xl font-bold text-white text-center">GE 20</h3></div>
+                        <div class="p-6">
+                            <div class="text-center mb-4"><span class="text-4xl font-black text-orange-500">Upto 30kg</span><span class="text-gray-500"> rice</span></div>
+                            <p class="text-gray-600 text-center mb-4">Commercial — Restaurants, Catering, Cloud kitchen, Hotels, Mess, College canteens</p>
+                            <div class="border-t border-gray-200 pt-4 mt-2">
+                                <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-green-500 w-5"></i> Heavy-duty performance</div>
+                                <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-green-500 w-5"></i> Cost-effective</div>
+                            </div>
+                            <div class="mt-6 text-center"><a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- GE 25 Premium -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-orange-300 hover:shadow-2xl transition duration-300 hover:-translate-y-1 lg:col-span-1 md:col-span-2 lg:col-span-1">
+                        <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-4"><h3 class="text-2xl font-bold text-white text-center">GE 25</h3></div>
+                        <div class="p-6">
+                            <div class="text-center mb-4"><span class="text-4xl font-black text-orange-500">Upto 50kg</span><span class="text-gray-500"> rice</span><div class="text-sm text-gray-500 mt-1">+ upto 30 litres of oil</div></div>
+                            <p class="text-gray-600 text-center mb-4">Industrial — Pakoda, Samosa, Bakery, Commercial snacks makers, Large industrial kitchen, Marriage halls, Community kitchens, Mass cooking</p>
+                            <div class="border-t border-gray-200 pt-4 mt-2">
+                                <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-orange-500 w-5"></i> Highest capacity</div>
+                                <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-orange-500 w-5"></i> Oil heating capability</div>
+                            </div>
+                            <div class="mt-6 text-center"><a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- Bonus info -->
+                    <div class="bg-gradient-to-br from-green-50 to-orange-50 rounded-2xl p-6 border border-green-200 flex flex-col justify-center lg:col-span-1">
+                        <i class="fas fa-chart-line text-orange-500 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">India Biomass Market</h3>
+                        <p class="text-gray-600 text-sm">Expected to reach <span class="font-bold text-green-600">₹32,000 crore</span> by FY2030-31, growing at 4% CAGR</p>
+                        <div class="mt-4 pt-4 border-t border-green-200"><p class="text-xs text-gray-500">Supported by government initiatives, surplus biomass availability, and technological advancements</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- APPLICATIONS SECTION -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-green-600 font-semibold tracking-wider uppercase text-sm">Versatile Applications</span>
+                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">What Can Producer Gas Do?</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
+                    <p class="mt-6 text-lg text-gray-600">Agricultural waste becomes a valuable energy source</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-utensils text-orange-500 text-2xl"></i></div><h3 class="font-bold text-lg mb-2">Cooking</h3><p class="text-gray-600 text-sm">Smokeless stoves for homes and commercial kitchens</p></div>
+                    <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-fire text-orange-500 text-2xl"></i></div><h3 class="font-bold text-lg mb-2">Industrial Heating</h3><p class="text-gray-600 text-sm">Process heat for manufacturing and drying</p></div>
+                    <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-charging-station text-green-600 text-2xl"></i></div><h3 class="font-bold text-lg mb-2">Electricity Generation</h3><p class="text-gray-600 text-sm">Power engines and generators for off-grid areas</p></div>
+                    <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-seedling text-green-600 text-2xl"></i></div><h3 class="font-bold text-lg mb-2">Drying Products</h3><p class="text-gray-600 text-sm">Agricultural drying and processing</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFITS & CHALLENGES SECTION -->
+        <section class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-8 border-green-500"><i class="fas fa-leaf text-green-500 text-4xl mb-4"></i><h3 class="text-2xl font-bold text-gray-800 mb-4">Benefits of Gasifiers</h3><ul class="space-y-3"><li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Producing a clean and efficient fuel</li><li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Reducing waste and emissions</li><li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Providing a renewable energy source</li><li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Offering a flexible and scalable technology</li><li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Low operating cost</li><li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Supports rural energy independence</li></ul></div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-8 border-orange-500"><i class="fas fa-chart-line text-orange-500 text-4xl mb-4"></i><h3 class="text-2xl font-bold text-gray-800 mb-4">Considerations</h3><ul class="space-y-3"><li class="flex items-center gap-3"><i class="fas fa-exclamation-triangle text-orange-500"></i> Requiring consistent feedstock quality</li><li class="flex items-center gap-3"><i class="fas fa-exclamation-triangle text-orange-500"></i> Managing tar and particulate matter</li><li class="flex items-center gap-3"><i class="fas fa-exclamation-triangle text-orange-500"></i> Ensuring efficient heat transfer and temperature control</li></ul><div class="mt-6 p-4 bg-orange-50 rounded-lg"><p class="text-sm text-gray-700"><span class="font-bold text-orange-600">VARAM Solution:</span> Our advanced filtration and control systems address these challenges effectively.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="py-16 md:py-20" style="background: linear-gradient(135deg, #2E7D32 0%, #F57C00 100%);">
+            <div class="max-w-4xl mx-auto text-center px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Switch to Clean Energy?</h2>
+                <p class="text-white/90 text-lg mb-8">Reduce your LPG and diesel consumption by up to 70% with VARAM Biomass Gasifiers</p>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="contact.html" class="bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-full text-base font-semibold shadow-lg transition">Contact Us Today</a>
+                    <a href="products.html" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full text-base font-semibold transition">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer loaded via js -->
+        <div id="footer"></div>
+    </div> <!-- end main-content -->
+
+    <!-- Modal for intro video (replay) -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <iframe id="introVideoIframe" src="https://www.youtube.com/embed/7Pq-S557XQU?si=5e9z8rqGq3IhTZgM" title="Biomass Gasifier Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <!-- abstract shape -->
-        <div class="absolute -top-20 -right-20 w-96 h-96 bg-orange-400/20 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-green-600/20 rounded-full blur-3xl"></div>
-    </section>
-
-    <!-- WHAT IS A GASIFIER? SECTION - NEW -->
-    <section class="py-20 md:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Understanding the Technology</span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">What is a Biomass Gasifier?</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-6 text-xl text-gray-700 font-semibold">A Biomass Gasifier is a machine that converts solid biomass into combustible gas.</p>
-                <p class="mt-4 text-lg text-gray-600">Instead of directly burning the fuel, the gasifier converts it into a clean-burning gas called <span class="font-bold text-green-600">Producer Gas</span>.</p>
-            </div>
-
-            <div class="mt-16 grid md:grid-cols-2 gap-12 items-center">
-                <div class="bg-gradient-to-br from-green-50 to-orange-50 p-8 rounded-2xl border-l-8 border-orange-500">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">How It Works</h3>
-                    <div class="space-y-4">
-                        <div class="flex gap-3">
-                            <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
-                            <p class="text-gray-700">Biomass fuel is loaded into the gasifier</p>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
-                            <p class="text-gray-700">A limited amount of air enters the chamber</p>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
-                            <p class="text-gray-700">Because oxygen is limited, the fuel does not burn completely — it undergoes <span class="font-semibold">gasification</span></p>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
-                            <p class="text-gray-700">Produces a mixture of gases: <span class="font-semibold">Carbon Monoxide, Hydrogen, Methane</span> — forming Producer Gas that burns with a clean blue flame</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="space-y-6">
-                    <div class="bg-gray-50 p-6 rounded-xl">
-                        <i class="fas fa-flask text-orange-500 text-3xl mb-3"></i>
-                        <h3 class="text-xl font-bold text-gray-800">Producer Gas Composition</h3>
-                        <div class="mt-3 flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">CO (Carbon Monoxide)</span>
-                            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">H₂ (Hydrogen)</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">CH₄ (Methane)</span>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl">
-                        <i class="fas fa-recycle text-green-600 text-3xl mb-3"></i>
-                        <h3 class="text-xl font-bold text-gray-800">Benefits at a Glance</h3>
-                        <ul class="mt-3 space-y-2">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Uses waste biomass as fuel</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Reduces LPG and diesel consumption</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Produces clean smokeless flame</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Low operating cost</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Environment friendly, reduces carbon emissions</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCT MODELS SECTION - GE SERIES -->
-    <section class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Our Products</span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">GE Series Biomass Gasifiers</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-6 text-lg text-gray-600">Choose the right gasifier for your needs — from home cooking to commercial kitchens</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- GE 5 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="bg-gradient-to-r from-green-600 to-green-700 p-4">
-                        <h3 class="text-2xl font-bold text-white text-center">GE 5</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-center mb-4">
-                            <span class="text-4xl font-black text-orange-500">Upto 3kg</span>
-                            <span class="text-gray-500"> rice</span>
-                        </div>
-                        <p class="text-gray-600 text-center mb-4">Perfect for domestic, home, travel, and picnic use</p>
-                        <div class="border-t border-gray-200 pt-4 mt-2">
-                            <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-green-500 w-5"></i> Compact and portable</div>
-                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-green-500 w-5"></i> Ideal for small families</div>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GE 10 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="bg-gradient-to-r from-green-600 to-green-700 p-4">
-                        <h3 class="text-2xl font-bold text-white text-center">GE 10</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-center mb-4">
-                            <span class="text-4xl font-black text-orange-500">Upto 7kg</span>
-                            <span class="text-gray-500"> rice</span>
-                        </div>
-                        <p class="text-gray-600 text-center mb-4">Mini Commercial — Tea shops, Food carts</p>
-                        <div class="border-t border-gray-200 pt-4 mt-2">
-                            <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-green-500 w-5"></i> Perfect for small businesses</div>
-                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-green-500 w-5"></i> Continuous operation</div>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GE 15 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="bg-gradient-to-r from-green-600 to-green-700 p-4">
-                        <h3 class="text-2xl font-bold text-white text-center">GE 15</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-center mb-4">
-                            <span class="text-4xl font-black text-orange-500">Upto 15kg</span>
-                            <span class="text-gray-500"> rice</span>
-                        </div>
-                        <p class="text-gray-600 text-center mb-4">Small Commercial — Food trucks, Restaurants, Cloud kitchen</p>
-                        <div class="border-t border-gray-200 pt-4 mt-2">
-                            <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-green-500 w-5"></i> High efficiency</div>
-                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-green-500 w-5"></i> Low fuel consumption</div>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GE 20 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="bg-gradient-to-r from-green-600 to-green-700 p-4">
-                        <h3 class="text-2xl font-bold text-white text-center">GE 20</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-center mb-4">
-                            <span class="text-4xl font-black text-orange-500">Upto 30kg</span>
-                            <span class="text-gray-500"> rice</span>
-                        </div>
-                        <p class="text-gray-600 text-center mb-4">Commercial — Restaurants, Catering, Cloud kitchen, Hotels, Mess, College canteens</p>
-                        <div class="border-t border-gray-200 pt-4 mt-2">
-                            <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-green-500 w-5"></i> Heavy-duty performance</div>
-                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-green-500 w-5"></i> Cost-effective</div>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GE 25 - Premium -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-orange-300 hover:shadow-2xl transition duration-300 hover:-translate-y-1 lg:col-span-1 md:col-span-2 lg:col-span-1">
-                    <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-4">
-                        <h3 class="text-2xl font-bold text-white text-center">GE 25</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-center mb-4">
-                            <span class="text-4xl font-black text-orange-500">Upto 50kg</span>
-                            <span class="text-gray-500"> rice</span>
-                            <div class="text-sm text-gray-500 mt-1">+ upto 30 litres of oil</div>
-                        </div>
-                        <p class="text-gray-600 text-center mb-4">Industrial — Pakoda, Samosa, Bakery, Commercial snacks makers, Large industrial kitchen, Marriage halls, Community kitchens, Mass cooking</p>
-                        <div class="border-t border-gray-200 pt-4 mt-2">
-                            <div class="flex items-center gap-2 text-sm text-gray-600 mb-2"><i class="fas fa-check-circle text-orange-500 w-5"></i> Highest capacity</div>
-                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-orange-500 w-5"></i> Oil heating capability</div>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bonus: Dual purpose info -->
-                <div class="bg-gradient-to-br from-green-50 to-orange-50 rounded-2xl p-6 border border-green-200 flex flex-col justify-center lg:col-span-1">
-                    <i class="fas fa-chart-line text-orange-500 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">India Biomass Market</h3>
-                    <p class="text-gray-600 text-sm">Expected to reach <span class="font-bold text-green-600">₹32,000 crore</span> by FY2030-31, growing at 4% CAGR</p>
-                    <div class="mt-4 pt-4 border-t border-green-200">
-                        <p class="text-xs text-gray-500">Supported by government initiatives, surplus biomass availability, and technological advancements</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- APPLICATIONS SECTION - Uses of Biomass Gasifier -->
-    <section class="py-20 md:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-green-600 font-semibold tracking-wider uppercase text-sm">Versatile Applications</span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">What Can Producer Gas Do?</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-6 text-lg text-gray-600">Agricultural waste becomes a valuable energy source</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-utensils text-orange-500 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Cooking</h3>
-                    <p class="text-gray-600 text-sm">Smokeless stoves for homes and commercial kitchens</p>
-                </div>
-                <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-fire text-orange-500 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Industrial Heating</h3>
-                    <p class="text-gray-600 text-sm">Process heat for manufacturing and drying</p>
-                </div>
-                <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-charging-station text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Electricity Generation</h3>
-                    <p class="text-gray-600 text-sm">Power engines and generators for off-grid areas</p>
-                </div>
-                <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-seedling text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Drying Products</h3>
-                    <p class="text-gray-600 text-sm">Agricultural drying and processing</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BENEFITS & CHALLENGES SECTION -->
-    <section class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Benefits -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-l-8 border-green-500">
-                    <i class="fas fa-leaf text-green-500 text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Benefits of Gasifiers</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Producing a clean and efficient fuel</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Reducing waste and emissions</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Providing a renewable energy source</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Offering a flexible and scalable technology</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Low operating cost</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Supports rural energy independence</li>
-                    </ul>
-                </div>
-
-                <!-- Challenges -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-l-8 border-orange-500">
-                    <i class="fas fa-chart-line text-orange-500 text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Considerations</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3"><i class="fas fa-exclamation-triangle text-orange-500"></i> Requiring consistent feedstock quality</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-exclamation-triangle text-orange-500"></i> Managing tar and particulate matter</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-exclamation-triangle text-orange-500"></i> Ensuring efficient heat transfer and temperature control</li>
-                    </ul>
-                    <div class="mt-6 p-4 bg-orange-50 rounded-lg">
-                        <p class="text-sm text-gray-700"><span class="font-bold text-orange-600">VARAM Solution:</span> Our advanced filtration and control systems address these challenges effectively.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CALL TO ACTION -->
-    <section class="py-16 md:py-20" style="background: linear-gradient(135deg, #2E7D32 0%, #F57C00 100%);">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Switch to Clean Energy?</h2>
-            <p class="text-white/90 text-lg mb-8">Reduce your LPG and diesel consumption by up to 70% with VARAM Biomass Gasifiers</p>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="contact.html" class="bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-full text-base font-semibold shadow-lg transition">Contact Us Today</a>
-                <a href="products.html" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full text-base font-semibold transition">View All Products</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- footer loaded via js -->
-    <div id="footer"></div>
+    </div>
 
     <!-- js files -->
     <script src="js/main.js"></script>
@@ -358,6 +383,31 @@
         }
         loadHTML('header', 'header.html');
         loadHTML('footer', 'footer.html');
+
+        // Intro video: hide after 5 seconds, fade in main content
+        window.addEventListener('load', () => {
+            const introContainer = document.getElementById('introVideoContainer');
+            const mainContent = document.querySelector('.main-content');
+            setTimeout(() => {
+                introContainer.style.opacity = '0';
+                setTimeout(() => {
+                    introContainer.style.display = 'none';
+                    mainContent.style.opacity = '1';
+                }, 900);
+            }, 5000);
+        });
+
+        // Modal functionality for "Watch Intro" button
+        const modal = document.getElementById('videoModal');
+        const introBtn = document.getElementById('introVideoBtn');
+        const closeBtn = document.querySelector('.close-modal');
+        if (introBtn) {
+            introBtn.addEventListener('click', () => modal.style.display = 'flex');
+        }
+        closeBtn.addEventListener('click', () => modal.style.display = 'none');
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+        });
     </script>
 </body>
 </html>
