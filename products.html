@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARAM · Clean Energy Gasifiers | Shop Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hover-scale { transition: transform 0.2s, box-shadow 0.2s; }
+        .hover-scale:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15); }
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-leaf text-green-600 text-2xl"></i>
+                    <span class="font-bold text-xl text-gray-800">VARAM<span class="text-orange-500">SUSTAINABLE</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-base font-medium">
+                    <a href="index.html" class="text-gray-600 hover:text-green-600 transition">Home</a>
+                    <a href="products.html" class="text-green-600 border-b-2 border-green-600 pb-1">Products</a>
+                    <a href="cart.html" class="text-gray-600 hover:text-green-600 transition relative">
+                        <i class="fas fa-shopping-cart mr-1"></i> Cart
+                        <span id="cartCountNav" class="absolute -top-2 -right-4 bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative py-16 bg-gradient-to-r from-green-700 to-green-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white">GE Series Biomass Gasifiers</h1>
+            <p class="text-green-100 text-lg mt-4 max-w-2xl mx-auto">Convert biomass waste into clean Producer Gas — choose your model, add to cart, start saving.</p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="productsContainer"></div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 bg-white border-t border-gray-200">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-2xl font-bold text-gray-800">Ready to make a sustainable switch?</h2>
+            <p class="text-gray-600 mt-2">Review your selected gasifiers and proceed to checkout.</p>
+            <a href="cart.html" class="inline-block mt-5 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow transition"><i class="fas fa-shopping-cart mr-2"></i> View Cart & Checkout</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 mt-10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-400 text-sm">
+            <p>© 2025 VARAM SUSTAINABLE — Clean Energy Gasifiers & Biogas Solutions.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get products from localStorage (admin panel updates this)
+        function getProductCatalog() {
+            const stored = localStorage.getItem("varam_products");
+            if (stored) return JSON.parse(stored);
+            // Fallback defaults if never initialized
+            const defaults = [
+                { id: "ge5", name: "GE 5", capacity: "Upto 3kg rice", description: "Perfect for home, travel & picnic.", price: 12500, icon: "fa-utensils", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE5" },
+                { id: "ge10", name: "GE 10", capacity: "Upto 7kg rice", description: "Mini Commercial — Tea shops, Food carts.", price: 22500, icon: "fa-mug-hot", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE10" },
+                { id: "ge15", name: "GE 15", capacity: "Upto 15kg rice", description: "Food trucks, Restaurants.", price: 36500, icon: "fa-truck", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE15" },
+                { id: "ge20", name: "GE 20", capacity: "Upto 30kg rice", description: "Hotels, Mess, Canteens.", price: 49500, icon: "fa-building", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE20" },
+                { id: "ge25", name: "GE 25", capacity: "Upto 50kg rice + 30L oil", description: "Industrial mass cooking.", price: 72500, icon: "fa-industry", bgClass: "from-orange-500 to-orange-600", image: "https://placehold.co/400x300?text=GE25" }
+            ];
+            localStorage.setItem("varam_products", JSON.stringify(defaults));
+            return defaults;
+        }
+
+        // Cart functions
+        function getCart() {
+            const cart = localStorage.getItem("varam_cart");
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem("varam_cart", JSON.stringify(cart));
+            updateCartCountDisplay();
+        }
+
+        function updateCartCountDisplay() {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const countSpan = document.getElementById("cartCountNav");
+            if (countSpan) countSpan.innerText = totalItems;
+        }
+
+        function addToCart(productId) {
+            const products = getProductCatalog();
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            let cart = getCart();
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    quantity: 1,
+                    capacity: product.capacity,
+                    icon: product.icon,
+                    image: product.image  // store image for cart display if needed
+                });
+            }
+            saveCart(cart);
+            alert(`✓ ${product.name} added to cart!`);
+        }
+
+        function renderProducts() {
+            const container = document.getElementById("productsContainer");
+            if (!container) return;
+            const products = getProductCatalog();
+            if (products.length === 0) {
+                container.innerHTML = '<div class="col-span-full text-center py-10 text-gray-500">No products available. Please check back later.</div>';
+                return;
+            }
+            container.innerHTML = products.map(prod => `
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover-scale transition-all">
+                    <div class="bg-gradient-to-r ${prod.bgClass} p-5 flex justify-between items-center">
+                        <h3 class="text-2xl font-bold text-white">${prod.name}</h3>
+                        <i class="fas ${prod.icon} text-white text-3xl opacity-80"></i>
+                    </div>
+                    <img src="${prod.image || 'https://placehold.co/400x300?text=No+Image'}" class="product-img w-full h-48 object-cover" onerror="this.src='https://placehold.co/400x300?text=Image+Missing'">
+                    <div class="p-6">
+                        <div class="text-center mb-3">
+                            <span class="text-3xl font-black text-orange-500">${prod.capacity}</span>
+                        </div>
+                        <p class="text-gray-600 text-center text-sm mb-4">${prod.description}</p>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-2">
+                            <div class="text-2xl font-bold text-green-700">₹${prod.price.toLocaleString('en-IN')}</div>
+                            <button onclick="addToCart('${prod.id}')" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full text-sm font-semibold transition flex items-center gap-2 shadow">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                        <div class="mt-3 text-xs text-gray-400"><i class="fas fa-fire"></i> Producer Gas ready · smokeless</div>
+                    </div>
+                </div>
+            `).join('');
+            updateCartCountDisplay();
+        }
+
+        window.onload = () => {
+            renderProducts();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+/* style.css – Enhanced with Green + Orange Energy Theme */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hover Effects */
+.hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.stat-card {
+    transition: all 0.3s ease;
+}
+
+/* Gradient Backgrounds */
+.gradient-bg {
+    background: linear-gradient(145deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+/* Green + Orange Theme Gradient */
+.gradient-green-orange {
+    background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #F57C00 100%);
+}
+
+/* Text Gradient - Green to Orange */
+.text-gradient {
+    background: linear-gradient(135deg, #2E7D32, #F57C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Button Gradient - Green to Orange */
+.btn-gradient {
+    background: linear-gradient(135deg, #2E7D32, #F57C00);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+}
+
+.btn-gradient:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 124, 0, 0.4);
+}
+
+/* Orange Button Variant */
+.btn-orange {
+    background: linear-gradient(135deg, #F57C00, #FF9800);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-orange:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+}
+
+/* Green Button Variant */
+.btn-green {
+    background: linear-gradient(135deg, #2E7D32, #4CAF50);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-green:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+}
+
+/* Border Gradient */
+.border-gradient {
+    border-left: 4px solid #F57C00;
+}
+
+/* Border Gradient - Green */
+.border-gradient-green {
+    border-left: 4px solid #2E7D32;
+}
+
+/* Card Styles */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(46, 125, 50, 0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
+
+/* Process Arrow */
+.process-arrow {
+    color: #F57C00;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    transition: transform 0.3s ease;
+}
+
+/* Active Link Highlight - Orange Theme */
+nav a.text-orange-600,
+nav a.active {
+    background-color: #FFF3E0;
+    color: #F57C00 !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #2E7D32, #F57C00);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #1B5E20, #E65100);
+}
+
+/* Counter Animation */
+.counter {
+    animation: countUp 1s ease-out;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #F57C00;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Form Focus Styles */
+input:focus, textarea:focus, select:focus {
+    border-color: #F57C00 !important;
+    box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.1) !important;
+    outline: none;
+}
+
+/* Button Focus */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.3);
+}
+
+/* Table Styles */
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #FFF8F0;
+}
+
+.table-striped tbody tr:hover {
+    background-color: #FFF3E0;
+}
+
+/* Badge Styles */
+.badge-green {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.badge-orange {
+    background-color: #FFF3E0;
+    color: #F57C00;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* Alert Styles */
+.alert-success {
+    background-color: #E8F5E9;
+    border-left: 4px solid #2E7D32;
+    color: #1B5E20;
+}
+
+.alert-warning {
+    background-color: #FFF3E0;
+    border-left: 4px solid #F57C00;
+    color: #E65100;
+}
+
+/* Pricing Card */
+.pricing-card {
+    transition: all 0.3s ease;
+}
+
+.pricing-card.featured {
+    border: 2px solid #F57C00;
+    box-shadow: 0 10px 30px rgba(245, 124, 0, 0.1);
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+/* Progress Bar */
+.progress-bar {
+    background: linear-gradient(90deg, #2E7D32, #F57C00);
+    height: 8px;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: #2E7D32;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .text-gradient {
+        font-size: 1.8rem;
+    }
+
+    .btn-gradient, .btn-orange, .btn-green {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .tooltip .tooltip-text {
+        font-size: 10px;
+        white-space: normal;
+        width: 150px;
+        bottom: 150%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
