@@ -3,89 +3,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARAM · Clean Energy Gasifiers | Shop Products</title>
+    <title>VARAM · GE Series Biomass Gasifiers | Official Products</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .hover-scale { transition: transform 0.2s, box-shadow 0.2s; }
-        .hover-scale:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15); }
+        .hover-scale {
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .hover-scale:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.2);
+        }
         .product-img {
-            height: 200px;
-            object-fit: cover;
+            height: 240px;
+            object-fit: contain;
             width: 100%;
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            padding: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.02);
+        }
+        .add-to-cart-btn {
+            background: linear-gradient(135deg, #F57C00, #E65100);
+            transition: all 0.25s ease;
+        }
+        .add-to-cart-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(245, 124, 0, 0.35);
+        }
+        .cart-count-badge {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); background-color: #F57C00; }
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .badge-industrial {
+            background: linear-gradient(135deg, #1a3c34, #2E7D32);
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-gradient-to-br from-gray-50 via-white to-gray-50">
 
     <!-- Navbar -->
-    <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-100">
+    <nav class="glass-nav sticky top-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-leaf text-green-600 text-2xl"></i>
-                    <span class="font-bold text-xl text-gray-800">VARAM<span class="text-orange-500">SUSTAINABLE</span></span>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-leaf text-white text-xl"></i>
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-gray-800">VARAM<span class="text-orange-500">SUSTAINABLE</span></span>
                 </div>
-                <div class="hidden md:flex space-x-8 text-base font-medium">
-                    <a href="index.html" class="text-gray-600 hover:text-green-600 transition">Home</a>
-                    <a href="products.html" class="text-green-600 border-b-2 border-green-600 pb-1">Products</a>
-                    <a href="cart.html" class="text-gray-600 hover:text-green-600 transition relative">
-                        <i class="fas fa-shopping-cart mr-1"></i> Cart
-                        <span id="cartCountNav" class="absolute -top-2 -right-4 bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                <div class="hidden md:flex items-center space-x-10 text-base font-medium">
+                    <a href="#" class="text-gray-600 hover:text-green-600 transition flex items-center gap-2"><i class="fas fa-home"></i> Home</a>
+                    <a href="#" class="text-green-700 font-semibold border-b-2 border-orange-500 pb-1 flex items-center gap-2"><i class="fas fa-fire text-orange-500"></i> Products</a>
+                    <!-- FIXED: Cart now redirects to cart.html -->
+                    <a href="cart.html" class="text-gray-600 hover:text-green-600 transition relative flex items-center gap-2">
+                        <i class="fas fa-shopping-cart text-lg"></i> Cart
+                        <span id="cartCountNav" class="absolute -top-2 -right-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md cart-count-badge">0</span>
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="relative py-16 bg-gradient-to-r from-green-700 to-green-800">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white">GE Series Biomass Gasifiers</h1>
-            <p class="text-green-100 text-lg mt-4 max-w-2xl mx-auto">Convert biomass waste into clean Producer Gas — choose your model, add to cart, start saving.</p>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-green-800 via-green-700 to-orange-600 py-20">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-white text-sm font-semibold mb-6">
+                <i class="fas fa-certificate text-green-200"></i> ISO Certified · Made in India
+            </div>
+            <h1 class="text-5xl md:text-6xl font-black text-white tracking-tight drop-shadow-lg">GE Series <span class="text-orange-200">Biomass Gasifiers</span></h1>
+            <div class="w-24 h-1 bg-orange-300 mx-auto my-5 rounded-full"></div>
+            <p class="text-green-50 text-xl max-w-2xl mx-auto font-light">Convert biomass waste into clean Producer Gas — choose your model, add to cart, start saving up to 70% fuel cost.</p>
         </div>
     </section>
 
-    <!-- Products Grid -->
-    <section class="py-16 md:py-24 bg-gray-50">
+    <!-- Products Grid - COMPLETE GE SERIES WITH EXACT SPECS & STATIC IMAGES -->
+    <section class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="productsContainer"></div>
+            <div class="text-center mb-16">
+                <span class="text-orange-500 font-bold uppercase tracking-wider text-sm bg-orange-100 px-4 py-1.5 rounded-full inline-block">Complete Range</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mt-4">GE Series <span class="bg-gradient-to-r from-green-600 to-orange-500 bg-clip-text text-transparent">Specifications</span></h2>
+                <div class="w-28 h-1 bg-gradient-to-r from-green-500 to-orange-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto mt-4">Choose the perfect gasifier based on your cooking capacity and application</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- GE 5 - Domestic -->
+                <div class="product-card relative group bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover-scale transition-all duration-300">
+                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10"><i class="fas fa-home mr-1"></i> DOMESTIC</span>
+                    <span class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10"><i class="fas fa-fire mr-1"></i> BEST SELLER</span>
+                    <div class="relative overflow-hidden bg-gradient-to-br from-green-50 to-gray-100">
+                        <img src="static/pro1.jpeg" class="product-img w-full h-56 object-contain p-4" alt="GE 5 Gasifier" onerror="this.src='https://placehold.co/600x400/2E7D32/white?text=GE+5'">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-gray-800">GE 5</h3>
+                                <p class="text-xs text-orange-500 font-semibold uppercase tracking-wide mt-1">HOME · TRAVEL · PICNIC</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center shadow-md">
+                                <i class="fas fa-utensils text-orange-500 text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-3 mb-4 space-y-1">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fas fa-charging-station text-green-600 mr-2"></i>Capacity:</span>
+                                <span class="font-bold text-gray-800">Suitable for 3 kg rice</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-gray-200 pt-1">
+                                <span class="text-gray-600"><i class="fas fa-weight-hanging text-orange-500 mr-2"></i>Weight:</span>
+                                <span class="font-bold text-gray-800">10.9 Kg</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-bullseye text-green-600 mr-1"></i> Used for:</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">Domestic use — home, travel, or picnic. Perfect for outdoor cooking, small family meals.</p>
+                        </div>
+
+                        <div class="price mb-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-black text-green-700">₹12,500</span>
+                            <span class="text-xs text-gray-400">+ GST</span>
+                        </div>
+
+                        <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Fuel: Wood chips, pellets, coconut shells</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Burn time: 60-90 minutes per load</li>
+                        </ul>
+
+                        <button onclick="addToCart('ge5')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GE 10 - Mini Commercial -->
+                <div class="product-card relative group bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover-scale transition-all duration-300">
+                    <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10"><i class="fas fa-chart-line mr-1"></i> POPULAR</span>
+                    <div class="relative overflow-hidden bg-gradient-to-br from-green-50 to-gray-100">
+                        <img src="static/pro2.jpeg" class="product-img w-full h-56 object-contain p-4" alt="GE 10 Gasifier" onerror="this.src='https://placehold.co/600x400/2E7D32/white?text=GE+10'">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-gray-800">GE 10</h3>
+                                <p class="text-xs text-orange-500 font-semibold uppercase tracking-wide mt-1">MINI COMMERCIAL</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center shadow-md">
+                                <i class="fas fa-mug-hot text-orange-500 text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-3 mb-4 space-y-1">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fas fa-charging-station text-green-600 mr-2"></i>Capacity:</span>
+                                <span class="font-bold text-gray-800">Suitable for 7 kg rice</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-gray-200 pt-1">
+                                <span class="text-gray-600"><i class="fas fa-weight-hanging text-orange-500 mr-2"></i>Weight:</span>
+                                <span class="font-bold text-gray-800">19.5 Kg</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-bullseye text-green-600 mr-1"></i> Used for:</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">Mini commercial — tea shop, food carts, small eateries.</p>
+                        </div>
+
+                        <div class="price mb-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-black text-green-700">₹22,500</span>
+                            <span class="text-xs text-gray-400">+ GST</span>
+                        </div>
+
+                        <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Fuel savings: 60-70% vs LPG</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Continuous feed design</li>
+                        </ul>
+
+                        <button onclick="addToCart('ge10')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GE 15 - Small Commercial -->
+                <div class="product-card relative group bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover-scale transition-all duration-300">
+                    <div class="relative overflow-hidden bg-gradient-to-br from-green-50 to-gray-100">
+                        <img src="static/pro3.jpeg" class="product-img w-full h-56 object-contain p-4" alt="GE 15 Gasifier" onerror="this.src='https://placehold.co/600x400/2E7D32/white?text=GE+15'">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-gray-800">GE 15</h3>
+                                <p class="text-xs text-orange-500 font-semibold uppercase tracking-wide mt-1">SMALL COMMERCIAL</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center shadow-md">
+                                <i class="fas fa-truck text-orange-500 text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-3 mb-4 space-y-1">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fas fa-charging-station text-green-600 mr-2"></i>Capacity:</span>
+                                <span class="font-bold text-gray-800">Suitable for 15 kg rice</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-gray-200 pt-1">
+                                <span class="text-gray-600"><i class="fas fa-weight-hanging text-orange-500 mr-2"></i>Weight:</span>
+                                <span class="font-bold text-gray-800">32 Kg</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-bullseye text-green-600 mr-1"></i> Used for:</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">Small commercial — food trucks, restaurants, cloud kitchens.</p>
+                        </div>
+
+                        <div class="price mb-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-black text-green-700">₹36,500</span>
+                            <span class="text-xs text-gray-400">+ GST</span>
+                        </div>
+
+                        <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Cooking capacity: 100-150 meals/day</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Payback period: 6-12 months</li>
+                        </ul>
+
+                        <button onclick="addToCart('ge15')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GE 20 - Commercial -->
+                <div class="product-card relative group bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover-scale transition-all duration-300">
+                    <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10"><i class="fas fa-building mr-1"></i> COMMERCIAL</span>
+                    <div class="relative overflow-hidden bg-gradient-to-br from-green-50 to-gray-100">
+                        <img src="static/pro4.jpeg" class="product-img w-full h-56 object-contain p-4" alt="GE 20 Gasifier" onerror="this.src='https://placehold.co/600x400/2E7D32/white?text=GE+20'">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-gray-800">GE 20</h3>
+                                <p class="text-xs text-orange-500 font-semibold uppercase tracking-wide mt-1">COMMERCIAL</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center shadow-md">
+                                <i class="fas fa-building text-orange-500 text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-3 mb-4 space-y-1">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fas fa-charging-station text-green-600 mr-2"></i>Capacity:</span>
+                                <span class="font-bold text-gray-800">Suitable for 30 kg rice</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-gray-200 pt-1">
+                                <span class="text-gray-600"><i class="fas fa-weight-hanging text-orange-500 mr-2"></i>Weight:</span>
+                                <span class="font-bold text-gray-800">52.5 Kg</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-bullseye text-green-600 mr-1"></i> Used for:</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">Commercial — restaurants, catering, cloud kitchens, hotels, mess & college canteens.</p>
+                        </div>
+
+                        <div class="price mb-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-black text-green-700">₹52,500</span>
+                            <span class="text-xs text-gray-400">+ GST</span>
+                        </div>
+
+                        <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Cooking capacity: 200-400 meals/day</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> 24/7 continuous operation ready</li>
+                        </ul>
+
+                        <button onclick="addToCart('ge20')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GE 25 - Industrial PREMIUM -->
+                <div class="product-card relative group bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-orange-300 hover-scale transition-all duration-300">
+                    <span class="absolute top-4 left-4 badge-industrial text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10"><i class="fas fa-industry mr-1"></i> INDUSTRIAL</span>
+                    <span class="absolute top-4 right-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10"><i class="fas fa-crown mr-1"></i> PREMIUM</span>
+                    <div class="relative overflow-hidden bg-gradient-to-br from-orange-50 to-gray-100">
+                        <img src="static/pro5.jpeg" class="product-img w-full h-56 object-contain p-4" alt="GE 25 Gasifier" onerror="this.src='https://placehold.co/600x400/F57C00/white?text=GE+25'">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-gray-800">GE 25</h3>
+                                <p class="text-xs text-orange-500 font-semibold uppercase tracking-wide mt-1">INDUSTRIAL · MASS COOKING</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center shadow-md">
+                                <i class="fas fa-crown text-orange-500 text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-3 mb-4 space-y-1">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fas fa-charging-station text-green-600 mr-2"></i>Capacity:</span>
+                                <span class="font-bold text-gray-800">Suitable for 50 kg rice & 30 litres of oil</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-gray-200 pt-1">
+                                <span class="text-gray-600"><i class="fas fa-weight-hanging text-orange-500 mr-2"></i>Weight:</span>
+                                <span class="font-bold text-gray-800">71 Kg</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-bullseye text-green-600 mr-1"></i> Used for:</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">Pakoda, samosa, bakery & commercial snacks makers, large industrial use, community kitchens, marriage halls, mass cooking.</p>
+                        </div>
+
+                        <div class="price mb-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-black text-green-700">₹85,000</span>
+                            <span class="text-xs text-gray-400">+ GST</span>
+                        </div>
+
+                        <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Mass cooking: 500-1000+ meals/day</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Fully automated with PLC control</li>
+                        </ul>
+
+                        <button onclick="addToCart('ge25')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GE 30 - Heavy Commercial -->
+                <div class="product-card relative group bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover-scale transition-all duration-300">
+                    <span class="absolute top-4 left-4 bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10"><i class="fas fa-warehouse mr-1"></i> HEAVY DUTY</span>
+                    <div class="relative overflow-hidden bg-gradient-to-br from-green-50 to-gray-100">
+                        <img src="static/pro6.jpeg" class="product-img w-full h-56 object-contain p-4" alt="GE 30 Gasifier" onerror="this.src='https://placehold.co/600x400/2E7D32/white?text=GE+30'">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-gray-800">GE 30</h3>
+                                <p class="text-xs text-orange-500 font-semibold uppercase tracking-wide mt-1">HEAVY COMMERCIAL</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center shadow-md">
+                                <i class="fas fa-warehouse text-orange-500 text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-3 mb-4 space-y-1">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fas fa-charging-station text-green-600 mr-2"></i>Capacity:</span>
+                                <span class="font-bold text-gray-800">Suitable for 75 kg rice</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-gray-200 pt-1">
+                                <span class="text-gray-600"><i class="fas fa-weight-hanging text-orange-500 mr-2"></i>Weight:</span>
+                                <span class="font-bold text-gray-800">~95 Kg</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-bullseye text-green-600 mr-1"></i> Used for:</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">Large-scale commercial, industrial canteens, community cooking centers, temples, langars.</p>
+                        </div>
+
+                        <div class="price mb-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-black text-green-700">₹1,25,000</span>
+                            <span class="text-xs text-gray-400">+ GST</span>
+                        </div>
+
+                        <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Cooking capacity: 800-1500 meals/day</li>
+                            <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Industrial-grade construction</li>
+                        </ul>
+
+                        <button onclick="addToCart('ge30')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-12 bg-white border-t border-gray-200">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-2xl font-bold text-gray-800">Ready to make a sustainable switch?</h2>
-            <p class="text-gray-600 mt-2">Review your selected gasifiers and proceed to checkout.</p>
-            <a href="cart.html" class="inline-block mt-5 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow transition"><i class="fas fa-shopping-cart mr-2"></i> View Cart & Checkout</a>
+    <!-- Stats Section -->
+    <section class="py-12 bg-gradient-to-r from-green-50 to-orange-50 border-y border-green-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div><i class="fas fa-smile text-orange-500 text-3xl mb-2"></i><p class="font-bold text-xl">5000+</p><p class="text-sm text-gray-600">Happy Customers</p></div>
+                <div><i class="fas fa-tree text-green-600 text-3xl mb-2"></i><p class="font-bold text-xl">200+ Tons</p><p class="text-sm text-gray-600">CO₂ Saved Yearly</p></div>
+                <div><i class="fas fa-tachometer-alt text-orange-500 text-3xl mb-2"></i><p class="font-bold text-xl">70%</p><p class="text-sm text-gray-600">Fuel Cost Reduction</p></div>
+                <div><i class="fas fa-map-marker-alt text-green-600 text-3xl mb-2"></i><p class="font-bold text-xl">15+ States</p><p class="text-sm text-gray-600">Pan India Presence</p></div>
+            </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-8 mt-10">
+    <!-- CTA - FIXED: View Cart button now redirects to cart.html -->
+    <section class="py-16 relative overflow-hidden bg-gradient-to-r from-green-800 to-orange-700">
+        <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20">
+                <i class="fas fa-leaf text-white text-5xl mb-4 opacity-80"></i>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to make a sustainable switch?</h2>
+                <p class="text-green-100 text-lg mb-6">Join the clean energy movement. Review your selected gasifiers and proceed to checkout.</p>
+                <a href="cart.html" class="inline-flex items-center gap-3 bg-white text-orange-600 hover:bg-orange-50 px-8 py-3.5 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl transform hover:scale-105">
+                    <i class="fas fa-shopping-cart text-xl"></i> View Cart & Checkout
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
         <div class="max-w-7xl mx-auto px-6 text-center text-gray-400 text-sm">
-            <p>© 2025 VARAM SUSTAINABLE — Clean Energy Gasifiers & Biogas Solutions.</p>
+            <p>© 2025 VARAM SUSTAINABLE — Clean Energy Gasifiers & Biogas Solutions. <i class="fas fa-fire text-orange-400"></i> Powering a greener tomorrow.</p>
         </div>
     </footer>
 
     <script>
-        // Get products from localStorage (admin panel updates this)
-        function getProductCatalog() {
-            const stored = localStorage.getItem("varam_products");
-            if (stored) return JSON.parse(stored);
-            // Fallback defaults if never initialized
-            const defaults = [
-                { id: "ge5", name: "GE 5", capacity: "Upto 3kg rice", description: "Perfect for home, travel & picnic.", price: 12500, icon: "fa-utensils", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE5" },
-                { id: "ge10", name: "GE 10", capacity: "Upto 7kg rice", description: "Mini Commercial — Tea shops, Food carts.", price: 22500, icon: "fa-mug-hot", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE10" },
-                { id: "ge15", name: "GE 15", capacity: "Upto 15kg rice", description: "Food trucks, Restaurants.", price: 36500, icon: "fa-truck", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE15" },
-                { id: "ge20", name: "GE 20", capacity: "Upto 30kg rice", description: "Hotels, Mess, Canteens.", price: 49500, icon: "fa-building", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE20" },
-                { id: "ge25", name: "GE 25", capacity: "Upto 50kg rice + 30L oil", description: "Industrial mass cooking.", price: 72500, icon: "fa-industry", bgClass: "from-orange-500 to-orange-600", image: "https://placehold.co/400x300?text=GE25" }
-            ];
-            localStorage.setItem("varam_products", JSON.stringify(defaults));
-            return defaults;
-        }
-
-        // Cart functions
+        // ========== CART FUNCTIONALITY ==========
         function getCart() {
             const cart = localStorage.getItem("varam_cart");
             return cart ? JSON.parse(cart) : [];
@@ -103,65 +456,51 @@
             if (countSpan) countSpan.innerText = totalItems;
         }
 
-        function addToCart(productId) {
-            const products = getProductCatalog();
-            const product = products.find(p => p.id === productId);
+        // Product details for cart
+        const productDetails = {
+            ge5: { name: "GE 5", price: 12500, capacity: "3 kg rice", weight: "10.9 Kg" },
+            ge10: { name: "GE 10", price: 22500, capacity: "7 kg rice", weight: "19.5 Kg" },
+            ge15: { name: "GE 15", price: 36500, capacity: "15 kg rice", weight: "32 Kg" },
+            ge20: { name: "GE 20", price: 52500, capacity: "30 kg rice", weight: "52.5 Kg" },
+            ge25: { name: "GE 25", price: 85000, capacity: "50 kg rice + 30L oil", weight: "71 Kg" },
+            ge30: { name: "GE 30", price: 125000, capacity: "75 kg rice", weight: "~95 Kg" }
+        };
+
+        window.addToCart = function(productId) {
+            const product = productDetails[productId];
             if (!product) return;
+
             let cart = getCart();
             const existing = cart.find(item => item.id === productId);
             if (existing) {
                 existing.quantity += 1;
             } else {
                 cart.push({
-                    id: product.id,
+                    id: productId,
                     name: product.name,
                     price: product.price,
                     quantity: 1,
                     capacity: product.capacity,
-                    icon: product.icon,
-                    image: product.image  // store image for cart display if needed
+                    weight: product.weight
                 });
             }
             saveCart(cart);
+
+            // Visual feedback
+            const btns = document.querySelectorAll(`button[onclick="addToCart('${productId}')"]`);
+            btns.forEach(btn => {
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Added!';
+                setTimeout(() => { btn.innerHTML = originalHtml; }, 1000);
+            });
+
             alert(`✓ ${product.name} added to cart!`);
-        }
-
-        function renderProducts() {
-            const container = document.getElementById("productsContainer");
-            if (!container) return;
-            const products = getProductCatalog();
-            if (products.length === 0) {
-                container.innerHTML = '<div class="col-span-full text-center py-10 text-gray-500">No products available. Please check back later.</div>';
-                return;
-            }
-            container.innerHTML = products.map(prod => `
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover-scale transition-all">
-                    <div class="bg-gradient-to-r ${prod.bgClass} p-5 flex justify-between items-center">
-                        <h3 class="text-2xl font-bold text-white">${prod.name}</h3>
-                        <i class="fas ${prod.icon} text-white text-3xl opacity-80"></i>
-                    </div>
-                    <img src="${prod.image || 'https://placehold.co/400x300?text=No+Image'}" class="product-img w-full h-48 object-cover" onerror="this.src='https://placehold.co/400x300?text=Image+Missing'">
-                    <div class="p-6">
-                        <div class="text-center mb-3">
-                            <span class="text-3xl font-black text-orange-500">${prod.capacity}</span>
-                        </div>
-                        <p class="text-gray-600 text-center text-sm mb-4">${prod.description}</p>
-                        <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-2">
-                            <div class="text-2xl font-bold text-green-700">₹${prod.price.toLocaleString('en-IN')}</div>
-                            <button onclick="addToCart('${prod.id}')" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full text-sm font-semibold transition flex items-center gap-2 shadow">
-                                <i class="fas fa-cart-plus"></i> Add to Cart
-                            </button>
-                        </div>
-                        <div class="mt-3 text-xs text-gray-400"><i class="fas fa-fire"></i> Producer Gas ready · smokeless</div>
-                    </div>
-                </div>
-            `).join('');
-            updateCartCountDisplay();
-        }
-
-        window.onload = () => {
-            renderProducts();
         };
+
+        // Initialize cart count
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCountDisplay();
+        });
     </script>
 </body>
 </html>
