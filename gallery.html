@@ -6,13 +6,78 @@
     <title>VARAM SUSTAINABLE · Gallery | Biomass Gasifier Installations</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .filter-btn.active {
+            background: #2E7D32 !important;
+            color: white !important;
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
-<body>
-    <div id="header"></div>
+<body class="bg-white">
 
-    <!-- Hero Section with Green + Orange Theme -->
-    <section class="pt-20 pb-10" style="background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #F57C00 100%);">
+    <!-- STICKY FULL WIDTH NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="w-full px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <div class="flex items-center gap-2">
+                    <img src="logo.png" alt="VARAM Sustainable Logo" class="w-10 h-10 object-contain rounded-lg">
+                    <span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">
+                        VARAM SUSTAINABLE SOLUTIONS
+                    </span>
+                </div>
+                <div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
+                    <a href="index.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">About</a>
+                    <a href="services.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Services</a>
+                    <a href="products.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Products</a>
+                    <a href="installation.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Installation</a>
+                    <a href="projects.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Projects</a>
+                    <a href="gallery.html" class="px-3 py-2 rounded-full bg-orange-50 text-orange-600 font-semibold transition">Gallery</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Contact</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="contact.html" class="hidden md:inline-block text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-md transition" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
+                        Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden w-full bg-white/95 backdrop-blur-md border-t border-gray-200 py-4 px-6 flex flex-col space-y-2">
+            <a href="index.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Home</a>
+            <a href="about.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">About</a>
+            <a href="services.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Services</a>
+            <a href="products.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Products</a>
+            <a href="installation.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Installation</a>
+            <a href="projects.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Projects</a>
+            <a href="gallery.html" class="py-2 px-3 rounded-lg bg-orange-50 text-orange-600 font-medium transition">Gallery</a>
+            <a href="contact.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Contact</a>
+            <a href="contact.html" class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-2 text-white transition" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
+                Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </nav>
+    <div class="h-20"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="pt-16 pb-10" style="background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #F57C00 100%);">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-white">Installation Gallery</h1>
             <div class="w-24 h-1 bg-orange-300 mx-auto mt-4 rounded-full"></div>
@@ -24,7 +89,7 @@
     <section class="py-8 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-wrap justify-center gap-3">
-                <button class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold transition" data-filter="all" style="background: #2E7D32; color: white;">All Projects</button>
+                <button class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold transition" data-filter="all" style="background: #2E7D32; color: white;">All Photos</button>
                 <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="commercial">Commercial</button>
                 <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="industrial">Industrial</button>
                 <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="institutional">Institutional</button>
@@ -33,13 +98,22 @@
         </div>
     </section>
 
-    <!-- Gallery Grid -->
+    <!-- Gallery Grid with Actual Photos -->
     <section class="pb-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 mt-8">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="galleryGrid">
-                <!-- GE 5 Domestic Installation -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl cursor-pointer transition hover:scale-105" data-category="installation">
-                    <i class="fas fa-home"></i>
+
+                <!-- ============================================ -->
+                <!-- ADD YOUR PHOTOS BELOW - COPY AND PASTE FORMAT -->
+                <!-- ============================================ -->
+
+                <!-- PHOTO 1 - GE 5 Domestic Installation -->
+                <!-- Replace the src path with your actual photo path -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="installation">
+                    <img src="static/img/p1.jpeg" alt="GE 5 Domestic Gasifier Installation" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
+                        <i class="fas fa-home"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">GE 5 Domestic Gasifier</p>
                         <p class="text-xs">Coimbatore, Tamil Nadu</p>
@@ -47,9 +121,12 @@
                     </div>
                 </div>
 
-                <!-- Tea Shop Installation -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <i class="fas fa-mug-hot"></i>
+                <!-- PHOTO 2 - GE 10 Tea Shop -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
+                    <img src="static/img/p1.jpeg" alt="GE 10 at Tea Shop" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">GE 10 at Tea Shop</p>
                         <p class="text-xs">Madurai, Tamil Nadu</p>
@@ -57,9 +134,12 @@
                     </div>
                 </div>
 
-                <!-- Restaurant Installation -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <i class="fas fa-utensils"></i>
+                <!-- PHOTO 3 - GE 15 Restaurant -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
+                    <img src="static/img/p2.jpeg" alt="GE 15 at Restaurant" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
+                        <i class="fas fa-utensils"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">GE 15 at Restaurant</p>
                         <p class="text-xs">Chennai, Tamil Nadu</p>
@@ -67,9 +147,12 @@
                     </div>
                 </div>
 
-                <!-- Catering Kitchen -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <i class="fas fa-people-carry"></i>
+                <!-- PHOTO 4 - GE 20 Catering -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
+                    <img src="static/img/p3.jpeg" alt="GE 20 at Catering Unit" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
+                        <i class="fas fa-people-carry"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">GE 20 at Catering Unit</p>
                         <p class="text-xs">Bangalore, Karnataka</p>
@@ -77,9 +160,12 @@
                     </div>
                 </div>
 
-                <!-- Industrial Installation -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl cursor-pointer transition hover:scale-105" data-category="industrial">
-                    <i class="fas fa-industry"></i>
+                <!-- PHOTO 5 - GE 25 Industrial -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="industrial">
+                    <img src="static/img/p4.jpeg" alt="GE 25 Industrial Gasifier" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
+                        <i class="fas fa-industry"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">GE 25 Industrial Gasifier</p>
                         <p class="text-xs">Pune, Maharashtra</p>
@@ -87,9 +173,12 @@
                     </div>
                 </div>
 
-                <!-- College Canteen -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl cursor-pointer transition hover:scale-105" data-category="institutional">
-                    <i class="fas fa-university"></i>
+                <!-- PHOTO 6 - College Canteen -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="institutional">
+                    <img src="static/img/p5.jpeg" alt="GE 20 at College Canteen" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
+                        <i class="fas fa-university"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">GE 20 at College Canteen</p>
                         <p class="text-xs">Coimbatore, Tamil Nadu</p>
@@ -97,9 +186,12 @@
                     </div>
                 </div>
 
-                <!-- Marriage Hall -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl cursor-pointer transition hover:scale-105" data-category="institutional">
-                    <i class="fas fa-ring"></i>
+                <!-- PHOTO 7 - Marriage Hall -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="institutional">
+                    <img src="static/img/p6.jpeg" alt="GE 25 at Marriage Hall" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
+                        <i class="fas fa-ring"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">GE 25 at Marriage Hall</p>
                         <p class="text-xs">Salem, Tamil Nadu</p>
@@ -107,9 +199,12 @@
                     </div>
                 </div>
 
-                <!-- Installation Team -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl cursor-pointer transition hover:scale-105" data-category="installation">
-                    <i class="fas fa-hard-hat"></i>
+                <!-- PHOTO 8 - Installation Team -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="installation">
+                    <img src="static/img/p7.jpeg" alt="Installation Team at Work" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">Installation Team at Work</p>
                         <p class="text-xs">Hyderabad, Telangana</p>
@@ -117,9 +212,12 @@
                     </div>
                 </div>
 
-                <!-- Food Truck -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <i class="fas fa-truck-food"></i>
+                <!-- PHOTO 9 - Food Truck -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
+                    <img src="static/img/p8.jpeg" alt="GE 10 in Food Truck" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
+                        <i class="fas fa-truck-food"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">GE 10 in Food Truck</p>
                         <p class="text-xs">Kochi, Kerala</p>
@@ -127,9 +225,12 @@
                     </div>
                 </div>
 
-                <!-- Community Kitchen -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl cursor-pointer transition hover:scale-105" data-category="institutional">
-                    <i class="fas fa-hand-holding-heart"></i>
+                <!-- PHOTO 10 - Community Kitchen -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="institutional">
+                    <img src="static/img/p9.jpeg" alt="Community Kitchen" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">Community Kitchen</p>
                         <p class="text-xs">Vellore, Tamil Nadu</p>
@@ -137,9 +238,12 @@
                     </div>
                 </div>
 
-                <!-- Bakery Installation -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <i class="fas fa-bread-slice"></i>
+                <!-- PHOTO 11 - Bakery -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
+                    <img src="static/img/p10.jpeg" alt="GE 25 at Bakery" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">GE 25 at Bakery</p>
                         <p class="text-xs">Mumbai, Maharashtra</p>
@@ -147,15 +251,26 @@
                     </div>
                 </div>
 
-                <!-- Training Session -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl cursor-pointer transition hover:scale-105" data-category="installation">
-                    <i class="fas fa-chalkboard-user"></i>
+                <!-- PHOTO 12 - Training Session -->
+                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="installation">
+                    <img src="static/img/p11.jpeg" alt="User Training Session" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
+                        <i class="fas fa-chalkboard-user"></i>
+                    </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
                         <p class="text-sm font-semibold">User Training Session</p>
                         <p class="text-xs">Delhi NCR</p>
                         <p class="text-xs mt-1">Operation & maintenance training</p>
                     </div>
                 </div>
+
+                <!-- ============================================ -->
+                <!-- COPY THE BLOCK ABOVE TO ADD MORE PHOTOS     -->
+                <!-- Change: src="YOUR-PHOTO-PATH.jpg"           -->
+                <!-- Change: title, location, description        -->
+                <!-- Change: data-category for filtering         -->
+                <!-- ============================================ -->
+
             </div>
         </div>
 
@@ -196,19 +311,20 @@
         </div>
     </section>
 
-    <div id="footer"></div>
-    <script src="js/main.js"></script>
-    <script>
-        loadHTML('header','header.html');
-        loadHTML('footer','footer.html');
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-400 text-sm">
+            <p>© 2025 VARAM SUSTAINABLE — Clean Energy Gasifiers & Biogas Solutions. <i class="fas fa-fire text-orange-400"></i> Powering a greener tomorrow.</p>
+        </div>
+    </footer>
 
-        // Gallery filter functionality
+    <!-- Gallery Filter Script -->
+    <script>
         const filterButtons = document.querySelectorAll('.filter-btn');
         const galleryItems = document.querySelectorAll('.gallery-item');
 
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Update active button styles
                 filterButtons.forEach(btn => {
                     btn.classList.remove('active');
                     btn.style.background = '#e5e7eb';
@@ -222,7 +338,7 @@
 
                 galleryItems.forEach(item => {
                     if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'flex';
+                        item.style.display = 'block';
                     } else {
                         item.style.display = 'none';
                     }

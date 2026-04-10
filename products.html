@@ -25,23 +25,18 @@
         .product-card:hover .product-img {
             transform: scale(1.02);
         }
-        .add-to-cart-btn {
-            background: linear-gradient(135deg, #F57C00, #E65100);
+        .enquiry-btn {
+            background: linear-gradient(135deg, #2E7D32, #1B5E20);
             transition: all 0.25s ease;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        .add-to-cart-btn:hover {
+        .enquiry-btn:hover {
+            background: linear-gradient(135deg, #F57C00, #E65100);
             transform: scale(1.02);
             box-shadow: 0 8px 20px rgba(245, 124, 0, 0.35);
         }
-        .cart-count-badge {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); background-color: #F57C00; }
-        }
         .glass-nav {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
@@ -52,28 +47,69 @@
 </head>
 <body class="bg-gradient-to-br from-gray-50 via-white to-gray-50">
 
-    <!-- Navbar -->
-    <nav class="glass-nav sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
-                        <i class="fas fa-leaf text-white text-xl"></i>
-                    </div>
-                    <span class="font-bold text-2xl tracking-tight text-gray-800">VARAM<span class="text-orange-500">SUSTAINABLE</span></span>
+    <!-- STICKY FULL WIDTH NAVBAR - Green + Orange Energy Theme -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="w-full px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <img src="logo.png" alt="VARAM Sustainable Logo" class="w-10 h-10 object-contain rounded-lg">
+                    <span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">
+                        VARAM SUSTAINABLE SOLUTIONS
+                    </span>
                 </div>
-                <div class="hidden md:flex items-center space-x-10 text-base font-medium">
-                    <a href="#" class="text-gray-600 hover:text-green-600 transition flex items-center gap-2"><i class="fas fa-home"></i> Home</a>
-                    <a href="#" class="text-green-700 font-semibold border-b-2 border-orange-500 pb-1 flex items-center gap-2"><i class="fas fa-fire text-orange-500"></i> Products</a>
-                    <!-- FIXED: Cart now redirects to cart.html -->
-                    <a href="cart.html" class="text-gray-600 hover:text-green-600 transition relative flex items-center gap-2">
-                        <i class="fas fa-shopping-cart text-lg"></i> Cart
-                        <span id="cartCountNav" class="absolute -top-2 -right-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md cart-count-badge">0</span>
+                <!-- Desktop menu -->
+                <div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
+                    <a href="index.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">About</a>
+                    <a href="services.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Services</a>
+                    <a href="products.html" class="px-3 py-2 rounded-full bg-orange-50 text-orange-600 font-semibold transition duration-300">Products</a>
+                    <a href="installation.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Installation</a>
+                    <a href="projects.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Projects</a>
+                    <a href="gallery.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Gallery</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Contact</a>
+                </div>
+                <!-- CTA + Mobile button -->
+                <div class="flex items-center gap-3">
+                    <a href="contact.html" class="hidden md:inline-block text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-md transition duration-300" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
+                        Get a Quote <i class="fas fa-arrow-right ml-2"></i>
                     </a>
+                    <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
             </div>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden w-full bg-white/95 backdrop-blur-md border-t border-gray-200 py-4 px-6 flex flex-col space-y-2">
+            <a href="index.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Home</a>
+            <a href="about.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">About</a>
+            <a href="services.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Services</a>
+            <a href="products.html" class="py-2 px-3 rounded-lg bg-orange-50 text-orange-600 font-medium transition">Products</a>
+            <a href="installation.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Installation</a>
+            <a href="projects.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Projects</a>
+            <a href="gallery.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Gallery</a>
+            <a href="contact.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Contact</a>
+            <a href="contact.html" class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-2 text-white transition" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
+                Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
     </nav>
+    <!-- Spacer for fixed navbar -->
+    <div class="h-20"></div>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
 
     <!-- Hero Section -->
     <section class="relative overflow-hidden bg-gradient-to-br from-green-800 via-green-700 to-orange-600 py-20">
@@ -84,11 +120,49 @@
             </div>
             <h1 class="text-5xl md:text-6xl font-black text-white tracking-tight drop-shadow-lg">GE Series <span class="text-orange-200">Biomass Gasifiers</span></h1>
             <div class="w-24 h-1 bg-orange-300 mx-auto my-5 rounded-full"></div>
-            <p class="text-green-50 text-xl max-w-2xl mx-auto font-light">Convert biomass waste into clean Producer Gas — choose your model, add to cart, start saving up to 70% fuel cost.</p>
+            <p class="text-green-50 text-xl max-w-2xl mx-auto font-light">Convert biomass waste into clean Producer Gas — choose your model and send an enquiry today</p>
         </div>
     </section>
 
-    <!-- Products Grid - COMPLETE GE SERIES WITH EXACT SPECS & STATIC IMAGES -->
+    <!-- Model Specifications Summary -->
+    <section class="py-10 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Gasifier Series</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2">Model Capacities & Applications</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
+                    <span class="text-xl font-black text-green-700">GE 5</span>
+                    <p class="text-xs font-semibold text-gray-500 mt-1">Upto 3kg rice</p>
+                    <p class="text-xs text-gray-600 mt-1">Domestic · Home · Travel · Picnic</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-orange-100">
+                    <span class="text-xl font-black text-orange-600">GE 10</span>
+                    <p class="text-xs font-semibold text-gray-500 mt-1">Upto 7 kg rice</p>
+                    <p class="text-xs text-gray-600 mt-1">Tea shop · Food carts · Mini commercial</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
+                    <span class="text-xl font-black text-green-700">GE 15</span>
+                    <p class="text-xs font-semibold text-gray-500 mt-1">Upto 15 kg rice</p>
+                    <p class="text-xs text-gray-600 mt-1">Food truck · Restaurant · Cloud kitchen</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-orange-100">
+                    <span class="text-xl font-black text-orange-600">GE 20</span>
+                    <p class="text-xs font-semibold text-gray-500 mt-1">Upto 30 kg rice</p>
+                    <p class="text-xs text-gray-600 mt-1">Hotels · Mess · Canteens · Catering</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
+                    <span class="text-xl font-black text-green-700">GE 25</span>
+                    <p class="text-xs font-semibold text-gray-500 mt-1">Upto 50 kg rice + 30L oil</p>
+                    <p class="text-xs text-gray-600 mt-1">Marriage halls · Bakery · Industrial kitchen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid - GE SERIES WITH ENQUIRY BUTTONS -->
     <section class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -134,20 +208,15 @@
                             <p class="text-sm text-gray-600 leading-relaxed">Domestic use — home, travel, or picnic. Perfect for outdoor cooking, small family meals.</p>
                         </div>
 
-                        <div class="price mb-4 flex items-baseline gap-1">
-                            <span class="text-3xl font-black text-green-700">₹12,500</span>
-                            <span class="text-xs text-gray-400">+ GST</span>
-                        </div>
-
                         <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Fuel: Wood chips, pellets, coconut shells</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Burn time: 60-90 minutes per load</li>
                         </ul>
 
-                        <button onclick="addToCart('ge5')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
+                        <a href="contact.html?product=GE5" class="enquiry-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-envelope"></i> Send Enquiry
+                        </a>
                     </div>
                 </div>
 
@@ -184,20 +253,15 @@
                             <p class="text-sm text-gray-600 leading-relaxed">Mini commercial — tea shop, food carts, small eateries.</p>
                         </div>
 
-                        <div class="price mb-4 flex items-baseline gap-1">
-                            <span class="text-3xl font-black text-green-700">₹22,500</span>
-                            <span class="text-xs text-gray-400">+ GST</span>
-                        </div>
-
                         <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Fuel savings: 60-70% vs LPG</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Continuous feed design</li>
                         </ul>
 
-                        <button onclick="addToCart('ge10')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
+                        <a href="contact.html?product=GE10" class="enquiry-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-envelope"></i> Send Enquiry
+                        </a>
                     </div>
                 </div>
 
@@ -233,20 +297,15 @@
                             <p class="text-sm text-gray-600 leading-relaxed">Small commercial — food trucks, restaurants, cloud kitchens.</p>
                         </div>
 
-                        <div class="price mb-4 flex items-baseline gap-1">
-                            <span class="text-3xl font-black text-green-700">₹36,500</span>
-                            <span class="text-xs text-gray-400">+ GST</span>
-                        </div>
-
                         <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Cooking capacity: 100-150 meals/day</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Payback period: 6-12 months</li>
                         </ul>
 
-                        <button onclick="addToCart('ge15')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
+                        <a href="contact.html?product=GE15" class="enquiry-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-envelope"></i> Send Enquiry
+                        </a>
                     </div>
                 </div>
 
@@ -283,20 +342,15 @@
                             <p class="text-sm text-gray-600 leading-relaxed">Commercial — restaurants, catering, cloud kitchens, hotels, mess & college canteens.</p>
                         </div>
 
-                        <div class="price mb-4 flex items-baseline gap-1">
-                            <span class="text-3xl font-black text-green-700">₹52,500</span>
-                            <span class="text-xs text-gray-400">+ GST</span>
-                        </div>
-
                         <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Cooking capacity: 200-400 meals/day</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> 24/7 continuous operation ready</li>
                         </ul>
 
-                        <button onclick="addToCart('ge20')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
+                        <a href="contact.html?product=GE20" class="enquiry-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-envelope"></i> Send Enquiry
+                        </a>
                     </div>
                 </div>
 
@@ -334,20 +388,15 @@
                             <p class="text-sm text-gray-600 leading-relaxed">Pakoda, samosa, bakery & commercial snacks makers, large industrial use, community kitchens, marriage halls, mass cooking.</p>
                         </div>
 
-                        <div class="price mb-4 flex items-baseline gap-1">
-                            <span class="text-3xl font-black text-green-700">₹85,000</span>
-                            <span class="text-xs text-gray-400">+ GST</span>
-                        </div>
-
                         <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Mass cooking: 500-1000+ meals/day</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Fully automated with PLC control</li>
                         </ul>
 
-                        <button onclick="addToCart('ge25')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
+                        <a href="contact.html?product=GE25" class="enquiry-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-envelope"></i> Send Enquiry
+                        </a>
                     </div>
                 </div>
 
@@ -384,20 +433,15 @@
                             <p class="text-sm text-gray-600 leading-relaxed">Large-scale commercial, industrial canteens, community cooking centers, temples, langars.</p>
                         </div>
 
-                        <div class="price mb-4 flex items-baseline gap-1">
-                            <span class="text-3xl font-black text-green-700">₹1,25,000</span>
-                            <span class="text-xs text-gray-400">+ GST</span>
-                        </div>
-
                         <ul class="space-y-1.5 text-xs text-gray-500 mb-5">
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Producer Gas ready · Smokeless</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Cooking capacity: 800-1500 meals/day</li>
                             <li><i class="fas fa-check-circle text-orange-500 mr-2"></i> Industrial-grade construction</li>
                         </ul>
 
-                        <button onclick="addToCart('ge30')" class="add-to-cart-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
-                        </button>
+                        <a href="contact.html?product=GE30" class="enquiry-btn w-full text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fas fa-envelope"></i> Send Enquiry
+                        </a>
                     </div>
                 </div>
             </div>
@@ -416,15 +460,15 @@
         </div>
     </section>
 
-    <!-- CTA - FIXED: View Cart button now redirects to cart.html -->
+    <!-- CTA -->
     <section class="py-16 relative overflow-hidden bg-gradient-to-r from-green-800 to-orange-700">
         <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
             <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20">
                 <i class="fas fa-leaf text-white text-5xl mb-4 opacity-80"></i>
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to make a sustainable switch?</h2>
-                <p class="text-green-100 text-lg mb-6">Join the clean energy movement. Review your selected gasifiers and proceed to checkout.</p>
-                <a href="cart.html" class="inline-flex items-center gap-3 bg-white text-orange-600 hover:bg-orange-50 px-8 py-3.5 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl transform hover:scale-105">
-                    <i class="fas fa-shopping-cart text-xl"></i> View Cart & Checkout
+                <p class="text-green-100 text-lg mb-6">Contact us today for a customized quote and start saving up to 70% on fuel costs</p>
+                <a href="contact.html" class="inline-flex items-center gap-3 bg-white text-orange-600 hover:bg-orange-50 px-8 py-3.5 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl transform hover:scale-105">
+                    <i class="fas fa-envelope text-xl"></i> Contact Us
                 </a>
             </div>
         </div>
@@ -437,70 +481,5 @@
         </div>
     </footer>
 
-    <script>
-        // ========== CART FUNCTIONALITY ==========
-        function getCart() {
-            const cart = localStorage.getItem("varam_cart");
-            return cart ? JSON.parse(cart) : [];
-        }
-
-        function saveCart(cart) {
-            localStorage.setItem("varam_cart", JSON.stringify(cart));
-            updateCartCountDisplay();
-        }
-
-        function updateCartCountDisplay() {
-            const cart = getCart();
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const countSpan = document.getElementById("cartCountNav");
-            if (countSpan) countSpan.innerText = totalItems;
-        }
-
-        // Product details for cart
-        const productDetails = {
-            ge5: { name: "GE 5", price: 12500, capacity: "3 kg rice", weight: "10.9 Kg" },
-            ge10: { name: "GE 10", price: 22500, capacity: "7 kg rice", weight: "19.5 Kg" },
-            ge15: { name: "GE 15", price: 36500, capacity: "15 kg rice", weight: "32 Kg" },
-            ge20: { name: "GE 20", price: 52500, capacity: "30 kg rice", weight: "52.5 Kg" },
-            ge25: { name: "GE 25", price: 85000, capacity: "50 kg rice + 30L oil", weight: "71 Kg" },
-            ge30: { name: "GE 30", price: 125000, capacity: "75 kg rice", weight: "~95 Kg" }
-        };
-
-        window.addToCart = function(productId) {
-            const product = productDetails[productId];
-            if (!product) return;
-
-            let cart = getCart();
-            const existing = cart.find(item => item.id === productId);
-            if (existing) {
-                existing.quantity += 1;
-            } else {
-                cart.push({
-                    id: productId,
-                    name: product.name,
-                    price: product.price,
-                    quantity: 1,
-                    capacity: product.capacity,
-                    weight: product.weight
-                });
-            }
-            saveCart(cart);
-
-            // Visual feedback
-            const btns = document.querySelectorAll(`button[onclick="addToCart('${productId}')"]`);
-            btns.forEach(btn => {
-                const originalHtml = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-check"></i> Added!';
-                setTimeout(() => { btn.innerHTML = originalHtml; }, 1000);
-            });
-
-            alert(`✓ ${product.name} added to cart!`);
-        };
-
-        // Initialize cart count
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCartCountDisplay();
-        });
-    </script>
 </body>
 </html>

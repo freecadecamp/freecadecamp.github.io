@@ -2,273 +2,483 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>VARAM SUSTAINABLE · Projects | Biomass Gasifier Installations</title>
+    <!-- Tailwind + Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Video Modal Styles - native HTML5 video player */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.94);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 1100px;
+            background: #000;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.6);
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            display: block;
+            outline: none;
+        }
+        .close-video {
+            position: absolute;
+            top: -42px;
+            right: -8px;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.6);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 10;
+            font-weight: bold;
+        }
+        .close-video:hover {
+            background: #F57C00;
+            transform: scale(1.05);
+        }
+        /* Project card hover & play overlay */
+        .project-card {
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+        }
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            cursor: pointer;
+            border-radius: inherit;
+        }
+        .project-video-container:hover .play-overlay {
+            opacity: 1;
+        }
+        .play-btn-circle {
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+        .play-btn-circle i {
+            color: #F57C00;
+            font-size: 28px;
+            margin-left: 5px;
+        }
+        .project-video-container:hover .play-btn-circle {
+            background: #F57C00;
+            transform: scale(1.08);
+        }
+        .project-video-container:hover .play-btn-circle i {
+            color: white;
+        }
+        .local-video-badge {
+            background: #2c7a2d;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        /* Thumbnail background helper */
+        .bg-thumb {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        @media (max-width: 640px) {
+            .close-video {
+                top: -36px;
+                right: 0px;
+            }
+            .play-btn-circle {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
 </head>
-<body>
-    <div id="header"></div>
+<body class="antialiased">
 
-    <!-- Hero Section with Green + Orange Theme -->
-    <section class="pt-20 pb-10" style="background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #F57C00 100%);">
+    <!-- STICKY NAVBAR (clean) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="w-full px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-green-700 to-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">V</div>
+                    <span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">
+                        VARAM SUSTAINABLE
+                    </span>
+                </div>
+                 <div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
+                <a href="index.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Home</a>
+                <a href="about.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">About</a>
+                <a href="services.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Services</a>
+                <a href="products.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Products</a>
+                <a href="installation.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Installation</a>
+                <a href="projects.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Projects</a>
+                <a href="gallery.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Gallery</a>
+                <a href="contact.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Contact</a>
+            </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="#" class="hidden md:inline-block text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-md transition" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
+                        Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-500 hover:bg-orange-50">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <div class="h-20"></div>
+
+    <!-- VIDEO MODAL (Native HTML5 video player with local src) -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-container">
+            <span class="close-video" onclick="closeVideoModal()">&times;</span>
+            <video id="localVideoPlayer" controls preload="metadata">
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-16 pb-10" style="background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #F57C00 100%);">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-white">Delivered Projects</h1>
             <div class="w-24 h-1 bg-orange-300 mx-auto mt-4 rounded-full"></div>
-            <p class="mt-6 text-xl text-white/90">Real-world installations across India — from small businesses to large institutions</p>
+            <p class="mt-6 text-xl text-white/90">Real-world installations across India — watch project videos (local MP4)</p>
         </div>
     </section>
 
-    <!-- Projects Statistics -->
+    <!-- Stats Section -->
     <section class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-4">
-                    <div class="text-3xl md:text-4xl font-black text-green-600">30+</div>
-                    <div class="text-sm text-gray-600">Projects Completed</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl md:text-4xl font-black text-orange-500">15+</div>
-                    <div class="text-sm text-gray-600">Commercial Kitchens</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl md:text-4xl font-black text-green-600">8+</div>
-                    <div class="text-sm text-gray-600">Institutional Clients</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl md:text-4xl font-black text-orange-500">1000+</div>
-                    <div class="text-sm text-gray-600">Meals Served Daily</div>
-                </div>
+                <div class="p-4"><div class="text-3xl md:text-4xl font-black text-green-600">38+</div><div class="text-sm text-gray-600">Projects Completed</div></div>
+                <div class="p-4"><div class="text-3xl md:text-4xl font-black text-orange-500">18+</div><div class="text-sm text-gray-600">Commercial Kitchens</div></div>
+                <div class="p-4"><div class="text-3xl md:text-4xl font-black text-green-600">12+</div><div class="text-sm text-gray-600">Institutional Clients</div></div>
+                <div class="p-4"><div class="text-3xl md:text-4xl font-black text-orange-500">2500+</div><div class="text-sm text-gray-600">Meals Served Daily</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Grid -->
+    <!-- Model Specifications -->
+    <section class="py-10 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-8"><span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Gasifier Series</span><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2">Model Capacities & Applications</h2><div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-3 rounded-full"></div></div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100"><span class="text-xl font-black text-green-700">GE 5</span><p class="text-xs font-semibold text-gray-500 mt-1">Upto 3kg rice</p><p class="text-xs text-gray-600">Domestic · Picnic</p></div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-orange-100"><span class="text-xl font-black text-orange-600">GE 10</span><p class="text-xs font-semibold text-gray-500 mt-1">Upto 7 kg rice</p><p class="text-xs text-gray-600">Tea shops · Food carts</p></div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100"><span class="text-xl font-black text-green-700">GE 15</span><p class="text-xs font-semibold text-gray-500 mt-1">Upto 15 kg rice</p><p class="text-xs text-gray-600">Restaurant · Cloud kitchen</p></div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-orange-100"><span class="text-xl font-black text-orange-600">GE 20</span><p class="text-xs font-semibold text-gray-500 mt-1">Upto 30 kg rice</p><p class="text-xs text-gray-600">Hotels · Canteens</p></div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100"><span class="text-xl font-black text-green-700">GE 25</span><p class="text-xs font-semibold text-gray-500 mt-1">Upto 50kg rice + oil</p><p class="text-xs text-gray-600">Marriage halls · Bakeries</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS GRID - IMAGE THUMBNAILS + LOCAL VIDEOS -->
     <section class="pb-20 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
                 <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Our Work</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Featured Installations</h2>
                 <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-600">See how our gasifiers are transforming kitchens across India</p>
+                <p class="mt-4 text-gray-600">Click any project to watch the installation video — each card features a custom thumbnail image.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 - Wedding Hall -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="h-44 bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center text-white text-6xl">
-                        <i class="fas fa-ring"></i>
+
+                <!-- Project 1 - Marriage Hall (custom thumbnail + video) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+                    <div class="project-video-container relative h-44 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem1.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/proj.mp4', 'Sri Balaji Marriage Hall - GE25 Installation')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-ring text-white text-5xl drop-shadow-lg"></i>
+                        </div>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl">Sri Balaji Marriage Hall</h3>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE 25</span>
-                            <span><i class="fas fa-map-pin"></i> Salem, Tamil Nadu</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Industrial gasifier installed for mass cooking at marriage hall. Handles 1000+ guests per event. Oil heating system for deep frying samosa and pakoda.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">50kg rice capacity</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Oil heating</span>
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">70% fuel savings</span>
-                        </div>
+                        <div class="flex justify-between items-start"><h3 class="font-bold text-xl">Sri Balaji Marriage Hall</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div>
+                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-tag"></i> GE 25</span><span><i class="fas fa-map-pin"></i> Salem, TN</span></div>
+                        <p class="mt-3 text-gray-600 text-sm">Industrial gasifier for mass cooking (1000+ guests). Oil heating system, 70% fuel savings.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">50kg rice</span><span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Oil heating 30L</span><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">70% savings</span></div>
                     </div>
                 </div>
 
-                <!-- Project 2 - College Canteen -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="h-44 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-6xl">
-                        <i class="fas fa-university"></i>
+                <!-- Project 2 - College Canteen (thumb2) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+                    <div class="project-video-container relative h-44 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem2.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/proj2.mp4', 'PSG College Canteen - GE20 Gasifier')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-university text-white text-5xl drop-shadow-lg"></i>
+                        </div>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl">PSG College of Technology</h3>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE 20</span>
-                            <span><i class="fas fa-map-pin"></i> Coimbatore, Tamil Nadu</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Commercial gasifier installed in college canteen serving 500+ students daily. Reduced LPG consumption by 65% with payback period of 8 months.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">30kg rice capacity</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">500+ meals/day</span>
-                        </div>
+                        <div class="flex justify-between items-start"><h3 class="font-bold text-xl">PSG College of Tech</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div>
+                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-tag"></i> GE 20</span><span><i class="fas fa-map-pin"></i> Coimbatore, TN</span></div>
+                        <p class="mt-3 text-gray-600 text-sm">Canteen serving 500+ students daily. Reduced LPG by 65%, payback 8 months.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">30kg rice</span><span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">500+ meals/day</span></div>
                     </div>
                 </div>
 
-                <!-- Project 3 - Restaurant Chain -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="h-44 bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center text-white text-6xl">
-                        <i class="fas fa-utensils"></i>
+                <!-- Project 3 - Annapoorna Restaurant (thumb3) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+                    <div class="project-video-container relative h-44 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem3.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/proj3.mp4', 'Annapoorna Restaurant - GE15 Performance')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-utensils text-white text-5xl drop-shadow-lg"></i>
+                        </div>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl">Annapoorna Restaurant</h3>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE 15</span>
-                            <span><i class="fas fa-map-pin"></i> Chennai, Tamil Nadu</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Popular restaurant chain installed GE 15 gasifier for their main kitchen. Reports 60% reduction in fuel costs and consistent blue flame for all cooking.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">15kg rice capacity</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Continuous operation</span>
-                        </div>
+                        <div class="flex justify-between items-start"><h3 class="font-bold text-xl">Annapoorna Restaurant</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div>
+                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-tag"></i> GE 15</span><span><i class="fas fa-map-pin"></i> Chennai, TN</span></div>
+                        <p class="mt-3 text-gray-600 text-sm">Popular chain saved 60% fuel costs, consistent blue flame for all cooking.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">15kg rice</span><span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Continuous op.</span></div>
                     </div>
                 </div>
 
-                <!-- Project 4 - Tea Shop Chain -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="h-44 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-6xl">
-                        <i class="fas fa-mug-hot"></i>
+                <!-- Project 4 - Tea Stall (thumb4) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+                    <div class="project-video-container relative h-44 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem4.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/pro0.mp4', 'Krishna Tea Stall - GE10 Installation')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-mug-hot text-white text-5xl drop-shadow-lg"></i>
+                        </div>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl">Krishna Tea Stall</h3>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE 10</span>
-                            <span><i class="fas fa-map-pin"></i> Madurai, Tamil Nadu</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Popular tea shop chain using GE 10 for continuous tea preparation. Eliminated LPG dependence completely, saving ₹8,000 per month.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">7kg rice capacity</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">100% LPG savings</span>
-                        </div>
+                        <div class="flex justify-between items-start"><h3 class="font-bold text-xl">Krishna Tea Stall</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div>
+                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-tag"></i> GE 10</span><span><i class="fas fa-map-pin"></i> Madurai, TN</span></div>
+                        <p class="mt-3 text-gray-600 text-sm">Tea shop chain eliminated LPG, saves ₹8,000/month. 100% renewable cooking.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">7kg rice</span><span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">100% LPG saving</span></div>
                     </div>
                 </div>
 
-                <!-- Project 5 - Bakery -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="h-44 bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center text-white text-6xl">
-                        <i class="fas fa-bread-slice"></i>
+                <!-- Project 5 - Bakery (thumb5) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+                    <div class="project-video-container relative h-44 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem5.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/proj5.mp4', 'Chennai Bakery - Industrial Gasifier Oil Heating')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-bread-slice text-white text-5xl drop-shadow-lg"></i>
+                        </div>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl">Chennai Bakery</h3>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE 25</span>
-                            <span><i class="fas fa-map-pin"></i> Chennai, Tamil Nadu</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Large bakery using GE 25 for both cooking and oil heating for deep frying. Handles 30 litres of oil simultaneously for snacks production.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">50kg rice + oil</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Snacks production</span>
-                        </div>
+                        <div class="flex justify-between items-start"><h3 class="font-bold text-xl">Chennai Bakery</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div>
+                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-tag"></i> GE 25</span><span><i class="fas fa-map-pin"></i> Chennai, TN</span></div>
+                        <p class="mt-3 text-gray-600 text-sm">Large bakery for deep frying & cooking; handles 30L oil simultaneously.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">50kg + oil</span><span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Snacks production</span></div>
                     </div>
                 </div>
 
-                <!-- Project 6 - Food Truck -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-                    <div class="h-44 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-6xl">
-                        <i class="fas fa-truck-food"></i>
+                <!-- Project 6 - Food Truck (thumb6) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+                    <div class="project-video-container relative h-44 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem6.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/proj6.mp4', 'Street Bites Food Truck - Mobile Gasifier')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-truck-food text-white text-5xl drop-shadow-lg"></i>
+                        </div>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl">Street Bites Food Truck</h3>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE 10</span>
-                            <span><i class="fas fa-map-pin"></i> Kochi, Kerala</span>
+                        <div class="flex justify-between items-start"><h3 class="font-bold text-xl">Street Bites Food Truck</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div>
+                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-tag"></i> GE 10</span><span><i class="fas fa-map-pin"></i> Kochi, Kerala</span></div>
+                        <p class="mt-3 text-gray-600 text-sm">Compact gasifier perfect for mobile kitchen, clean cooking on the go.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">7kg rice</span><span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Mobile kitchen</span></div>
+                    </div>
+                </div>
+
+                <!-- Project 7 - Temple Kitchen (thumb7) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+                    <div class="project-video-container relative h-44 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem7.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/pro002.mp4', 'Srirangam Temple Kitchen - Community Meal')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-place-of-worship text-white text-5xl drop-shadow-lg"></i>
                         </div>
-                        <p class="mt-3 text-gray-600 text-sm">Mobile food truck equipped with GE 10 gasifier. Compact design fits perfectly in limited space while providing clean cooking for all menu items.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Portable design</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Mobile kitchen</span>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start"><h3 class="font-bold text-xl">Srirangam Temple Kitchen</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div>
+                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-tag"></i> GE 20</span><span><i class="fas fa-map-pin"></i> Trichy, TN</span></div>
+                        <p class="mt-3 text-gray-600 text-sm">Community kitchen preparing prasadam for 2000+ devotees daily, runs on coconut shells.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">30kg rice</span><span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Zero LPG</span></div>
+                    </div>
+                </div>
+
+                <!-- Project 8 - Eco Resort (thumb8) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+                    <div class="project-video-container relative h-44 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem8.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/pro003.mp4', 'Vana Eco Resort - Sustainable Kitchen')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-tree text-white text-5xl drop-shadow-lg"></i>
                         </div>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start"><h3 class="font-bold text-xl">Vana Eco Resort</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div>
+                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-tag"></i> GE 25</span><span><i class="fas fa-map-pin"></i> Wayanad, Kerala</span></div>
+                        <p class="mt-3 text-gray-600 text-sm">Eco-resort kitchen, biomass gasifier for buffet cooking & oil heating, reduces carbon footprint.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">50kg + 30L oil</span><span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Green resort</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Community Projects Section -->
+    <!-- Community & Institutional Projects (with thumbnails) -->
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Social Impact</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Community & Institutional Projects</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-            </div>
-
+            <div class="text-center mb-12"><span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Social Impact</span><h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Community & Institutional Projects</h2><div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div></div>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Community Kitchen -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                    <div class="h-48 bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center text-white text-6xl">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl">Akshaya Patra Foundation</h3>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE 20 & GE 25</span>
-                            <span><i class="fas fa-map-pin"></i> Multiple Locations</span>
+                <!-- Akshaya Patra -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="project-video-container relative h-48 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem00.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/proj10.mp4', 'Akshaya Patra Foundation - Mid Day Meal Scheme')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-hand-holding-heart text-white text-5xl drop-shadow-lg"></i>
                         </div>
-                        <p class="mt-3 text-gray-600 text-sm">Community kitchen serving mid-day meals to school children. Multiple gasifiers installed to cook 5000+ meals daily using agricultural waste as fuel.</p>
-                        <div class="mt-4">
-                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Impact: 5000+ meals/day</span>
-                        </div>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
                     </div>
+                    <div class="p-6"><div class="flex justify-between"><h3 class="font-bold text-xl">Akshaya Patra Foundation</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div><p class="text-sm text-gray-600 mt-2">GE20 & GE25 units cooking 5000+ mid-day meals using agricultural waste.</p><span class="inline-block mt-3 px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">5000+ meals/day</span></div>
                 </div>
-
-                <!-- Ashram -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                    <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-6xl">
-                        <i class="fas fa-om"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl">Isha Foundation</h3>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE 20</span>
-                            <span><i class="fas fa-map-pin"></i> Coimbatore, Tamil Nadu</span>
+                <!-- Isha Foundation -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="project-video-container relative h-48 bg-thumb cursor-pointer"
+                         style="background: url('static/t1/tem11.png') center/cover;"
+                         onclick="playLocalVideo('static/vid/proj11.mp4', 'Isha Foundation Ashram - Sustainable Cooking')">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <i class="fas fa-om text-white text-5xl drop-shadow-lg"></i>
                         </div>
-                        <p class="mt-3 text-gray-600 text-sm">Ashram kitchen serving volunteers and visitors. Gasifier runs on coconut shells and wood chips, reducing environmental impact and operational costs.</p>
-                        <div class="mt-4">
-                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Sustainable cooking</span>
-                        </div>
+                        <div class="play-overlay"><div class="play-btn-circle"><i class="fas fa-play"></i></div></div>
                     </div>
+                    <div class="p-6"><div class="flex justify-between"><h3 class="font-bold text-xl">Isha Foundation</h3><span class="local-video-badge"><i class="fas fa-video"></i> MP4</span></div><p class="text-sm text-gray-600 mt-2">Ashram kitchen runs on coconut shells & wood chips — sustainable model.</p><span class="inline-block mt-3 px-3 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Eco-friendly</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
+    <!-- Environmental Impact -->
     <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Environmental Impact</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-            </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Environmental Impact</h2><div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full mb-8"></div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
-                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-tree text-green-600 text-3xl"></i>
-                    </div>
-                    <div class="text-3xl font-bold text-gray-800">200+</div>
-                    <div class="text-gray-600">Tons CO₂ Saved</div>
-                    <div class="text-sm text-gray-500 mt-2">Per year across all projects</div>
-                </div>
-                <div class="text-center p-6">
-                    <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-leaf text-orange-500 text-3xl"></i>
-                    </div>
-                    <div class="text-3xl font-bold text-gray-800">50+</div>
-                    <div class="text-gray-600">Tons Biomass Used</div>
-                    <div class="text-sm text-gray-500 mt-2">Agricultural waste diverted monthly</div>
-                </div>
-                <div class="text-center p-6">
-                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-line text-green-600 text-3xl"></i>
-                    </div>
-                    <div class="text-3xl font-bold text-gray-800">₹25L+</div>
-                    <div class="text-gray-600">Annual Fuel Savings</div>
-                    <div class="text-sm text-gray-500 mt-2">Combined across all clients</div>
-                </div>
+                <div><div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-tree text-green-600 text-3xl"></i></div><div class="text-3xl font-bold">280+</div><div class="text-gray-600">Tons CO₂ Saved/Year</div></div>
+                <div><div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-leaf text-orange-500 text-3xl"></i></div><div class="text-3xl font-bold">65+</div><div class="text-gray-600">Tons Biomass Used Monthly</div></div>
+                <div><div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-chart-line text-green-600 text-3xl"></i></div><div class="text-3xl font-bold">₹32L+</div><div class="text-gray-600">Annual Fuel Savings</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- CTA -->
     <section class="py-16" style="background: linear-gradient(135deg, #2E7D32 0%, #F57C00 100%);">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Want to See Your Project Here?</h2>
-            <p class="text-white/90 text-lg mb-8">Join our growing list of satisfied customers making the switch to clean energy</p>
-            <a href="contact.html" class="inline-block bg-white text-green-700 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition shadow-lg">Start Your Project →</a>
-        </div>
+        <div class="max-w-4xl mx-auto text-center px-6"><h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Want to See Your Project Here?</h2><p class="text-white/90 text-lg mb-8">Join our growing list of satisfied customers making the switch to clean energy</p><a href="#" class="inline-block bg-white text-green-700 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold shadow-lg transition">Start Your Project →</a></div>
     </section>
 
-    <div id="footer"></div>
-    <script src="js/main.js"></script>
-    <script>loadHTML('header','header.html');loadHTML('footer','footer.html');</script>
+    <footer class="bg-gray-900 text-white pt-12 pb-6"><div class="max-w-7xl mx-auto px-6 text-center text-gray-400 text-sm"><p>© 2025 VARAM SUSTAINABLE — Clean Energy Gasifiers & Biogas Solutions. <i class="fas fa-fire text-orange-400"></i> Powering a greener tomorrow.</p></div></footer>
+
+    <script>
+        const modal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('localVideoPlayer');
+        const videoSource = document.getElementById('videoSource');
+
+        function playLocalVideo(videoPath, projectTitle) {
+            if (!videoPath) return;
+            videoSource.src = videoPath;
+            videoPlayer.load();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            videoPlayer.play().catch(e => console.log("Autoplay blocked:", e));
+        }
+
+        function closeVideoModal() {
+            videoPlayer.pause();
+            videoSource.src = '';
+            videoPlayer.load();
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeVideoModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeVideoModal();
+        });
+
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+    </script>
 </body>
 </html>
