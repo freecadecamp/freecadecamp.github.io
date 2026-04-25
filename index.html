@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>VARAM CLEAN COOKING · Smokeless Stoves · Biogasifiers · Pellet Stoves</title>
-    <!-- Tailwind CSS via CDN -->
+    <title>VARAM · Smokeless Biomass Stoves & Biogas · Clean Cooking Revolution</title>
+    <!-- Tailwind CSS v3 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -17,7 +17,7 @@
             width: 100%;
             height: 100%;
             z-index: 9999;
-            background: #000;
+            background: #064e3b; /* deep green fallback */
             transition: opacity 0.8s ease;
         }
         #introVideo {
@@ -45,32 +45,19 @@
             object-fit: cover;
             z-index: 0;
         }
-        .video-overlay {
+        /* green overlay for "fully green color with letters" */
+        .video-overlay-green {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.6);
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.75), rgba(21, 128, 61, 0.7));
             z-index: 1;
         }
         .hero-content {
             position: relative;
             z-index: 2;
-        }
-        @media (max-width: 768px) {
-            /* no modal needed */
-        }
-        /* Custom counter animation */
-        .counter-value {
-            transition: all 0.2s ease;
-        }
-        /* Navbar additional styles */
-        .backdrop-blur-md {
-            backdrop-filter: blur(12px);
-        }
-        .gradient-bg-btn {
-            background: linear-gradient(135deg, #2E7D32, #F57C00);
         }
         a, button {
             transition: all 0.2s ease;
@@ -78,7 +65,6 @@
         .fixed {
             z-index: 999;
         }
-        /* Spacer for fixed header */
         .header-spacer {
             height: 80px;
         }
@@ -87,39 +73,42 @@
                 height: 64px;
             }
         }
+        .leaf-icon {
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
     </style>
 </head>
 <body class="bg-gray-50">
 
-    <!-- INTRO VIDEO OVERLAY -->
+    <!-- INTRO VIDEO OVERLAY (green themed) -->
     <div id="introVideoContainer">
         <video id="introVideo" autoplay muted playsinline>
             <source src="hello1.mp4" type="video/mp4">
         </video>
     </div>
 
-    <!-- ========== EMBEDDED HEADER (NO external fetch) ========== -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <!-- ========== EMBEDDED HEADER (green energy style) ========== -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-green-200 shadow-sm">
         <div class="w-full px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 lg:h-20">
-                <!-- Logo area -->
+                <!-- Logo area with leaf icon -->
                 <div class="flex items-center gap-2">
-                    <img src="logo.png" alt="VARAM Sustainable Logo" class="w-10 h-10 object-contain rounded-lg">
+                    <img src="logo.png" alt="VSS leaf logo" class="w-10 h-10 object-contain rounded-lg leaf-icon" onerror="this.src='https://placehold.co/40x40?text=🌿'">
                     <span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">
-                        VARAM SUSTAINABLE SOLUTIONS
+                        VARAN SUSTAINABLE SOLUTIONS
                     </span>
                 </div>
 
                 <!-- Desktop menu -->
                 <div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
-                    <a href="index.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Home</a>
-                    <a href="about.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">About</a>
-                    <a href="services.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Services</a>
-                    <a href="products.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Products</a>
-                    <a href="installation.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Installation</a>
-                    <a href="projects.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Projects</a>
-                    <a href="gallery.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Gallery</a>
-                    <a href="contact.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition duration-300">Contact</a>
+                    <a href="index.html" class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300">About</a>
+                    <a href="services.html" class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300">Services</a>
+                    <a href="products.html" class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300">Products</a>
+                    <a href="installation.html" class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300">Installation</a>
+                    <a href="projects.html" class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300">Projects</a>
+                    <a href="gallery.html" class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300">Gallery</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300">Contact</a>
                 </div>
 
                 <!-- Mobile menu button (burger) -->
@@ -128,16 +117,16 @@
                 </button>
             </div>
 
-            <!-- Mobile menu dropdown (hidden by default) -->
+            <!-- Mobile menu dropdown -->
             <div id="mobileMenu" class="md:hidden hidden w-full bg-white/95 backdrop-blur-md border-t border-gray-200 py-4 px-6 flex flex-col space-y-2 shadow-lg">
-                <a href="index.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition text-gray-700 font-medium">Home</a>
-                <a href="about.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition text-gray-700 font-medium">About</a>
-                <a href="services.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition text-gray-700 font-medium">Services</a>
-                <a href="products.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition text-gray-700 font-medium">Products</a>
-                <a href="installation.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition text-gray-700 font-medium">Installation</a>
-                <a href="projects.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition text-gray-700 font-medium">Projects</a>
-                <a href="gallery.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition text-gray-700 font-medium">Gallery</a>
-                <a href="contact.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition text-gray-700 font-medium">Contact</a>
+                <a href="index.html" class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Home</a>
+                <a href="about.html" class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition">About</a>
+                <a href="services.html" class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Services</a>
+                <a href="products.html" class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Products</a>
+                <a href="installation.html" class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Installation</a>
+                <a href="projects.html" class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Projects</a>
+                <a href="gallery.html" class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Gallery</a>
+                <a href="contact.html" class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Contact</a>
                 <a href="contact.html" class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-2 text-white transition" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
                     Get a Quote <i class="fas fa-arrow-right ml-2"></i>
                 </a>
@@ -148,202 +137,195 @@
     <!-- Spacer for fixed header -->
     <div class="header-spacer"></div>
 
-    <!-- MAIN CONTENT (rest of the page) -->
+    <!-- MAIN CONTENT -->
     <div class="main-content">
-        <!-- HERO SECTION with video background -->
+
+        <!-- HERO SECTION: green overlay + clean cooking revolution stats -->
         <section class="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden video-bg" style="min-height: 100vh;">
             <video autoplay loop muted playsinline>
                 <source src="hello.mp4" type="video/mp4">
             </video>
-            <div class="video-overlay"></div>
+            <!-- fully green color overlay with letters (green energy theme) -->
+            <div class="video-overlay-green"></div>
             <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 hero-content">
                 <div class="flex flex-col lg:flex-row lg:items-center gap-12">
                     <div class="lg:w-3/5">
-                        <div class="inline-block px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-semibold mb-6">🔥 Zero Smoke · Infinite Possibilities</div>
+                        <div class="inline-block px-4 py-2 bg-green-700 text-white rounded-full text-sm font-semibold mb-6 shadow-lg">🇮🇳 INDIA'S CLEAN COOKING REVOLUTION</div>
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
-                            Next-Gen <span class="text-orange-300">Clean Cooking</span><br>Smokeless Stoves & Biogasifiers
+                            <span class="text-green-300">Smokeless</span> Biomass Stove<br>& Biogas Solutions
                         </h1>
-                        <p class="mt-6 text-lg md:text-xl text-white/90 max-w-2xl">
-                            From biomass smokeless stoves, continuous feeding systems, biogasifiers to advanced pellet stoves — VARAM delivers efficient, eco-friendly solutions for homes, hotels, and industries. Cook cleaner, save fuel, breathe better.
+                        <p class="mt-6 text-lg md:text-xl text-white/95 max-w-2xl">
+                            41% of India still cooks on biomass — emitting 340 million tonnes of CO₂ annually. Globally 2.4 billion people lack access to clean cooking, damaging economy, health & environment. VSS delivers efficient, eco-friendly smokeless stoves and biogas systems for homes, hotels & industries.
                         </p>
                         <div class="mt-8 flex flex-wrap gap-4">
-                            <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg shadow-black/20 transition duration-300">Get a Quote</a>
+                            <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg transition">Get a Quote</a>
                             <a href="products.html" class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 px-8 py-4 rounded-full text-base font-semibold text-white transition">Explore Stoves</a>
                             <a href="gallery.html" class="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 px-8 py-4 rounded-full text-base font-semibold text-white transition flex items-center gap-2">
                                 <i class="fas fa-play-circle"></i> Watch Intro
                             </a>
                         </div>
                     </div>
-                    <!-- stats -->
+                    <!-- new stats: reflect real data (no 12h/65% removed) -->
                     <div class="lg:w-2/5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-5">
-                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition duration-300 flex items-center gap-4">
-                            <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-wind"></i></div>
-                            <div><div class="text-orange-300 text-4xl font-black counter" data-target="98">0</div><div class="text-sm uppercase tracking-wider text-white/80">% smoke reduction</div><div class="text-xs text-white/60">clean indoor air</div></div>
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-chart-line"></i></div>
+                            <div><div class="text-green-300 text-4xl font-black counter" data-target="41">0</div><div class="text-sm uppercase tracking-wider text-white/80">% cook on biomass</div><div class="text-xs text-white/60">NFHS-5 (2019-21)</div></div>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition duration-300 flex items-center gap-4">
-                            <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-hourglass-half"></i></div>
-                            <div><div class="text-orange-300 text-4xl font-black counter" data-target="12">0</div><div class="text-sm uppercase tracking-wider text-white/80">+ hours continuous</div><div class="text-xs text-white/60">feeding systems</div></div>
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition flex items-center gap-4">
+                            <div class="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <div><div class="text-green-300 text-4xl font-black counter" data-target="340">0</div><div class="text-sm uppercase tracking-wider text-white/80">M tonnes CO₂ / year</div><div class="text-xs text-white/60">from biomass cooking</div></div>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition duration-300 flex items-center gap-4">
-                            <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-fire"></i></div>
-                            <div><div class="text-orange-300 text-4xl font-black counter" data-target="65">0</div><div class="text-sm uppercase tracking-wider text-white/80">% fuel savings</div><div class="text-xs text-white/60">vs traditional chulha</div></div>
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:scale-105 transition flex items-center gap-4">
+                            <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-white text-2xl"><i class="fas fa-heartbeat"></i></div>
+                            <div><div class="text-green-300 text-4xl font-black counter" data-target="600">0</div><div class="text-sm uppercase tracking-wider text-white/80">k premature deaths/year</div><div class="text-xs text-white/60">India (Lancet & PTI)</div></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TECHNOLOGY SPOTLIGHT (Four core solutions) -->
+        <!-- SMOKELESS BIOMASS STOVE + BIOGAS (no continuous feed / biogasifier / pellet) -->
         <section class="py-20 md:py-28 bg-white">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Our Clean Cooking Arsenal</span>
-                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">Revolutionary Biomass Solutions</h2>
+                    <span class="text-green-600 font-semibold tracking-wider uppercase text-sm">clean · safe · renewable</span>
+                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">Smokeless Biomass Stove & Biogas</h2>
                     <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                    <p class="mt-6 text-lg text-gray-600">From zero-smoke stoves to biogasifiers — engineered for performance, sustainability, and ease.</p>
+                    <p class="mt-6 text-lg text-gray-600">VSS delivers efficient, eco‑friendly solutions for homes, hotels and industries. Cook cleaner, safe fuel, breathe better.</p>
                 </div>
 
-                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Smokeless Stove -->
-                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-md border-b-4 border-orange-500 hover:shadow-xl transition">
-                        <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-5"><i class="fas fa-smog text-orange-600 text-2xl"></i></div>
-                        <h3 class="text-xl font-bold text-gray-800">Biomass Smokeless Stove</h3>
-                        <p class="text-gray-600 mt-2 text-sm">Patented secondary combustion technology eliminates 98% smoke. Clean blue flame, no respiratory hazards. Ideal for rural & urban kitchens.</p>
-                        <div class="mt-4 flex flex-wrap gap-2"><span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Instant ignition</span><span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">Low tar emission</span></div>
+                <div class="mt-16 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Smokeless Biomass Stove -->
+                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-b-4 border-green-600 hover:shadow-xl transition text-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5"><i class="fas fa-fire-extinguisher text-green-700 text-3xl"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-800">Smokeless Biomass Stove</h3>
+                        <p class="text-gray-600 mt-3">Patented secondary combustion technology eliminates 98% smoke. Clean blue flame, no respiratory hazards. Saves 40% wood vs traditional open stove. Ideal for rural & urban kitchens.</p>
+                        <div class="mt-5 flex flex-wrap justify-center gap-2"><span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">Instant ignition</span><span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Low particulate matter</span><span class="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full">Eco‑friendly</span></div>
+                        <div class="mt-6"><a href="products.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Explore Model</a></div>
                     </div>
-                    <!-- Continuous Feeding Stove -->
-                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-md border-b-4 border-green-600 hover:shadow-xl transition">
-                        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-5"><i class="fas fa-infinity text-green-700 text-2xl"></i></div>
-                        <h3 class="text-xl font-bold text-gray-800">Continuous Feeding Stove</h3>
-                        <p class="text-gray-600 mt-2 text-sm">Auto-feed hopper design for 12+ hours uninterrupted cooking. Perfect for canteens, marriage halls, and food processing units. Reduce manual intervention.</p>
-                        <div class="mt-4 flex flex-wrap gap-2"><span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Hopper capacity 20-50kg</span><span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">Thermostat control</span></div>
-                    </div>
-                    <!-- Biogasifier -->
-                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-md border-b-4 border-amber-600 hover:shadow-xl transition">
-                        <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mb-5"><i class="fas fa-drumstick-bite text-amber-700 text-2xl"></i></div>
-                        <h3 class="text-xl font-bold text-gray-800">Biogasifier</h3>
-                        <p class="text-gray-600 mt-2 text-sm">Convert kitchen waste, cattle dung, agricultural residue into biogas. Compact, high-efficiency digester with dual fuel compatibility.</p>
-                        <div class="mt-4 flex flex-wrap gap-2"><span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full">Zero waste</span><span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Methane yield +30%</span></div>
-                    </div>
-                    <!-- Pellet Stove -->
-                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-md border-b-4 border-slate-600 hover:shadow-xl transition">
-                        <div class="w-14 h-14 bg-slate-100 rounded-full flex items-center justify-center mb-5"><i class="fas fa-pallet text-slate-700 text-2xl"></i></div>
-                        <h3 class="text-xl font-bold text-gray-800">Premium Pellet Stove</h3>
-                        <p class="text-gray-600 mt-2 text-sm">High-density wood/agri-pellets fueled, automated ignition, adjustable flame, and minimal ash. Efficient heating and cooking with renewable pellets.</p>
-                        <div class="mt-4 flex flex-wrap gap-2"><span class="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-full">95% efficiency</span><span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">Programmable</span></div>
+                    <!-- Biogas System (not biogasifier) -->
+                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border-b-4 border-amber-600 hover:shadow-xl transition text-center">
+                        <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5"><i class="fas fa-gas-pump text-amber-700 text-3xl"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-800">Biogas System</h3>
+                        <p class="text-gray-600 mt-3">Convert kitchen waste, cattle dung, agricultural residue into clean biogas. Works seamlessly with our dual‑fuel stoves. Reduces LPG dependency, manages waste locally.</p>
+                        <div class="mt-5 flex flex-wrap justify-center gap-2"><span class="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full">Zero waste</span><span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">Offsets 2 LPG cylinders/month</span></div>
+                        <div class="mt-6"><a href="contact.html" class="inline-block bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Inquire Now</a></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PRODUCT MODELS -->
+        <!-- PRODUCT SHOWCASE: only Varam Smokeless 5 + Biogas System (no continuous feed / biogasifier / pellet) -->
         <section class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Flagship Range</span>
+                    <span class="text-green-600 font-semibold tracking-wider uppercase text-sm">flagship range</span>
                     <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">VARAM Clean Cooking Series</h2>
                     <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                    <p class="mt-6 text-lg text-gray-600">Smokeless stoves, continuous feeders, biogasifiers & pellet stoves for every scale.</p>
+                    <p class="mt-6 text-lg text-gray-600">Smokeless biomass stoves & biogas systems — simple, durable, affordable.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Varam Smokeless 5 - Shop Now -> product page -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Varam Smokeless 5 (domestic) -->
                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition hover:-translate-y-1">
-                        <div class="bg-gradient-to-r from-orange-600 to-orange-500 p-4"><h3 class="text-2xl font-bold text-white text-center">Varam Smokeless 5</h3></div>
+                        <div class="bg-gradient-to-r from-green-700 to-green-600 p-4"><h3 class="text-2xl font-bold text-white text-center">Varam Smokeless 5</h3></div>
                         <div class="p-6">
-                            <div class="text-center mb-4"><span class="text-3xl font-black text-orange-500">Upto 5kg</span><span class="text-gray-500"> rice/day</span></div>
-                            <p class="text-gray-600 text-center mb-4">Domestic smokeless stove · Zero visible smoke · Portable</p>
-                            <div class="border-t pt-4"><div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-leaf text-green-500"></i> 98% smoke reduction</div><div class="flex items-center gap-2 text-sm text-gray-600 mt-2"><i class="fas fa-hourglass-start text-orange-500"></i> Single load: 2-3hrs</div></div>
-                            <div class="mt-6 text-center"><a href="products.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Shop Now</a></div>
+                            <div class="text-center mb-4"><span class="text-3xl font-black text-green-700">Upto 5kg</span><span class="text-gray-500"> rice/day</span></div>
+                            <p class="text-gray-600 text-center mb-4">Domestic smokeless stove · zero visible smoke · portable · 40% wood saving</p>
+                            <div class="border-t pt-4"><div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-leaf text-green-500"></i> 98% smoke reduction</div><div class="flex items-center gap-2 text-sm text-gray-600 mt-2"><i class="fas fa-chart-line text-orange-500"></i> Saves ₹ 3000+ fuel/year</div></div>
+                            <div class="mt-6 text-center"><a href="products.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Shop Now</a></div>
                         </div>
                     </div>
-                    <!-- ContinFeed 12 - Inquire Now -> contact page -->
+                    <!-- Varam Biogas Domestic 2k (renamed, no "biogasifier") -->
                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition hover:-translate-y-1">
-                        <div class="bg-gradient-to-r from-green-700 to-green-600 p-4"><h3 class="text-2xl font-bold text-white text-center">ContinFeed 12</h3></div>
+                        <div class="bg-gradient-to-r from-amber-600 to-amber-500 p-4"><h3 class="text-2xl font-bold text-white text-center">Varam Biogas 2k</h3></div>
                         <div class="p-6">
-                            <div class="text-center mb-4"><span class="text-3xl font-black text-green-700">12+ hours</span><span class="text-gray-500"> continuous</span></div>
-                            <p class="text-gray-600 text-center mb-4">Commercial continuous feeding stove · Hopper 25kg</p>
-                            <div class="border-t pt-4"><div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-cogs text-green-500"></i> Auto-feeder mechanism</div><div class="flex items-center gap-2 text-sm text-gray-600 mt-2"><i class="fas fa-chart-line text-orange-500"></i> Saves 60% fuel vs LPG</div></div>
-                            <div class="mt-6 text-center"><a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Inquire Now</a></div>
-                        </div>
-                    </div>
-                    <!-- BioGasifier 2k - Learn More -> contact page -->
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition hover:-translate-y-1">
-                        <div class="bg-gradient-to-r from-amber-600 to-amber-500 p-4"><h3 class="text-2xl font-bold text-white text-center">BioGasifier 2k</h3></div>
-                        <div class="p-6">
-                            <div class="text-center mb-4"><span class="text-3xl font-black text-amber-600">2m³</span><span class="text-gray-500"> daily biogas</span></div>
-                            <p class="text-gray-600 text-center mb-4">Modular biogasifier for kitchen waste & manure</p>
-                            <div class="border-t pt-4"><div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-recycle text-amber-500"></i> Processes 10kg waste/day</div><div class="flex items-center gap-2 text-sm text-gray-600 mt-2"><i class="fas fa-fire text-amber-500"></i> Replace 2 LPG cylinders/month</div></div>
+                            <div class="text-center mb-4"><span class="text-3xl font-black text-amber-600">2m³</span><span class="text-gray-500"> biogas/day</span></div>
+                            <p class="text-gray-600 text-center mb-4">Compact biogas generation from kitchen waste & manure · clean cooking fuel</p>
+                            <div class="border-t pt-4"><div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-recycle text-amber-500"></i> Processes 8-12kg waste/day</div><div class="flex items-center gap-2 text-sm text-gray-600 mt-2"><i class="fas fa-fire text-amber-500"></i> Replaces 1.5 LPG cylinders/month</div></div>
                             <div class="mt-6 text-center"><a href="contact.html" class="inline-block bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Learn More</a></div>
                         </div>
                     </div>
-                    <!-- PelletPro 10 - View Specs -> contact page -->
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition hover:-translate-y-1">
-                        <div class="bg-gradient-to-r from-slate-700 to-slate-600 p-4"><h3 class="text-2xl font-bold text-white text-center">PelletPro 10</h3></div>
-                        <div class="p-6">
-                            <div class="text-center mb-4"><span class="text-3xl font-black text-slate-700">10kW</span><span class="text-gray-500"> thermal output</span></div>
-                            <p class="text-gray-600 text-center mb-4">Automated pellet stove · Heating + cooking</p>
-                            <div class="border-t pt-4"><div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-microchip text-slate-500"></i> Digital thermostat & timer</div><div class="flex items-center gap-2 text-sm text-gray-600 mt-2"><i class="fas fa-charging-station text-green-500"></i> Pellet hopper: 15kg (8hrs)</div></div>
-                            <div class="mt-6 text-center"><a href="contact.html" class="inline-block bg-slate-700 hover:bg-slate-800 text-white px-6 py-2 rounded-full text-sm font-semibold transition">View Specs</a></div>
-                        </div>
-                    </div>
-                    <!-- ContinFeed Industrial - Request Quote -> contact page -->
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition hover:-translate-y-1 border-2 border-orange-200">
-                        <div class="bg-gradient-to-r from-orange-600 to-red-600 p-4"><h3 class="text-2xl font-bold text-white text-center">ContinFeed Industrial</h3></div>
-                        <div class="p-6">
-                            <div class="text-center mb-4"><span class="text-3xl font-black text-orange-600">100L+</span><span class="text-gray-500"> cooking capacity</span></div>
-                            <p class="text-gray-600 text-center mb-4">Heavy-duty continuous feeding · for hotels, community kitchens</p>
-                            <div class="border-t pt-4"><div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-industry text-orange-500"></i> Dual fuel (biomass/pellets)</div><div class="flex items-center gap-2 text-sm text-gray-600 mt-2"><i class="fas fa-tachometer-alt"></i> 24/7 continuous operation</div></div>
-                            <div class="mt-6 text-center"><a href="contact.html" class="inline-block bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition">Request Quote</a></div>
-                        </div>
-                    </div>
-                    <!-- Biomass market insight card -->
-                    <div class="bg-gradient-to-br from-green-50 to-orange-50 rounded-2xl p-6 border border-green-200 flex flex-col justify-center">
-                        <i class="fas fa-chart-pie text-green-600 text-4xl mb-4"></i>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">India's Clean Cooking Revolution</h3>
-                        <p class="text-gray-600 text-sm">Smokeless stove market growing at 15% CAGR. Government subsidies & carbon credits available for adopting biogasifiers & pellet stoves.</p>
-                        <div class="mt-4 text-xs text-gray-500">✓ Over 2M+ households shifting to clean biomass solutions</div>
-                    </div>
+                </div>
+                <!-- Insight card with NFHS-5 & Lancet data -->
+                <div class="mt-12 text-center p-5 bg-green-50 rounded-xl max-w-3xl mx-auto border border-green-200">
+                    <i class="fas fa-chart-simple text-green-600 text-2xl mr-2"></i> <span class="font-semibold text-gray-800">As per NFHS-5 (2019-21):</span> 41% of Indian households still rely on biomass. Cooking causes ~3 million premature deaths annually worldwide, with 0.6 million in India (Lancet & PTI). VSS offers a proven solution.
                 </div>
             </div>
         </section>
 
-        <!-- APPLICATIONS SECTION -->
+        <!-- ABOUT VSS SECTION (new) - green energy, carbon free, since 2020 -->
         <section class="py-20 md:py-28 bg-white">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-green-600 font-semibold tracking-wider uppercase text-sm">Versatile Usage</span>
-                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">Where VARAM Solutions Shine</h2>
-                    <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                    <p class="mt-6 text-lg text-gray-600">From rural kitchens to 5-star hotels and industrial heaters</p>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-home text-orange-500 text-2xl"></i></div><h3 class="font-bold text-lg mb-2">Home Cooking</h3><p class="text-gray-600 text-sm">Smokeless & pellet stoves for daily meals, zero indoor pollution</p></div>
-                    <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-hotel text-green-600 text-2xl"></i></div><h3 class="font-bold text-lg mb-2">Hotels & Catering</h3><p class="text-gray-600 text-sm">Continuous feeding stoves for bulk cooking, 24/7 buffet operations</p></div>
-                    <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50"><div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-tractor text-amber-600 text-2xl"></i></div><h3 class="font-bold text-lg mb-2">Agri-processing</h3><p class="text-gray-600 text-sm">Biogasifiers convert agri-waste, power drying & greenhouse heating</p></div>
-                    <div class="text-center p-6 rounded-xl hover:shadow-lg transition bg-gray-50"><div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-school text-slate-600 text-2xl"></i></div><h3 class="font-bold text-lg mb-2">Community Kitchens</h3><p class="text-gray-600 text-sm">Mid-day meal schemes, ashrams, temples — massive fuel savings</p></div>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <div class="flex justify-center md:justify-start mb-4">
+                            <i class="fas fa-leaf text-green-600 text-5xl leaf-icon"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">VARAN SUSTAINABLE SOLUTIONS</h2>
+                        <p class="text-green-600 font-semibold mt-1">green energy · clean energy</p>
+                        <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 my-4 rounded-full"></div>
+                        <p class="text-gray-600 text-lg leading-relaxed">
+                            <strong>VSS</strong> has been in the industry since 2020, dedicated to carbon‑free, environment‑friendly, energy‑saving, and economically viable products. We manufacture high‑efficiency <strong class="text-green-700">smokeless biomass stoves</strong> that empower households, hotels, and industries to cook clean, safe, and sustainably.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
+                            <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm"><i class="fas fa-check-circle mr-1"></i> Carbon free</span>
+                            <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm"><i class="fas fa-leaf mr-1"></i> Environment friendly</span>
+                            <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm"><i class="fas fa-bolt mr-1"></i> Energy saving</span>
+                            <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm"><i class="fas fa-rupee-sign mr-1"></i> Economic product</span>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="bg-gradient-to-br from-green-50 to-orange-50 p-6 rounded-2xl shadow-lg text-center max-w-sm">
+                            <img src="logo.png" alt="VSS leaf logo" class="w-24 h-24 mx-auto mb-3" onerror="this.src='https://placehold.co/100x100?text=🌿'">
+                            <p class="text-gray-700 italic">“Smokeless biomass stoves — healthier homes, greener future.”</p>
+                            <div class="mt-3 text-sm text-gray-500">Since 2020 · Made in India</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- BENEFITS & ADVANTAGES -->
+        <!-- BENEFITS & IMPACT (simplified, no continuous feeding / pellet) -->
         <section class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-12">
-                    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-8 border-green-500"><i class="fas fa-check-double text-green-500 text-4xl mb-4"></i><h3 class="text-2xl font-bold text-gray-800 mb-4">Why Choose VARAM Clean Cooking?</h3><ul class="space-y-3"><li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span>Zero smoke & improved respiratory health</span></li><li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span>Up to 70% reduction in cooking fuel costs</span></li><li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span>Continuous feeding eliminates frequent refueling</span></li><li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span>Biogasifiers turn waste into wealth (methane gas)</span></li><li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span>Pellet stoves with programmable temperature</span></li></ul></div>
-                    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-8 border-orange-500"><i class="fas fa-lightbulb text-orange-500 text-4xl mb-4"></i><h3 class="text-2xl font-bold text-gray-800 mb-4">VARAM Advantage</h3><ul class="space-y-3"><li class="flex gap-3"><i class="fas fa-microchip text-orange-500 mt-1"></i> <span>Advanced combustion engineering (low tar & particulate)</span></li><li class="flex gap-3"><i class="fas fa-tools text-orange-500 mt-1"></i> <span>Modular designs for easy maintenance & upgradation</span></li><li class="flex gap-3"><i class="fas fa-globe-asia text-orange-500 mt-1"></i> <span>Over 500+ installations across India & SAARC</span></li><li class="flex gap-3"><i class="fas fa-certificate text-orange-500 mt-1"></i> <span>ISO certified & Ministry of New & Renewable Energy approved</span></li></ul><div class="mt-6 p-4 bg-orange-50 rounded-lg"><p class="text-sm text-gray-700"><span class="font-bold text-orange-600">VARAM Commitment:</span> On-site installation, training, and lifetime support for all smokeless stoves, continuous feeders & biogasifiers.</p></div></div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-8 border-green-500">
+                        <i class="fas fa-shield-alt text-green-500 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Why Switch to Smokeless Biomass?</h3>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span><strong>Zero visible smoke</strong> – eliminates indoor air pollution (3M premature deaths/yr globally)</span></li>
+                            <li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span><strong>40% wood saving</strong> vs traditional open stove – reduces deforestation</span></li>
+                            <li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span><strong>Biogas compatible</strong> – turn waste into clean cooking fuel</span></li>
+                            <li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span><strong>Affordable & rugged</strong> – no electricity, low maintenance</span></li>
+                            <li class="flex gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span><strong>340M tonnes CO₂ potential reduction</strong> annually in India</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-8 border-orange-500">
+                        <i class="fas fa-seedling text-orange-500 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">VSS Advantage</h3>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3"><i class="fas fa-flask text-orange-500 mt-1"></i> <span>Advanced natural draft combustion (patented design, no moving parts)</span></li>
+                            <li class="flex gap-3"><i class="fas fa-hand-holding-usd text-orange-500 mt-1"></i> <span>Eligible for carbon credits & government subsidies</span></li>
+                            <li class="flex gap-3"><i class="fas fa-chalkboard-user text-orange-500 mt-1"></i> <span>On‑site training & lifetime support</span></li>
+                            <li class="flex gap-3"><i class="fas fa-certificate text-orange-500 mt-1"></i> <span>Recognised by Ministry of New & Renewable Energy (MNRE)</span></li>
+                        </ul>
+                        <div class="mt-6 p-4 bg-orange-50 rounded-lg">
+                            <p class="text-sm text-gray-700"><span class="font-bold text-orange-600">India’s clean cooking revolution:</span> Join thousands of households shifting to VSS smokeless stoves. Lower fuel costs, healthier kitchens, cleaner air.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CALL TO ACTION -->
-        <section class="py-16 md:py-20" style="background: linear-gradient(135deg, #1b4d1b 0%, #c2410c 100%);">
+        <!-- CALL TO ACTION (green & orange) -->
+        <section class="py-16 md:py-20" style="background: linear-gradient(135deg, #064e3b 0%, #c2410c 100%);">
             <div class="max-w-4xl mx-auto text-center px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Switch to Clean · Cook with Pride</h2>
-                <p class="text-white/90 text-lg mb-8">Reduce carbon footprint, eliminate smoke, and save up to 70% on fuel bills with VARAM's next-gen stoves and biogasifiers.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Cook Clean · Breathe Easy · Save Forests</h2>
+                <p class="text-white/90 text-lg mb-8">Switch to VSS smokeless biomass stoves & biogas systems. Reduce smoke, save 40% wood, and protect health.</p>
                 <div class="flex flex-wrap gap-4 justify-center">
                     <a href="contact.html" class="bg-white text-green-800 hover:bg-gray-100 px-8 py-4 rounded-full text-base font-semibold shadow-lg transition">Talk to an Expert</a>
-                    <a href="products.html" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full text-base font-semibold transition">Explore Full Range</a>
+                    <a href="products.html" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full text-base font-semibold transition">Explore Stoves</a>
                 </div>
             </div>
         </section>
@@ -352,12 +334,12 @@
     </div>
 
     <script>
-        // Load only footer (header is embedded)
+        // Load footer (external footer.html)
         function loadFooter() {
             fetch('footer.html')
                 .then(response => response.text())
                 .then(data => document.getElementById('footer').innerHTML = data)
-                .catch(() => console.log('Note: footer.html not found — footer may be missing.'));
+                .catch(() => console.log('Note: footer.html not found — ensure file exists or ignore.'));
         }
         loadFooter();
 
@@ -374,7 +356,7 @@
             }, 5000);
         });
 
-        // Animate counters
+        // Counter animation for stats (41, 340, 600)
         const counters = document.querySelectorAll('.counter');
         const animateCounter = (el) => {
             const target = parseInt(el.getAttribute('data-target'));
@@ -411,38 +393,20 @@
                 if (isOpen) {
                     mobileMenu.classList.remove("hidden");
                     menuBtn.setAttribute("aria-expanded", "true");
-                    if (icon) {
-                        icon.classList.remove("fa-bars");
-                        icon.classList.add("fa-times");
-                    }
+                    if (icon) { icon.classList.remove("fa-bars"); icon.classList.add("fa-times"); }
                     document.body.style.overflow = "hidden";
                 } else {
                     mobileMenu.classList.add("hidden");
                     menuBtn.setAttribute("aria-expanded", "false");
-                    if (icon) {
-                        icon.classList.remove("fa-times");
-                        icon.classList.add("fa-bars");
-                    }
+                    if (icon) { icon.classList.remove("fa-times"); icon.classList.add("fa-bars"); }
                     document.body.style.overflow = "";
                 }
             }
-            menuBtn.addEventListener("click", function (e) {
-                e.stopPropagation();
-                const isOpen = !mobileMenu.classList.contains("hidden");
-                updateMenuState(!isOpen);
-            });
-            document.addEventListener("click", function (e) {
-                if (!mobileMenu.classList.contains("hidden") && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                    updateMenuState(false);
-                }
-            });
-            mobileMenu.addEventListener("click", function (e) { e.stopPropagation(); });
-            window.addEventListener("resize", function () {
-                if (window.innerWidth >= 768) updateMenuState(false);
-            });
-            document.addEventListener("keydown", function (e) {
-                if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) updateMenuState(false);
-            });
+            menuBtn.addEventListener("click", (e) => { e.stopPropagation(); updateMenuState(!mobileMenu.classList.contains("hidden")); });
+            document.addEventListener("click", (e) => { if (!mobileMenu.classList.contains("hidden") && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) updateMenuState(false); });
+            mobileMenu.addEventListener("click", (e) => e.stopPropagation());
+            window.addEventListener("resize", () => { if (window.innerWidth >= 768) updateMenuState(false); });
+            document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) updateMenuState(false); });
         });
     </script>
 </body>
