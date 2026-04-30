@@ -29,19 +29,55 @@ function initMobileMenu() {
         // remove old listener to avoid duplicates
         menuBtn.replaceWith(menuBtn.cloneNode(true));
         const newBtn = document.getElementById('menuBtn');
-        newBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            // animate menu open/close
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.style.animation = 'fadeInUp 0.3s ease-out';
+        const icon = newBtn.querySelector("i");
+        const overlay = document.getElementById('mobileMenuOverlay');
+        
+        function updateMenuState(isOpen) {
+            if (isOpen) {
+                mobileMenu.classList.remove("translate-x-full");
+                mobileMenu.classList.add("translate-x-0");
+                if (overlay) {
+                    overlay.classList.remove("hidden");
+                    setTimeout(() => overlay.classList.remove("opacity-0"), 10);
+                }
+                newBtn.setAttribute("aria-expanded", "true");
+                if (icon) { icon.classList.remove("fa-bars"); icon.classList.add("fa-times"); }
+                document.body.style.overflow = "hidden";
+            } else {
+                mobileMenu.classList.remove("translate-x-0");
+                mobileMenu.classList.add("translate-x-full");
+                if (overlay) {
+                    overlay.classList.add("opacity-0");
+                    setTimeout(() => overlay.classList.add("hidden"), 300);
+                }
+                newBtn.setAttribute("aria-expanded", "false");
+                if (icon) { icon.classList.remove("fa-times"); icon.classList.add("fa-bars"); }
+                document.body.style.overflow = "";
             }
+        }
+        
+        newBtn.addEventListener("click", (e) => { 
+            e.stopPropagation(); 
+            updateMenuState(mobileMenu.classList.contains("translate-x-full")); 
+        });
+        
+        document.addEventListener("click", (e) => { 
+            if (!mobileMenu.classList.contains("translate-x-full") && !mobileMenu.contains(e.target) && !newBtn.contains(e.target)) {
+                updateMenuState(false);
+            }
+        });
+        
+        mobileMenu.addEventListener("click", (e) => e.stopPropagation());
+        
+        window.addEventListener("resize", () => { 
+            if (window.innerWidth >= 768) updateMenuState(false); 
         });
 
         // close on link click
         const links = mobileMenu.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                updateMenuState(false);
             });
         });
     }
@@ -237,13 +273,51 @@ function showToast(message, type = 'success') {
     }, 3000);
 }
 
+// ----- Intro Video Logic -----
+function initIntroVideo() {
+    const introVideoContainer = document.getElementById("introVideoContainer");
+    const introVideo = document.getElementById("introVideo");
+    const mainContent = document.querySelector(".main-content");
+
+    if (introVideoContainer && introVideo && mainContent) {
+        function dismissVideo() {
+            introVideoContainer.style.opacity = "0";
+            setTimeout(() => {
+                introVideoContainer.style.display = "none";
+                mainContent.style.opacity = "1";
+            }, 800);
+        }
+
+        let playPromise = introVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {}).catch(error => {
+                console.log("Autoplay prevented:", error);
+                dismissVideo();
+            });
+        }
+
+        introVideo.addEventListener("ended", dismissVideo);
+        introVideoContainer.addEventListener("click", dismissVideo);
+
+        setTimeout(() => {
+            if (introVideoContainer.style.display !== "none") {
+                dismissVideo();
+            }
+        }, 10000);
+    } else if (mainContent) {
+        mainContent.style.opacity = "1";
+    }
+}
+
 // ----- init all components -----
 function initAll() {
+    initIntroVideo();
     initCounters();
     initSmoothScroll();
     initScrollToTop();
     initLazyLoad();
     highlightActiveLink();
+    initMobileMenu();
 
     // initialize any forms with submit handling
     const contactForm = document.querySelector('form');

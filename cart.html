@@ -1,425 +1,186 @@
+ <!DOCTYPE html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARAM · Cart & Checkout | Biomass Gasifiers</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .cart-item-enter {
-            transition: all 0.2s ease;
-        }
-        .qr-placeholder {
-            background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px);
-        }
-        .hover-scale {
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .hover-scale:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-        input:focus, textarea:focus, select:focus {
-            ring: 2px solid #F57C00;
-            border-color: #F57C00;
-            outline: none;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
+<html lang="en"> <head> <meta charset="utf-8"/> <meta content="width=device-width, initial-scale=1.0" name="viewport"/> <title>VARAM · Cart &amp; Checkout | Biomass Gasifiers</title> <script src="https://cdn.tailwindcss.com"></script> <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/> <style>.cart-item-enter { transition: all 0.2s ease; }.qr-placeholder { background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); }.hover-scale { transition: transform 0.2s, box-shadow 0.2s; }.hover-scale:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); } input:focus, textarea:focus, select:focus { ring: 2px solid #F57C00; border-color: #F57C00; outline: none; } </style> </head> <body class="bg-gray-50 text-gray-800"><nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-green-200 shadow-sm">
+<div class="w-full px-6 lg:px-8">
+<div class="flex justify-between items-center h-16 lg:h-20">
+<!-- Logo area -->
+<div class="flex items-center gap-3">
+<img alt="VSS leaf logo" class="w-10 h-10 object-contain rounded-lg drop-shadow-md" onerror="this.src='https://placehold.co/40x40?text=🌿'" src="logo.png"/>
+<div>
+<span class="text-xs font-semibold text-green-700 block leading-tight">green energy · clean
+                            energy</span>
+<span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">
+                            VARAM SUSTAINABLE SOLUTIONS
+                        </span>
+</div>
+</div>
+<!-- Desktop menu -->
+<div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="index.html">Home</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="about.html">About</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="services.html">Services</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="products.html">Products</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="installation.html">Installation</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="projects.html">Projects</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="gallery.html">Gallery</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="contact.html">Contact</a>
+</div>
+<!-- Mobile menu button -->
+<button aria-expanded="false" aria-label="Menu" class="md:hidden text-gray-700 focus:outline-none z-[60] relative" id="menuBtn">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+</div>
+</nav><div class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300" id="mobileMenuOverlay">
+</div><div class="fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out py-20 px-6 flex flex-col space-y-2 overflow-y-auto" id="mobileMenu">
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="index.html">Home</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="about.html">About</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="services.html">Services</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="products.html">Products</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="installation.html">Installation</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="projects.html">Projects</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="gallery.html">Gallery</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="contact.html">Contact</a>
+<a class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-6 text-white transition shadow-lg" href="contact.html" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
+            Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+</a>
+</div><div class="h-16 lg:h-20"></div> <!-- STICKY FULL WIDTH NAVBAR --> <!-- Overlay for mobile menu --> <!-- Mobile menu dropdown (Slide from right) --> <!-- STICKY FULL WIDTH NAVBAR --> <!-- Overlay for mobile menu --> <!-- Mobile menu dropdown (Slide from right) --> <!-- ==================== NAVBAR (consistent) ==================== --> <!-- ==================== MAIN CART + CHECKOUT ==================== --> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16"> <div class="grid lg:grid-cols-3 gap-8"> <!-- LEFT: Cart Items Management --> <div class="lg:col-span-2 space-y-6"> <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100"> <div class="px-6 py-4 bg-gradient-to-r from-green-50 to-orange-50 border-b border-gray-200"> <h2 class="text-2xl font-bold text-gray-800"><i class="fas fa-shopping-cart text-orange-500 mr-2"></i>Your Cart</h2> </div> <div class="divide-y divide-gray-100" id="cartItemsContainer"> <!-- dynamic cart items will appear here --> </div> <div class="p-8 text-center text-gray-500 hidden" id="cartEmptyMsg"> <i class="fas fa-box-open text-5xl text-gray-300 mb-3"></i> <p>Your cart is empty. <a class="text-green-600 font-semibold underline" href="products.html">Browse products</a></p> </div> <div class="px-6 py-4 bg-gray-50 flex justify-between items-center border-t border-gray-200"> <span class="text-lg font-semibold">Total Amount</span> <span class="text-2xl font-bold text-green-700" id="cartTotalPrice">₹0</span> </div> </div> <!-- Order Summary (optional but nice) --> <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100"> <h3 class="font-semibold text-gray-700 flex items-center gap-2"><i class="fas fa-truck-fast text-orange-500"></i> Why choose VARAM?</h3> <p class="text-sm text-gray-500 mt-1">✅ Smokeless flame · 70% fuel savings · Made in India · 1 year warranty</p> </div> </div> <!-- RIGHT: Checkout Form (Address, Contact, QR + Upload) --> <div class="lg:col-span-1"> <div class="bg-white rounded-2xl shadow-lg border border-gray-200 sticky top-24"> <div class="p-6 border-b border-gray-100 bg-orange-50 rounded-t-2xl"> <h3 class="text-xl font-bold text-gray-800"><i class="fas fa-credit-card mr-2 text-orange-500"></i>Checkout Details</h3> <p class="text-xs text-gray-500 mt-1">Fill details &amp; upload payment proof → send to Discord</p> </div> <div class="p-6 space-y-5"> <!-- Address & Contact --> <div> <label class="block text-sm font-semibold text-gray-700 mb-1">Full Name *</label> <input class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-orange-300 transition" id="fullName" placeholder="e.g. Ramesh Kumar" type="text"/> </div> <div> <label class="block text-sm font-semibold text-gray-700 mb-1">Phone / WhatsApp *</label> <input class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-orange-300" id="phone" placeholder="+91 9876543210" type="tel"/> </div> <div> <label class="block text-sm font-semibold text-gray-700 mb-1">Email (optional)</label> <input class="w-full border border-gray-300 rounded-xl px-4 py-2.5" id="email" placeholder="you@example.com" type="email"/> </div> <div> <label class="block text-sm font-semibold text-gray-700 mb-1">Delivery Address *</label> <textarea class="w-full border border-gray-300 rounded-xl px-4 py-2.5" id="address" placeholder="Street, City, PIN code" rows="2"></textarea> </div> <!-- Payment QR Section --> <div class="bg-gray-50 p-4 rounded-xl border border-dashed border-orange-200"> <div class="flex items-center gap-2 mb-3"> <i class="fas fa-qrcode text-orange-500 text-xl"></i> <span class="font-bold text-gray-700">Scan &amp; Pay via UPI</span> </div> <div class="flex flex-col items-center justify-center"> <!-- SIMULATED QR CODE (Static mock) --> <div class="w-36 h-36 bg-white border-2 border-gray-300 rounded-xl flex items-center justify-center shadow-sm qr-placeholder relative"> <div class="absolute inset-0 flex items-center justify-center flex-col bg-white/90"> <i class="fas fa-hand-holding-usd text-4xl text-green-600"></i> <span class="text-[10px] font-mono mt-1">varam@okhdfcbank</span> </div> </div> <div class="mt-2 text-center"> <p class="text-xs text-gray-600 font-mono">UPI ID: <span class="font-bold">varam@okhdfcbank</span></p> <p class="text-[11px] text-gray-400 mt-1">Scan or pay to this ID with amount = total order value</p> </div> </div> </div> <!-- Payment Proof Upload --> <div> <label class="block text-sm font-semibold text-gray-700 mb-1">📸 Upload Payment Screenshot *</label> <input accept="image/*" class="w-full text-sm text-gray-500 file:mr-3 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100" id="paymentProof" type="file"/> <p class="text-xs text-gray-400 mt-1">Upload a clear screenshot of UPI transaction (jpg/png)</p> </div> <!-- Submit Button --> <button class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 rounded-xl shadow-md transition flex items-center justify-center gap-2" id="submitOrderBtn"> <i class="fab fa-discord"></i> Confirm Order &amp; Send to Discord </button> <p class="text-[11px] text-center text-gray-400">Your order details + payment proof will be sent to our support team via Discord.</p> </div> </div> </div> </div> </div> <!-- simple footer --> <script> // ========== CONFIGURATION ========== // 🔥 REPLACE THIS WITH YOUR ACTUAL DISCORD WEBHOOK URL 🔥 const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1484545227359256596/gtA-V_xuVmD7ZHbRuSvP6i50EJNbmX_rCppLVdRBDY_RgifHTl7tU3ix1CRrHdmg2Y5P"; // IMPORTANT: For testing, you can create a test webhook in any Discord server (channel settings -> integrations -> webhook) // If webhook is not set, the system will show a warning but still simulate. // ========== CART MANAGEMENT (same as product page) ========== let currentCart = []; function loadCartFromStorage() { const stored = localStorage.getItem("varam_cart"); return stored ? JSON.parse(stored) : []; } function saveCartToStorage(cart) { localStorage.setItem("varam_cart", JSON.stringify(cart)); updateCartCountDisplay(); } function updateCartCountDisplay() { const cart = loadCartFromStorage(); const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0); const countSpan = document.getElementById("cartCountNav"); if (countSpan) countSpan.innerText = totalItems; } // render cart items with + / - / remove function renderCart() { const container = document.getElementById("cartItemsContainer"); const emptyMsgDiv = document.getElementById("cartEmptyMsg"); const totalSpan = document.getElementById("cartTotalPrice"); let cart = loadCartFromStorage(); currentCart = cart; if (!cart.length) { if (container) container.innerHTML = ""; if (emptyMsgDiv) emptyMsgDiv.classList.remove("hidden"); if (totalSpan) totalSpan.innerText = "₹0"; return; } if (emptyMsgDiv) emptyMsgDiv.classList.add("hidden"); let total = 0; let html = ""; cart.forEach((item, idx) => { const itemTotal = item.price * item.quantity; total += itemTotal; html += ` <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-5 hover:bg-gray-50 transition" data-id="${item.id}"> <div class="flex-1"> <div class="flex items-center gap-3"> <i class="fas ${item.icon || 'fa-industry'} text-green-600 text-xl"></i> <div> <h4 class="font-bold text-gray-800">${item.name}</h4> <p class="text-xs text-gray-500">${item.capacity || "Gasifier"}</p> </div> </div> </div> <div class="flex items-center gap-4"> <div class="flex items-center border border-gray-300 rounded-full bg-white"> <button class="decr-btn w-8 h-8 rounded-l-full hover:bg-gray-100 text-gray-600 font-bold" data-id="${item.id}">-</button> <span class="w-10 text-center font-semibold text-gray-700">${item.quantity}</span> <button class="incr-btn w-8 h-8 rounded-r-full hover:bg-gray-100 text-gray-600 font-bold" data-id="${item.id}">+</button> </div> <div class="w-24 text-right font-bold text-green-700">₹${itemTotal.toLocaleString('en-IN')}</div> <button class="remove-btn text-red-500 hover:text-red-700 text-lg" data-id="${item.id}" title="Remove"><i class="fas fa-trash-alt"></i></button> </div> </div> `; }); container.innerHTML = html; totalSpan.innerText = `₹${total.toLocaleString('en-IN')}`; // attach event listeners for buttons document.querySelectorAll('.decr-btn').forEach(btn => { btn.addEventListener('click', (e) => { const id = btn.getAttribute('data-id'); updateQuantity(id, -1); }); }); document.querySelectorAll('.incr-btn').forEach(btn => { btn.addEventListener('click', (e) => { const id = btn.getAttribute('data-id'); updateQuantity(id, 1); }); }); document.querySelectorAll('.remove-btn').forEach(btn => { btn.addEventListener('click', (e) => { const id = btn.getAttribute('data-id'); removeItem(id); }); }); } function updateQuantity(productId, delta) { let cart = loadCartFromStorage(); const index = cart.findIndex(i => i.id === productId); if (index === -1) return; const newQty = cart[index].quantity + delta; if (newQty <= 0) { cart.splice(index, 1); } else { cart[index].quantity = newQty; } saveCartToStorage(cart); renderCart(); } function removeItem(productId) { let cart = loadCartFromStorage(); cart = cart.filter(i => i.id !== productId); saveCartToStorage(cart); renderCart(); } // ========== DISCORD SUBMIT FUNCTION (with file upload) ========== async function sendOrderToDiscord(orderData, fileBlob, fileName) { if (!DISCORD_WEBHOOK_URL || DISCORD_WEBHOOK_URL.includes("YOUR_WEBHOOK_ID")) { // Show warning but still simulate success for demo console.warn("⚠️ Discord webhook not configured. Please set DISCORD_WEBHOOK_URL in cart.html"); alert("⚠️ DEMO MODE: Webhook not configured. Your order details would be sent to Discord. To enable, replace DISCORD_WEBHOOK_URL with your actual webhook URL.\n\nOrder summary:\n" + JSON.stringify(orderData, null, 2)); return { success: true, simulated: true }; } // Build embed for order details const embed = { title: "🛒 NEW ORDER FROM VARAM WEBSITE", color: 0x2E7D32, // green fields: [ { name: "👤 Customer", value: orderData.name, inline: true }, { name: "📞 Phone", value: orderData.phone, inline: true }, { name: "✉️ Email", value: orderData.email || "—", inline: true }, { name: "📍 Address", value: orderData.address || "—", inline: false }, { name: "📦 Items", value: orderData.itemsList || "—", inline: false }, { name: "💰 Total Amount", value: `₹${orderData.total.toLocaleString('en-IN')}`, inline: true }, { name: "💳 Payment Method", value: "UPI QR (Screenshot attached)", inline: true }, { name: "📅 Order Timestamp", value: new Date().toLocaleString('en-IN'), inline: false } ], footer: { text: "VARAM Sustainable • Clean Energy Gasifiers" }, timestamp: new Date().toISOString() }; const formData = new FormData(); const payload = { embeds: [embed] }; formData.append("payload_json", JSON.stringify(payload)); if (fileBlob) { formData.append("file", fileBlob, fileName || "payment_proof.jpg"); } try { const response = await fetch(DISCORD_WEBHOOK_URL, { method: "POST", body: formData }); if (response.ok) { return { success: true }; } else { const errorText = await response.text(); console.error("Discord webhook error:", errorText); return { success: false, error: `HTTP ${response.status}` }; } } catch (err) { console.error("Network error sending to Discord:", err); return { success: false, error: err.message }; } } // Collect form data, validate, prepare order payload, upload file to Discord async function submitOrder() { // 1. Validate cart not empty const cart = loadCartFromStorage(); if (cart.length === 0) { alert("❌ Your cart is empty. Add products before checkout."); return; } // 2. Collect address & contact const name = document.getElementById("fullName").value.trim(); const phone = document.getElementById("phone").value.trim(); const email = document.getElementById("email").value.trim(); const address = document.getElementById("address").value.trim(); if (!name || !phone || !address) { alert("Please fill in Name, Phone, and Delivery Address."); return; } // 3. Get file (payment proof) const fileInput = document.getElementById("paymentProof"); const file = fileInput.files[0]; if (!file) { alert("Please upload a payment screenshot (proof of transaction)."); return; } if (!file.type.startsWith("image/")) { alert("Only image files (jpg/png) are accepted as payment proof."); return; } // 4. Calculate total & items summary let total = 0; let itemsSummary = ""; cart.forEach(item => { const itemTotal = item.price * item.quantity; total += itemTotal; itemsSummary += `• ${item.name} x${item.quantity} = ₹${itemTotal.toLocaleString('en-IN')}\n`; }); const orderData = { name, phone, email, address, itemsList: itemsSummary, total, cartItems: cart }; // 5. Disable button and show loading const submitBtn = document.getElementById("submitOrderBtn"); const originalText = submitBtn.innerHTML; submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending to Discord...'; try { // Convert file to blob for Discord attachment const fileBlob = new Blob([file], { type: file.type }); const fileName = `payment_${Date.now()}_${file.name}`; const result = await sendOrderToDiscord(orderData, fileBlob, fileName); if (result.success) { // Clear cart & form after successful submission localStorage.removeItem("varam_cart"); renderCart(); // re-render empty cart // Clear form fields document.getElementById("fullName").value = ""; document.getElementById("phone").value = ""; document.getElementById("email").value = ""; document.getElementById("address").value = ""; fileInput.value = ""; alert("✅ Order placed successfully! Our team will verify payment and contact you within 24 hours. (Discord notification sent)"); // Optionally reload page to reset UI or redirect? // For better UX, just refresh the cart view. } else { alert(`❌ Failed to send order to Discord: ${result.error || "Unknown error"}. Please check webhook URL and try again.`); } } catch (err) { console.error(err); alert("Unexpected error: " + err.message); } finally { submitBtn.disabled = false; submitBtn.innerHTML = originalText; } } // Initial render & event binding document.addEventListener("DOMContentLoaded", () => { renderCart(); const submitBtn = document.getElementById("submitOrderBtn"); if (submitBtn) submitBtn.addEventListener("click", submitOrder); // Update cart count on load updateCartCountDisplay(); }); </script>
+<!-- ECO-FRIENDLY & SUSTAINABLE ENERGY BOX -->
 
-    <!-- ==================== NAVBAR (consistent) ==================== -->
-    <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-leaf text-green-600 text-2xl"></i>
-                    <span class="font-bold text-xl text-gray-800">VARAM<span class="text-orange-500">SUSTAINABLE</span></span>
-                </div>
-                <div class="hidden md:flex space-x-8 text-base font-medium">
-                    <a href="index.html" class="text-gray-600 hover:text-green-600 transition">Home</a>
-                    <a href="products.html" class="text-gray-600 hover:text-green-600 transition">Products</a>
-                    <a href="cart.html" class="text-green-600 border-b-2 border-green-600 pb-1 font-semibold">
-                        <i class="fas fa-shopping-cart mr-1"></i> Cart
-                        <span id="cartCountNav" class="ml-1 bg-orange-500 text-white text-xs font-bold rounded-full px-2 py-0.5 inline-block">0</span>
-                    </a>
-                </div>
-                <div class="md:hidden">
-                    <i class="fas fa-bars text-2xl text-gray-700"></i>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ==================== MAIN CART + CHECKOUT ==================== -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
-        <div class="grid lg:grid-cols-3 gap-8">
-            <!-- LEFT: Cart Items Management -->
-            <div class="lg:col-span-2 space-y-6">
-                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
-                    <div class="px-6 py-4 bg-gradient-to-r from-green-50 to-orange-50 border-b border-gray-200">
-                        <h2 class="text-2xl font-bold text-gray-800"><i class="fas fa-shopping-cart text-orange-500 mr-2"></i>Your Cart</h2>
-                    </div>
-                    <div id="cartItemsContainer" class="divide-y divide-gray-100">
-                        <!-- dynamic cart items will appear here -->
-                    </div>
-                    <div id="cartEmptyMsg" class="p-8 text-center text-gray-500 hidden">
-                        <i class="fas fa-box-open text-5xl text-gray-300 mb-3"></i>
-                        <p>Your cart is empty. <a href="products.html" class="text-green-600 font-semibold underline">Browse products</a></p>
-                    </div>
-                    <div class="px-6 py-4 bg-gray-50 flex justify-between items-center border-t border-gray-200">
-                        <span class="text-lg font-semibold">Total Amount</span>
-                        <span id="cartTotalPrice" class="text-2xl font-bold text-green-700">₹0</span>
-                    </div>
-                </div>
-
-                <!-- Order Summary (optional but nice) -->
-                <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-                    <h3 class="font-semibold text-gray-700 flex items-center gap-2"><i class="fas fa-truck-fast text-orange-500"></i> Why choose VARAM?</h3>
-                    <p class="text-sm text-gray-500 mt-1">✅ Smokeless flame · 70% fuel savings · Made in India · 1 year warranty</p>
-                </div>
-            </div>
-
-            <!-- RIGHT: Checkout Form (Address, Contact, QR + Upload) -->
-            <div class="lg:col-span-1">
-                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 sticky top-24">
-                    <div class="p-6 border-b border-gray-100 bg-orange-50 rounded-t-2xl">
-                        <h3 class="text-xl font-bold text-gray-800"><i class="fas fa-credit-card mr-2 text-orange-500"></i>Checkout Details</h3>
-                        <p class="text-xs text-gray-500 mt-1">Fill details & upload payment proof → send to Discord</p>
-                    </div>
-                    <div class="p-6 space-y-5">
-                        <!-- Address & Contact -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Full Name *</label>
-                            <input type="text" id="fullName" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-orange-300 transition" placeholder="e.g. Ramesh Kumar">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Phone / WhatsApp *</label>
-                            <input type="tel" id="phone" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:ring-orange-300" placeholder="+91 9876543210">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Email (optional)</label>
-                            <input type="email" id="email" class="w-full border border-gray-300 rounded-xl px-4 py-2.5" placeholder="you@example.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Delivery Address *</label>
-                            <textarea id="address" rows="2" class="w-full border border-gray-300 rounded-xl px-4 py-2.5" placeholder="Street, City, PIN code"></textarea>
-                        </div>
-
-                        <!-- Payment QR Section -->
-                        <div class="bg-gray-50 p-4 rounded-xl border border-dashed border-orange-200">
-                            <div class="flex items-center gap-2 mb-3">
-                                <i class="fas fa-qrcode text-orange-500 text-xl"></i>
-                                <span class="font-bold text-gray-700">Scan & Pay via UPI</span>
-                            </div>
-                            <div class="flex flex-col items-center justify-center">
-                                <!-- SIMULATED QR CODE (Static mock) -->
-                                <div class="w-36 h-36 bg-white border-2 border-gray-300 rounded-xl flex items-center justify-center shadow-sm qr-placeholder relative">
-                                    <div class="absolute inset-0 flex items-center justify-center flex-col bg-white/90">
-                                        <i class="fas fa-hand-holding-usd text-4xl text-green-600"></i>
-                                        <span class="text-[10px] font-mono mt-1">varam@okhdfcbank</span>
-                                    </div>
-                                </div>
-                                <div class="mt-2 text-center">
-                                    <p class="text-xs text-gray-600 font-mono">UPI ID: <span class="font-bold">varam@okhdfcbank</span></p>
-                                    <p class="text-[11px] text-gray-400 mt-1">Scan or pay to this ID with amount = total order value</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Payment Proof Upload -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">📸 Upload Payment Screenshot *</label>
-                            <input type="file" id="paymentProof" accept="image/*" class="w-full text-sm text-gray-500 file:mr-3 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100">
-                            <p class="text-xs text-gray-400 mt-1">Upload a clear screenshot of UPI transaction (jpg/png)</p>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button id="submitOrderBtn" class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 rounded-xl shadow-md transition flex items-center justify-center gap-2">
-                            <i class="fab fa-discord"></i> Confirm Order & Send to Discord
-                        </button>
-                        <p class="text-[11px] text-center text-gray-400">Your order details + payment proof will be sent to our support team via Discord.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- simple footer -->
-    <footer class="bg-gray-900 text-white py-6 mt-10">
-        <div class="max-w-7xl mx-auto px-6 text-center text-gray-400 text-sm">
-            <p>© 2025 VARAM SUSTAINABLE — Clean Energy Gasifiers. Cart & checkout powered by secure Discord integration.</p>
-        </div>
-    </footer>
-
-    <script>
-        // ========== CONFIGURATION ==========
-        // 🔥 REPLACE THIS WITH YOUR ACTUAL DISCORD WEBHOOK URL 🔥
-        const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1484545227359256596/gtA-V_xuVmD7ZHbRuSvP6i50EJNbmX_rCppLVdRBDY_RgifHTl7tU3ix1CRrHdmg2Y5P";
-        // IMPORTANT: For testing, you can create a test webhook in any Discord server (channel settings -> integrations -> webhook)
-        // If webhook is not set, the system will show a warning but still simulate.
-
-        // ========== CART MANAGEMENT (same as product page) ==========
-        let currentCart = [];
-
-        function loadCartFromStorage() {
-            const stored = localStorage.getItem("varam_cart");
-            return stored ? JSON.parse(stored) : [];
-        }
-
-        function saveCartToStorage(cart) {
-            localStorage.setItem("varam_cart", JSON.stringify(cart));
-            updateCartCountDisplay();
-        }
-
-        function updateCartCountDisplay() {
-            const cart = loadCartFromStorage();
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const countSpan = document.getElementById("cartCountNav");
-            if (countSpan) countSpan.innerText = totalItems;
-        }
-
-        // render cart items with + / - / remove
-        function renderCart() {
-            const container = document.getElementById("cartItemsContainer");
-            const emptyMsgDiv = document.getElementById("cartEmptyMsg");
-            const totalSpan = document.getElementById("cartTotalPrice");
-            let cart = loadCartFromStorage();
-            currentCart = cart;
-
-            if (!cart.length) {
-                if (container) container.innerHTML = "";
-                if (emptyMsgDiv) emptyMsgDiv.classList.remove("hidden");
-                if (totalSpan) totalSpan.innerText = "₹0";
-                return;
-            }
-            if (emptyMsgDiv) emptyMsgDiv.classList.add("hidden");
-
-            let total = 0;
-            let html = "";
-            cart.forEach((item, idx) => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                html += `
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-5 hover:bg-gray-50 transition" data-id="${item.id}">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-3">
-                                <i class="fas ${item.icon || 'fa-industry'} text-green-600 text-xl"></i>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">${item.name}</h4>
-                                    <p class="text-xs text-gray-500">${item.capacity || "Gasifier"}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="flex items-center border border-gray-300 rounded-full bg-white">
-                                <button class="decr-btn w-8 h-8 rounded-l-full hover:bg-gray-100 text-gray-600 font-bold" data-id="${item.id}">-</button>
-                                <span class="w-10 text-center font-semibold text-gray-700">${item.quantity}</span>
-                                <button class="incr-btn w-8 h-8 rounded-r-full hover:bg-gray-100 text-gray-600 font-bold" data-id="${item.id}">+</button>
-                            </div>
-                            <div class="w-24 text-right font-bold text-green-700">₹${itemTotal.toLocaleString('en-IN')}</div>
-                            <button class="remove-btn text-red-500 hover:text-red-700 text-lg" data-id="${item.id}" title="Remove"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-                `;
-            });
-            container.innerHTML = html;
-            totalSpan.innerText = `₹${total.toLocaleString('en-IN')}`;
-
-            // attach event listeners for buttons
-            document.querySelectorAll('.decr-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const id = btn.getAttribute('data-id');
-                    updateQuantity(id, -1);
-                });
-            });
-            document.querySelectorAll('.incr-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const id = btn.getAttribute('data-id');
-                    updateQuantity(id, 1);
-                });
-            });
-            document.querySelectorAll('.remove-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const id = btn.getAttribute('data-id');
-                    removeItem(id);
-                });
-            });
-        }
-
-        function updateQuantity(productId, delta) {
-            let cart = loadCartFromStorage();
-            const index = cart.findIndex(i => i.id === productId);
-            if (index === -1) return;
-            const newQty = cart[index].quantity + delta;
-            if (newQty <= 0) {
-                cart.splice(index, 1);
-            } else {
-                cart[index].quantity = newQty;
-            }
-            saveCartToStorage(cart);
-            renderCart();
-        }
-
-        function removeItem(productId) {
-            let cart = loadCartFromStorage();
-            cart = cart.filter(i => i.id !== productId);
-            saveCartToStorage(cart);
-            renderCart();
-        }
-
-        // ========== DISCORD SUBMIT FUNCTION (with file upload) ==========
-        async function sendOrderToDiscord(orderData, fileBlob, fileName) {
-            if (!DISCORD_WEBHOOK_URL || DISCORD_WEBHOOK_URL.includes("YOUR_WEBHOOK_ID")) {
-                // Show warning but still simulate success for demo
-                console.warn("⚠️ Discord webhook not configured. Please set DISCORD_WEBHOOK_URL in cart.html");
-                alert("⚠️ DEMO MODE: Webhook not configured. Your order details would be sent to Discord. To enable, replace DISCORD_WEBHOOK_URL with your actual webhook URL.\n\nOrder summary:\n" + JSON.stringify(orderData, null, 2));
-                return { success: true, simulated: true };
-            }
-
-            // Build embed for order details
-            const embed = {
-                title: "🛒 NEW ORDER FROM VARAM WEBSITE",
-                color: 0x2E7D32, // green
-                fields: [
-                    { name: "👤 Customer", value: orderData.name, inline: true },
-                    { name: "📞 Phone", value: orderData.phone, inline: true },
-                    { name: "✉️ Email", value: orderData.email || "—", inline: true },
-                    { name: "📍 Address", value: orderData.address || "—", inline: false },
-                    { name: "📦 Items", value: orderData.itemsList || "—", inline: false },
-                    { name: "💰 Total Amount", value: `₹${orderData.total.toLocaleString('en-IN')}`, inline: true },
-                    { name: "💳 Payment Method", value: "UPI QR (Screenshot attached)", inline: true },
-                    { name: "📅 Order Timestamp", value: new Date().toLocaleString('en-IN'), inline: false }
-                ],
-                footer: { text: "VARAM Sustainable • Clean Energy Gasifiers" },
-                timestamp: new Date().toISOString()
-            };
-
-            const formData = new FormData();
-            const payload = { embeds: [embed] };
-            formData.append("payload_json", JSON.stringify(payload));
-            if (fileBlob) {
-                formData.append("file", fileBlob, fileName || "payment_proof.jpg");
-            }
-
-            try {
-                const response = await fetch(DISCORD_WEBHOOK_URL, {
-                    method: "POST",
-                    body: formData
-                });
-                if (response.ok) {
-                    return { success: true };
-                } else {
-                    const errorText = await response.text();
-                    console.error("Discord webhook error:", errorText);
-                    return { success: false, error: `HTTP ${response.status}` };
-                }
-            } catch (err) {
-                console.error("Network error sending to Discord:", err);
-                return { success: false, error: err.message };
-            }
-        }
-
-        // Collect form data, validate, prepare order payload, upload file to Discord
-        async function submitOrder() {
-            // 1. Validate cart not empty
-            const cart = loadCartFromStorage();
-            if (cart.length === 0) {
-                alert("❌ Your cart is empty. Add products before checkout.");
-                return;
-            }
-
-            // 2. Collect address & contact
-            const name = document.getElementById("fullName").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const address = document.getElementById("address").value.trim();
-
-            if (!name || !phone || !address) {
-                alert("Please fill in Name, Phone, and Delivery Address.");
-                return;
-            }
-
-            // 3. Get file (payment proof)
-            const fileInput = document.getElementById("paymentProof");
-            const file = fileInput.files[0];
-            if (!file) {
-                alert("Please upload a payment screenshot (proof of transaction).");
-                return;
-            }
-            if (!file.type.startsWith("image/")) {
-                alert("Only image files (jpg/png) are accepted as payment proof.");
-                return;
-            }
-
-            // 4. Calculate total & items summary
-            let total = 0;
-            let itemsSummary = "";
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                itemsSummary += `• ${item.name} x${item.quantity} = ₹${itemTotal.toLocaleString('en-IN')}\n`;
-            });
-
-            const orderData = {
-                name,
-                phone,
-                email,
-                address,
-                itemsList: itemsSummary,
-                total,
-                cartItems: cart
-            };
-
-            // 5. Disable button and show loading
-            const submitBtn = document.getElementById("submitOrderBtn");
-            const originalText = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending to Discord...';
-
-            try {
-                // Convert file to blob for Discord attachment
-                const fileBlob = new Blob([file], { type: file.type });
-                const fileName = `payment_${Date.now()}_${file.name}`;
-
-                const result = await sendOrderToDiscord(orderData, fileBlob, fileName);
-
-                if (result.success) {
-                    // Clear cart & form after successful submission
-                    localStorage.removeItem("varam_cart");
-                    renderCart();  // re-render empty cart
-                    // Clear form fields
-                    document.getElementById("fullName").value = "";
-                    document.getElementById("phone").value = "";
-                    document.getElementById("email").value = "";
-                    document.getElementById("address").value = "";
-                    fileInput.value = "";
-
-                    alert("✅ Order placed successfully! Our team will verify payment and contact you within 24 hours. (Discord notification sent)");
-                    // Optionally reload page to reset UI or redirect?
-                    // For better UX, just refresh the cart view.
-                } else {
-                    alert(`❌ Failed to send order to Discord: ${result.error || "Unknown error"}. Please check webhook URL and try again.`);
-                }
-            } catch (err) {
-                console.error(err);
-                alert("Unexpected error: " + err.message);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-            }
-        }
-
-        // Initial render & event binding
-        document.addEventListener("DOMContentLoaded", () => {
-            renderCart();
-            const submitBtn = document.getElementById("submitOrderBtn");
-            if (submitBtn) submitBtn.addEventListener("click", submitOrder);
-            // Update cart count on load
-            updateCartCountDisplay();
-        });
-    </script>
-</body>
-</html>
+<section class="py-16 bg-white border-t border-gray-100" id="global-about-us">
+<div class="max-w-6xl mx-auto px-6 lg:px-8 text-center md:text-left">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/3 flex justify-center">
+<div class="w-32 h-32 bg-green-50 rounded-full flex items-center justify-center border-4 border-green-100 shadow-inner">
+<i class="fas fa-leaf text-6xl text-green-600 drop-shadow-sm"></i>
+</div>
+</div>
+<div class="md:w-2/3">
+<span class="text-orange-500 font-bold tracking-wider uppercase text-sm mb-2 block">Our Mission</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">About VSS</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-green-500 to-orange-500 rounded-full mb-6 mx-auto md:mx-0"></div>
+<p class="text-gray-700 text-lg leading-relaxed text-justify md:text-left">
+                            VSS has been operating robustly since 2020, dedicated to carbon‑free, environment‑friendly, energy‑saving, and economically viable products. We manufacture high‑efficiency smokeless biomass stoves that empower households, hotels, and industries to cook clean, safe, and sustainably. As per NFHS-5 (2019-21): 41% of India still rely on biomass for cooking — emitting 340 million tonnes of CO₂ annually. Globally 2.4 billion people lack access to clean cooking solutions, causing significant damage to economy, public health and environment. Indoor air pollution from wood-based cooking causes about 3 million premature deaths annually worldwide, with 0.6 million in India (PTI report Jan 29, 2024).
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-gradient-to-br from-green-50 to-emerald-100 border-t border-green-200">
+<div class="max-w-5xl mx-auto px-6 text-center">
+<div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-green-100 transform hover:scale-[1.01] transition-transform">
+<span class="inline-block px-4 py-1.5 bg-green-100 text-green-800 rounded-full text-sm font-bold tracking-wider mb-4 uppercase">Eco-Friendly &amp; Sustainable Energy</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">Smokeless Biomass Stove</h2>
+<div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full mb-6"></div>
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium">
+                    Next gen clean cooking biomass smokeless stove and biogas. VSS delivers efficient, ecofriendly stoves for homes, hotels, and industries to cook with cleaner and safe fuels.
+                </p>
+<div class="mt-8 flex justify-center">
+<div class="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-2xl shadow-md font-bold text-lg">
+<i class="fas fa-fire-alt text-2xl"></i>
+<span>40% wood saving vs traditional open stove</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-gray-300 py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-700 pb-8">
+<div class="flex items-center gap-2">
+<img alt="VARAM Sustainable Solutions Logo" class="w-10 h-10 object-contain rounded-lg" onerror="this.src='https://placehold.co/40x40?text=🌿'" src="logo.png"/>
+<div>
+<span class="text-xs font-semibold text-green-400 block leading-tight">green energy · clean
+                            energy</span>
+<span class="text-xl font-extrabold text-white tracking-tight">VARAM <span class="text-orange-500">SUSTAINABLE SOLUTIONS</span></span>
+</div>
+</div>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-twitter"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-youtube"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-8">
+<!-- Company Info -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">VARAM SUSTAINABLE SOLUTIONS</h4>
+<p class="text-sm text-gray-400 leading-relaxed">Next gen clean cooking biomass smokeless stove and biogas, VSS delivers efficient ecofriendly stoves for homes, hotels and industries to cook with cleaner and safe fuels | 40% wood saving compared to traditional open stoves.</p>
+<div class="mt-4">
+<p class="text-sm text-gray-400"><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Coimbatore, Tamil Nadu, India</p>
+<p class="text-sm text-gray-400 mt-1"><i class="fas fa-phone-alt text-orange-500 mr-2"></i> +91
+                            98765 43210</p>
+<p class="text-sm text-gray-400 mt-1"><i class="fas fa-envelope text-orange-500 mr-2"></i>
+                            contact@varamsustainable.com</p>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-orange-500 transition" href="index.html">Home</a></li>
+<li><a class="hover:text-orange-500 transition" href="about.html">About Us</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html">Products</a></li>
+<li><a class="hover:text-orange-500 transition" href="services.html">Services</a></li>
+<li><a class="hover:text-orange-500 transition" href="installation.html">Installation</a></li>
+<li><a class="hover:text-orange-500 transition" href="projects.html">Projects</a></li>
+<li><a class="hover:text-orange-500 transition" href="gallery.html">Gallery</a></li>
+<li><a class="hover:text-orange-500 transition" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<!-- Our Solutions -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Clean Cooking Solutions</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-fire-extinguisher text-green-500 w-5 mr-1"></i> Smokeless Biomass
+                                Stoves</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-gas-pump text-amber-500 w-5 mr-1"></i> Biogas Systems</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-home text-green-500 w-5 mr-1"></i> Domestic Cooking Solutions</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-hotel text-orange-500 w-5 mr-1"></i> Commercial &amp; Industrial</a></li>
+</ul>
+</div>
+<!-- Newsletter / Key Stats -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Stay Updated</h4>
+<p class="text-sm text-gray-400 mb-3">Get latest updates on clean cooking solutions, fuel saving
+                        tips, and government schemes.</p>
+<div class="flex">
+<input class="px-3 py-2 rounded-l-lg text-gray-800 text-sm w-full focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Your email" type="email"/>
+<button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-r-lg text-sm font-semibold transition">
+<i class="fas fa-paper-plane"></i>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-3">
+<div class="flex items-center gap-1">
+<i class="fas fa-smog text-green-500 text-sm"></i>
+<span class="text-xs text-gray-400">98% Smoke Free</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-chart-line text-orange-500 text-sm"></i>
+<span class="text-xs text-gray-400">40% Wood Savings</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-leaf text-green-500 text-sm"></i>
+<span class="text-xs text-gray-400">Carbon Free</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-recycle text-amber-500 text-sm"></i>
+<span class="text-xs text-gray-400">Waste to Energy</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 text-sm border-t border-gray-700">
+<span>© 2025 VARAM SUSTAINABLE SOLUTIONS. All rights reserved.</span>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="hover:text-orange-500 transition" href="#">Privacy Policy</a>
+<a class="hover:text-orange-500 transition" href="#">Terms &amp; Conditions</a>
+<a class="hover:text-orange-500 transition" href="#">Careers</a>
+<a class="hover:text-orange-500 transition" href="#">Support</a>
+</div>
+</div>
+</div>
+</footer><script src="js/main.js"></script></body> </html> 

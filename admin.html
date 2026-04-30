@@ -1,290 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARAM Admin · Manage Products</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body class="bg-gray-100">
 
-    <nav class="bg-white shadow-sm border-b">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i class="fas fa-leaf text-green-600 text-2xl"></i>
-                <span class="font-bold text-xl">VARAM<span class="text-orange-500">ADMIN</span></span>
-            </div>
-            <div class="space-x-4">
-                <a href="products.html" target="_blank" class="text-green-600 hover:underline">View Store</a>
-                <button id="resetDefaultBtn" class="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded text-sm">Reset to Default</button>
-            </div>
-        </div>
-    </nav>
+<html lang="en"> <head> <meta charset="utf-8"/> <meta content="width=device-width, initial-scale=1.0" name="viewport"/> <title>VARAM Admin · Manage Products</title> <script src="https://cdn.tailwindcss.com"></script> <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/> </head> <body class="bg-gray-100"><nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-green-200 shadow-sm">
+<div class="w-full px-6 lg:px-8">
+<div class="flex justify-between items-center h-16 lg:h-20">
+<!-- Logo area -->
+<div class="flex items-center gap-3">
+<img alt="VSS leaf logo" class="w-10 h-10 object-contain rounded-lg drop-shadow-md" onerror="this.src='https://placehold.co/40x40?text=🌿'" src="logo.png"/>
+<div>
+<span class="text-xs font-semibold text-green-700 block leading-tight">green energy · clean
+                            energy</span>
+<span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">
+                            VARAM SUSTAINABLE SOLUTIONS
+                        </span>
+</div>
+</div>
+<!-- Desktop menu -->
+<div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="index.html">Home</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="about.html">About</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="services.html">Services</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="products.html">Products</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="installation.html">Installation</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="projects.html">Projects</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="gallery.html">Gallery</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="contact.html">Contact</a>
+</div>
+<!-- Mobile menu button -->
+<button aria-expanded="false" aria-label="Menu" class="md:hidden text-gray-700 focus:outline-none z-[60] relative" id="menuBtn">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+</div>
+</nav><div class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300" id="mobileMenuOverlay">
+</div><div class="fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out py-20 px-6 flex flex-col space-y-2 overflow-y-auto" id="mobileMenu">
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="index.html">Home</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="about.html">About</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="services.html">Services</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="products.html">Products</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="installation.html">Installation</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="projects.html">Projects</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="gallery.html">Gallery</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="contact.html">Contact</a>
+<a class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-6 text-white transition shadow-lg" href="contact.html" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
+            Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+</a>
+</div><div class="h-16 lg:h-20"></div> <!-- STICKY FULL WIDTH NAVBAR --> <!-- Overlay for mobile menu --> <!-- Mobile menu dropdown (Slide from right) --> <!-- STICKY FULL WIDTH NAVBAR --> <!-- Overlay for mobile menu --> <!-- Mobile menu dropdown (Slide from right) --> <div class="max-w-6xl mx-auto px-6 py-10"> <h1 class="text-3xl font-bold text-gray-800 mb-2">Product Manager</h1> <p class="text-gray-500 mb-8">Add, edit or remove products. Changes are saved locally and reflected on the store.</p> <!-- Add / Edit Form --> <div class="bg-white rounded-2xl shadow-md p-6 mb-10 border border-gray-200"> <h2 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-plus-circle text-green-600"></i> Add / Edit Product</h2> <form class="grid md:grid-cols-2 gap-4" id="productForm"> <input id="productId" type="hidden" value=""/> <div> <label class="block text-sm font-medium text-gray-700">Product Name *</label> <input class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1" id="prodName" required="" type="text"/> </div> <div> <label class="block text-sm font-medium text-gray-700">Capacity (e.g. "Upto 3kg rice") *</label> <input class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1" id="prodCapacity" required="" type="text"/> </div> <div class="md:col-span-2"> <label class="block text-sm font-medium text-gray-700">Description *</label> <textarea class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1" id="prodDesc" required="" rows="2"></textarea> </div> <div> <label class="block text-sm font-medium text-gray-700">Price (₹) *</label> <input class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1" id="prodPrice" min="0" required="" step="1000" type="number"/> </div> <div> <label class="block text-sm font-medium text-gray-700">Icon (FontAwesome class, e.g. "fa-utensils") *</label> <input class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1" id="prodIcon" required="" type="text" value="fa-industry"/> </div> <div> <label class="block text-sm font-medium text-gray-700">Badge Color</label> <select class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1" id="prodColor"> <option value="from-green-500 to-green-600">Green</option> <option value="from-orange-500 to-orange-600">Orange (Premium)</option> </select> </div> <div> <label class="block text-sm font-medium text-gray-700">Product Image</label> <input class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1" id="prodImageUrl" placeholder="https://example.com/image.jpg or data:image/..." type="text"/> <div class="mt-2"> <label class="block text-xs text-gray-500">Or upload an image:</label> <input accept="image/*" class="w-full text-sm" id="prodImageUpload" type="file"/> </div> <div class="mt-2 hidden" id="imagePreview"> <img class="h-20 w-auto rounded border" id="previewImg"/> </div> </div> <div class="flex items-end gap-3"> <button class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow" type="submit">Save Product</button> <button class="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded-lg" id="cancelEdit" type="button">Cancel</button> </div> </form> </div> <!-- Products List --> <div class="bg-white rounded-2xl shadow-md overflow-hidden"> <div class="px-6 py-4 bg-gradient-to-r from-green-50 to-orange-50 border-b"> <h2 class="text-xl font-bold">Product Inventory</h2> </div> <div class="divide-y divide-gray-100" id="productsList"> <!-- dynamic list --> </div> </div> </div> <script> // Default products with placeholder images const DEFAULT_PRODUCTS = [ { id: "ge5", name: "GE 5", capacity: "Upto 3kg rice", description: "Perfect for home, travel & picnic. Compact and portable.", price: 12500, icon: "fa-utensils", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE5+Gasifier" }, { id: "ge10", name: "GE 10", capacity: "Upto 7kg rice", description: "Mini Commercial — Tea shops, Food carts, small eateries.", price: 22500, icon: "fa-mug-hot", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE10+Gasifier" }, { id: "ge15", name: "GE 15", capacity: "Upto 15kg rice", description: "Food trucks, Restaurants, Cloud kitchen — high efficiency.", price: 36500, icon: "fa-truck", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE15+Gasifier" }, { id: "ge20", name: "GE 20", capacity: "Upto 30kg rice", description: "Hotels, Mess, College canteens — heavy-duty commercial.", price: 49500, icon: "fa-building", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE20+Gasifier" }, { id: "ge25", name: "GE 25", capacity: "Upto 50kg rice + 30L oil", description: "Industrial — mass cooking, marriage halls, snack makers.", price: 72500, icon: "fa-industry", bgClass: "from-orange-500 to-orange-600", image: "https://placehold.co/400x300?text=GE25+Gasifier" } ]; // Helper functions function getProducts() { const stored = localStorage.getItem("varam_products"); if (stored) return JSON.parse(stored); localStorage.setItem("varam_products", JSON.stringify(DEFAULT_PRODUCTS)); return [...DEFAULT_PRODUCTS]; } function saveProducts(products) { localStorage.setItem("varam_products", JSON.stringify(products)); renderProductList(); } function generateId(name) { return name.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-' + Date.now().toString().slice(-6); } // Render products in admin table function renderProductList() { const products = getProducts(); const container = document.getElementById("productsList"); if (!container) return; if (products.length === 0) { container.innerHTML = '<div class="p-8 text-center text-gray-500">No products. Add one using the form above.</div>'; return; } let html = `<div class="overflow-x-auto"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr> <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Image</th> <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Product</th> <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Capacity</th> <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Price</th> <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th> </tr></thead><tbody>`; products.forEach(prod => { const imgSrc = prod.image || 'https://placehold.co/60x60?text=No+Img'; html += ` <tr class="hover:bg-gray-50"> <td class="px-6 py-4 whitespace-nowrap"> <img src="${imgSrc}" class="h-12 w-12 object-cover rounded" onerror="this.src='https://placehold.co/60x60?text=No+Img'"> </td> <td class="px-6 py-4 whitespace-nowrap"> <div class="flex items-center gap-2"> <i class="fas ${prod.icon} text-green-600"></i> <span class="font-medium">${prod.name}</span> </div> </td> <td class="px-6 py-4 text-sm text-gray-600">${prod.capacity}</td> <td class="px-6 py-4 text-sm font-semibold text-green-700">₹${prod.price.toLocaleString('en-IN')}</td> <td class="px-6 py-4 text-sm space-x-3"> <button class="edit-btn text-blue-600 hover:text-blue-800" data-id="${prod.id}"><i class="fas fa-edit"></i> Edit</button> <button class="delete-btn text-red-600 hover:text-red-800" data-id="${prod.id}"><i class="fas fa-trash-alt"></i> Delete</button> </td> </tr> `; }); html += `</tbody></table></div>`; container.innerHTML = html; // Attach events document.querySelectorAll('.edit-btn').forEach(btn => { btn.addEventListener('click', () => editProduct(btn.getAttribute('data-id'))); }); document.querySelectorAll('.delete-btn').forEach(btn => { btn.addEventListener('click', () => deleteProduct(btn.getAttribute('data-id'))); }); } function editProduct(id) { const products = getProducts(); const product = products.find(p => p.id === id); if (!product) return; document.getElementById("productId").value = product.id; document.getElementById("prodName").value = product.name; document.getElementById("prodCapacity").value = product.capacity; document.getElementById("prodDesc").value = product.description; document.getElementById("prodPrice").value = product.price; document.getElementById("prodIcon").value = product.icon; document.getElementById("prodColor").value = product.bgClass; document.getElementById("prodImageUrl").value = product.image || ''; updatePreview(product.image || ''); } function deleteProduct(id) { if (confirm("Delete this product?")) { let products = getProducts(); products = products.filter(p => p.id !== id); saveProducts(products); } } // Image preview handling const fileInput = document.getElementById("prodImageUpload"); const urlInput = document.getElementById("prodImageUrl"); const previewDiv = document.getElementById("imagePreview"); const previewImg = document.getElementById("previewImg"); function updatePreview(src) { if (src && src.trim() !== "") { previewImg.src = src; previewDiv.classList.remove("hidden"); } else { previewDiv.classList.add("hidden"); } } fileInput.addEventListener("change", function(e) { const file = e.target.files[0]; if (file) { const reader = new FileReader(); reader.onload = function(ev) { const dataUrl = ev.target.result; urlInput.value = dataUrl; updatePreview(dataUrl); }; reader.readAsDataURL(file); } }); urlInput.addEventListener("input", function() { updatePreview(urlInput.value); }); // Save product (add or update) function saveProduct(event) { event.preventDefault(); const idField = document.getElementById("productId").value; const name = document.getElementById("prodName").value.trim(); const capacity = document.getElementById("prodCapacity").value.trim(); const description = document.getElementById("prodDesc").value.trim(); const price = parseInt(document.getElementById("prodPrice").value); const icon = document.getElementById("prodIcon").value.trim(); const bgClass = document.getElementById("prodColor").value; const image = document.getElementById("prodImageUrl").value.trim(); if (!name || !capacity || !description || isNaN(price) || !icon) { alert("Please fill all required fields."); return; } let products = getProducts(); if (idField) { // Update existing const index = products.findIndex(p => p.id === idField); if (index !== -1) { products[index] = {...products[index], name, capacity, description, price, icon, bgClass, image }; } } else { // Add new const newId = generateId(name); const newProduct = { id: newId, name, capacity, description, price, icon, bgClass, image }; products.push(newProduct); } saveProducts(products); resetForm(); } function resetForm() { document.getElementById("productId").value = ""; document.getElementById("prodName").value = ""; document.getElementById("prodCapacity").value = ""; document.getElementById("prodDesc").value = ""; document.getElementById("prodPrice").value = ""; document.getElementById("prodIcon").value = "fa-industry"; document.getElementById("prodColor").value = "from-green-500 to-green-600"; document.getElementById("prodImageUrl").value = ""; fileInput.value = ""; previewDiv.classList.add("hidden"); } function resetToDefault() { if (confirm("Reset all products to default set? This will remove any custom products.")) { localStorage.setItem("varam_products", JSON.stringify(DEFAULT_PRODUCTS)); renderProductList(); resetForm(); } } // Initialize everything when DOM is ready document.addEventListener("DOMContentLoaded", () => { renderProductList(); document.getElementById("productForm").addEventListener("submit", saveProduct); document.getElementById("cancelEdit").addEventListener("click", resetForm); document.getElementById("resetDefaultBtn").addEventListener("click", resetToDefault); }); </script>
+<!-- ECO-FRIENDLY & SUSTAINABLE ENERGY BOX -->
 
-    <div class="max-w-6xl mx-auto px-6 py-10">
-        <h1 class="text-3xl font-bold text-gray-800 mb-2">Product Manager</h1>
-        <p class="text-gray-500 mb-8">Add, edit or remove products. Changes are saved locally and reflected on the store.</p>
-
-        <!-- Add / Edit Form -->
-        <div class="bg-white rounded-2xl shadow-md p-6 mb-10 border border-gray-200">
-            <h2 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-plus-circle text-green-600"></i> Add / Edit Product</h2>
-            <form id="productForm" class="grid md:grid-cols-2 gap-4">
-                <input type="hidden" id="productId" value="">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Product Name *</label>
-                    <input type="text" id="prodName" required class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Capacity (e.g. "Upto 3kg rice") *</label>
-                    <input type="text" id="prodCapacity" required class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1">
-                </div>
-                <div class="md:col-span-2">
-                    <label class="block text-sm font-medium text-gray-700">Description *</label>
-                    <textarea id="prodDesc" rows="2" required class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1"></textarea>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Price (₹) *</label>
-                    <input type="number" id="prodPrice" required min="0" step="1000" class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Icon (FontAwesome class, e.g. "fa-utensils") *</label>
-                    <input type="text" id="prodIcon" value="fa-industry" required class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Badge Color</label>
-                    <select id="prodColor" class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1">
-                        <option value="from-green-500 to-green-600">Green</option>
-                        <option value="from-orange-500 to-orange-600">Orange (Premium)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Product Image</label>
-                    <input type="text" id="prodImageUrl" placeholder="https://example.com/image.jpg or data:image/..." class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-1">
-                    <div class="mt-2">
-                        <label class="block text-xs text-gray-500">Or upload an image:</label>
-                        <input type="file" id="prodImageUpload" accept="image/*" class="w-full text-sm">
-                    </div>
-                    <div id="imagePreview" class="mt-2 hidden">
-                        <img id="previewImg" class="h-20 w-auto rounded border">
-                    </div>
-                </div>
-                <div class="flex items-end gap-3">
-                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow">Save Product</button>
-                    <button type="button" id="cancelEdit" class="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded-lg">Cancel</button>
-                </div>
-            </form>
-        </div>
-
-        <!-- Products List -->
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden">
-            <div class="px-6 py-4 bg-gradient-to-r from-green-50 to-orange-50 border-b">
-                <h2 class="text-xl font-bold">Product Inventory</h2>
-            </div>
-            <div id="productsList" class="divide-y divide-gray-100">
-                <!-- dynamic list -->
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Default products with placeholder images
-        const DEFAULT_PRODUCTS = [
-            { id: "ge5", name: "GE 5", capacity: "Upto 3kg rice", description: "Perfect for home, travel & picnic. Compact and portable.", price: 12500, icon: "fa-utensils", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE5+Gasifier" },
-            { id: "ge10", name: "GE 10", capacity: "Upto 7kg rice", description: "Mini Commercial — Tea shops, Food carts, small eateries.", price: 22500, icon: "fa-mug-hot", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE10+Gasifier" },
-            { id: "ge15", name: "GE 15", capacity: "Upto 15kg rice", description: "Food trucks, Restaurants, Cloud kitchen — high efficiency.", price: 36500, icon: "fa-truck", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE15+Gasifier" },
-            { id: "ge20", name: "GE 20", capacity: "Upto 30kg rice", description: "Hotels, Mess, College canteens — heavy-duty commercial.", price: 49500, icon: "fa-building", bgClass: "from-green-500 to-green-600", image: "https://placehold.co/400x300?text=GE20+Gasifier" },
-            { id: "ge25", name: "GE 25", capacity: "Upto 50kg rice + 30L oil", description: "Industrial — mass cooking, marriage halls, snack makers.", price: 72500, icon: "fa-industry", bgClass: "from-orange-500 to-orange-600", image: "https://placehold.co/400x300?text=GE25+Gasifier" }
-        ];
-
-        // Helper functions
-        function getProducts() {
-            const stored = localStorage.getItem("varam_products");
-            if (stored) return JSON.parse(stored);
-            localStorage.setItem("varam_products", JSON.stringify(DEFAULT_PRODUCTS));
-            return [...DEFAULT_PRODUCTS];
-        }
-
-        function saveProducts(products) {
-            localStorage.setItem("varam_products", JSON.stringify(products));
-            renderProductList();
-        }
-
-        function generateId(name) {
-            return name.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-' + Date.now().toString().slice(-6);
-        }
-
-        // Render products in admin table
-        function renderProductList() {
-            const products = getProducts();
-            const container = document.getElementById("productsList");
-            if (!container) return;
-
-            if (products.length === 0) {
-                container.innerHTML = '<div class="p-8 text-center text-gray-500">No products. Add one using the form above.</div>';
-                return;
-            }
-
-            let html = `<div class="overflow-x-auto"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Image</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Product</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Capacity</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
-            </tr></thead><tbody>`;
-            products.forEach(prod => {
-                const imgSrc = prod.image || 'https://placehold.co/60x60?text=No+Img';
-                html += `
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <img src="${imgSrc}" class="h-12 w-12 object-cover rounded" onerror="this.src='https://placehold.co/60x60?text=No+Img'">
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center gap-2">
-                                <i class="fas ${prod.icon} text-green-600"></i>
-                                <span class="font-medium">${prod.name}</span>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-600">${prod.capacity}</td>
-                        <td class="px-6 py-4 text-sm font-semibold text-green-700">₹${prod.price.toLocaleString('en-IN')}</td>
-                        <td class="px-6 py-4 text-sm space-x-3">
-                            <button class="edit-btn text-blue-600 hover:text-blue-800" data-id="${prod.id}"><i class="fas fa-edit"></i> Edit</button>
-                            <button class="delete-btn text-red-600 hover:text-red-800" data-id="${prod.id}"><i class="fas fa-trash-alt"></i> Delete</button>
-                        </td>
-                    </tr>
-                `;
-            });
-            html += `</tbody></table></div>`;
-            container.innerHTML = html;
-
-            // Attach events
-            document.querySelectorAll('.edit-btn').forEach(btn => {
-                btn.addEventListener('click', () => editProduct(btn.getAttribute('data-id')));
-            });
-            document.querySelectorAll('.delete-btn').forEach(btn => {
-                btn.addEventListener('click', () => deleteProduct(btn.getAttribute('data-id')));
-            });
-        }
-
-        function editProduct(id) {
-            const products = getProducts();
-            const product = products.find(p => p.id === id);
-            if (!product) return;
-
-            document.getElementById("productId").value = product.id;
-            document.getElementById("prodName").value = product.name;
-            document.getElementById("prodCapacity").value = product.capacity;
-            document.getElementById("prodDesc").value = product.description;
-            document.getElementById("prodPrice").value = product.price;
-            document.getElementById("prodIcon").value = product.icon;
-            document.getElementById("prodColor").value = product.bgClass;
-            document.getElementById("prodImageUrl").value = product.image || '';
-            updatePreview(product.image || '');
-        }
-
-        function deleteProduct(id) {
-            if (confirm("Delete this product?")) {
-                let products = getProducts();
-                products = products.filter(p => p.id !== id);
-                saveProducts(products);
-            }
-        }
-
-        // Image preview handling
-        const fileInput = document.getElementById("prodImageUpload");
-        const urlInput = document.getElementById("prodImageUrl");
-        const previewDiv = document.getElementById("imagePreview");
-        const previewImg = document.getElementById("previewImg");
-
-        function updatePreview(src) {
-            if (src && src.trim() !== "") {
-                previewImg.src = src;
-                previewDiv.classList.remove("hidden");
-            } else {
-                previewDiv.classList.add("hidden");
-            }
-        }
-
-        fileInput.addEventListener("change", function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(ev) {
-                    const dataUrl = ev.target.result;
-                    urlInput.value = dataUrl;
-                    updatePreview(dataUrl);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        urlInput.addEventListener("input", function() {
-            updatePreview(urlInput.value);
-        });
-
-        // Save product (add or update)
-        function saveProduct(event) {
-            event.preventDefault();
-
-            const idField = document.getElementById("productId").value;
-            const name = document.getElementById("prodName").value.trim();
-            const capacity = document.getElementById("prodCapacity").value.trim();
-            const description = document.getElementById("prodDesc").value.trim();
-            const price = parseInt(document.getElementById("prodPrice").value);
-            const icon = document.getElementById("prodIcon").value.trim();
-            const bgClass = document.getElementById("prodColor").value;
-            const image = document.getElementById("prodImageUrl").value.trim();
-
-            if (!name || !capacity || !description || isNaN(price) || !icon) {
-                alert("Please fill all required fields.");
-                return;
-            }
-
-            let products = getProducts();
-            if (idField) {
-                // Update existing
-                const index = products.findIndex(p => p.id === idField);
-                if (index !== -1) {
-                    products[index] = { ...products[index], name, capacity, description, price, icon, bgClass, image };
-                }
-            } else {
-                // Add new
-                const newId = generateId(name);
-                const newProduct = { id: newId, name, capacity, description, price, icon, bgClass, image };
-                products.push(newProduct);
-            }
-            saveProducts(products);
-            resetForm();
-        }
-
-        function resetForm() {
-            document.getElementById("productId").value = "";
-            document.getElementById("prodName").value = "";
-            document.getElementById("prodCapacity").value = "";
-            document.getElementById("prodDesc").value = "";
-            document.getElementById("prodPrice").value = "";
-            document.getElementById("prodIcon").value = "fa-industry";
-            document.getElementById("prodColor").value = "from-green-500 to-green-600";
-            document.getElementById("prodImageUrl").value = "";
-            fileInput.value = "";
-            previewDiv.classList.add("hidden");
-        }
-
-        function resetToDefault() {
-            if (confirm("Reset all products to default set? This will remove any custom products.")) {
-                localStorage.setItem("varam_products", JSON.stringify(DEFAULT_PRODUCTS));
-                renderProductList();
-                resetForm();
-            }
-        }
-
-        // Initialize everything when DOM is ready
-        document.addEventListener("DOMContentLoaded", () => {
-            renderProductList();
-            document.getElementById("productForm").addEventListener("submit", saveProduct);
-            document.getElementById("cancelEdit").addEventListener("click", resetForm);
-            document.getElementById("resetDefaultBtn").addEventListener("click", resetToDefault);
-        });
-    </script>
-</body>
-</html>
+<section class="py-16 bg-white border-t border-gray-100" id="global-about-us">
+<div class="max-w-6xl mx-auto px-6 lg:px-8 text-center md:text-left">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/3 flex justify-center">
+<div class="w-32 h-32 bg-green-50 rounded-full flex items-center justify-center border-4 border-green-100 shadow-inner">
+<i class="fas fa-leaf text-6xl text-green-600 drop-shadow-sm"></i>
+</div>
+</div>
+<div class="md:w-2/3">
+<span class="text-orange-500 font-bold tracking-wider uppercase text-sm mb-2 block">Our Mission</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">About VSS</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-green-500 to-orange-500 rounded-full mb-6 mx-auto md:mx-0"></div>
+<p class="text-gray-700 text-lg leading-relaxed text-justify md:text-left">
+                            VSS has been operating robustly since 2020, dedicated to carbon‑free, environment‑friendly, energy‑saving, and economically viable products. We manufacture high‑efficiency smokeless biomass stoves that empower households, hotels, and industries to cook clean, safe, and sustainably. As per NFHS-5 (2019-21): 41% of India still rely on biomass for cooking — emitting 340 million tonnes of CO₂ annually. Globally 2.4 billion people lack access to clean cooking solutions, causing significant damage to economy, public health and environment. Indoor air pollution from wood-based cooking causes about 3 million premature deaths annually worldwide, with 0.6 million in India (PTI report Jan 29, 2024).
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-gradient-to-br from-green-50 to-emerald-100 border-t border-green-200">
+<div class="max-w-5xl mx-auto px-6 text-center">
+<div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-green-100 transform hover:scale-[1.01] transition-transform">
+<span class="inline-block px-4 py-1.5 bg-green-100 text-green-800 rounded-full text-sm font-bold tracking-wider mb-4 uppercase">Eco-Friendly &amp; Sustainable Energy</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">Smokeless Biomass Stove</h2>
+<div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full mb-6"></div>
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium">
+                    Next gen clean cooking biomass smokeless stove and biogas. VSS delivers efficient, ecofriendly stoves for homes, hotels, and industries to cook with cleaner and safe fuels.
+                </p>
+<div class="mt-8 flex justify-center">
+<div class="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-2xl shadow-md font-bold text-lg">
+<i class="fas fa-fire-alt text-2xl"></i>
+<span>40% wood saving vs traditional open stove</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-gray-300 py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-700 pb-8">
+<div class="flex items-center gap-2">
+<img alt="VARAM Sustainable Solutions Logo" class="w-10 h-10 object-contain rounded-lg" onerror="this.src='https://placehold.co/40x40?text=🌿'" src="logo.png"/>
+<div>
+<span class="text-xs font-semibold text-green-400 block leading-tight">green energy · clean
+                            energy</span>
+<span class="text-xl font-extrabold text-white tracking-tight">VARAM <span class="text-orange-500">SUSTAINABLE SOLUTIONS</span></span>
+</div>
+</div>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-twitter"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-youtube"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-8">
+<!-- Company Info -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">VARAM SUSTAINABLE SOLUTIONS</h4>
+<p class="text-sm text-gray-400 leading-relaxed">Next gen clean cooking biomass smokeless stove and biogas, VSS delivers efficient ecofriendly stoves for homes, hotels and industries to cook with cleaner and safe fuels | 40% wood saving compared to traditional open stoves.</p>
+<div class="mt-4">
+<p class="text-sm text-gray-400"><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Coimbatore, Tamil Nadu, India</p>
+<p class="text-sm text-gray-400 mt-1"><i class="fas fa-phone-alt text-orange-500 mr-2"></i> +91
+                            98765 43210</p>
+<p class="text-sm text-gray-400 mt-1"><i class="fas fa-envelope text-orange-500 mr-2"></i>
+                            contact@varamsustainable.com</p>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-orange-500 transition" href="index.html">Home</a></li>
+<li><a class="hover:text-orange-500 transition" href="about.html">About Us</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html">Products</a></li>
+<li><a class="hover:text-orange-500 transition" href="services.html">Services</a></li>
+<li><a class="hover:text-orange-500 transition" href="installation.html">Installation</a></li>
+<li><a class="hover:text-orange-500 transition" href="projects.html">Projects</a></li>
+<li><a class="hover:text-orange-500 transition" href="gallery.html">Gallery</a></li>
+<li><a class="hover:text-orange-500 transition" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<!-- Our Solutions -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Clean Cooking Solutions</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-fire-extinguisher text-green-500 w-5 mr-1"></i> Smokeless Biomass
+                                Stoves</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-gas-pump text-amber-500 w-5 mr-1"></i> Biogas Systems</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-home text-green-500 w-5 mr-1"></i> Domestic Cooking Solutions</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-hotel text-orange-500 w-5 mr-1"></i> Commercial &amp; Industrial</a></li>
+</ul>
+</div>
+<!-- Newsletter / Key Stats -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Stay Updated</h4>
+<p class="text-sm text-gray-400 mb-3">Get latest updates on clean cooking solutions, fuel saving
+                        tips, and government schemes.</p>
+<div class="flex">
+<input class="px-3 py-2 rounded-l-lg text-gray-800 text-sm w-full focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Your email" type="email"/>
+<button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-r-lg text-sm font-semibold transition">
+<i class="fas fa-paper-plane"></i>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-3">
+<div class="flex items-center gap-1">
+<i class="fas fa-smog text-green-500 text-sm"></i>
+<span class="text-xs text-gray-400">98% Smoke Free</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-chart-line text-orange-500 text-sm"></i>
+<span class="text-xs text-gray-400">40% Wood Savings</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-leaf text-green-500 text-sm"></i>
+<span class="text-xs text-gray-400">Carbon Free</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-recycle text-amber-500 text-sm"></i>
+<span class="text-xs text-gray-400">Waste to Energy</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 text-sm border-t border-gray-700">
+<span>© 2025 VARAM SUSTAINABLE SOLUTIONS. All rights reserved.</span>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="hover:text-orange-500 transition" href="#">Privacy Policy</a>
+<a class="hover:text-orange-500 transition" href="#">Terms &amp; Conditions</a>
+<a class="hover:text-orange-500 transition" href="#">Careers</a>
+<a class="hover:text-orange-500 transition" href="#">Support</a>
+</div>
+</div>
+</div>
+</footer><script src="js/main.js"></script></body> </html> 

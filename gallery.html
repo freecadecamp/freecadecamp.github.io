@@ -1,350 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARAM SUSTAINABLE · Gallery | Biomass Gasifier Installations</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .filter-btn.active {
-            background: #2E7D32 !important;
-            color: white !important;
-        }
-        .gallery-item {
-            transition: all 0.3s ease;
-        }
-    </style>
-</head>
-<body class="bg-white">
 
-    <!-- STICKY FULL WIDTH NAVBAR -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-        <div class="w-full px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 lg:h-20">
-                <div class="flex items-center gap-2">
-                    <img src="logo.png" alt="VARAM Sustainable Logo" class="w-10 h-10 object-contain rounded-lg">
-                    <span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">
-                        VARAM SUSTAINABLE SOLUTIONS
-                    </span>
-                </div>
-                <div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
-                    <a href="index.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Home</a>
-                    <a href="about.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">About</a>
-                    <a href="services.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Services</a>
-                    <a href="products.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Products</a>
-                    <a href="installation.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Installation</a>
-                    <a href="projects.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Projects</a>
-                    <a href="gallery.html" class="px-3 py-2 rounded-full bg-orange-50 text-orange-600 font-semibold transition">Gallery</a>
-                    <a href="contact.html" class="px-3 py-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition">Contact</a>
-                </div>
-                <div class="flex items-center gap-3">
-                    <a href="contact.html" class="hidden md:inline-block text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-md transition" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
-                        Get a Quote <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobileMenu" class="md:hidden hidden w-full bg-white/95 backdrop-blur-md border-t border-gray-200 py-4 px-6 flex flex-col space-y-2">
-            <a href="index.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Home</a>
-            <a href="about.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">About</a>
-            <a href="services.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Services</a>
-            <a href="products.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Products</a>
-            <a href="installation.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Installation</a>
-            <a href="projects.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Projects</a>
-            <a href="gallery.html" class="py-2 px-3 rounded-lg bg-orange-50 text-orange-600 font-medium transition">Gallery</a>
-            <a href="contact.html" class="py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-orange-500 transition">Contact</a>
-            <a href="contact.html" class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-2 text-white transition" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
-                Get a Quote <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-        </div>
-    </nav>
-    <div class="h-20"></div>
+<html lang="en"> <head> <meta charset="utf-8"/> <meta content="width=device-width, initial-scale=1.0" name="viewport"/> <title>VARAM SUSTAINABLE · Gallery | Biomass Gasifier Installations</title> <script src="https://cdn.tailwindcss.com"></script> <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/> <style>.filter-btn.active { background: #2E7D32 !important; color: white !important; }.gallery-item { transition: all 0.3s ease; } </style> </head> <body class="bg-white"><nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-green-200 shadow-sm">
+<div class="w-full px-6 lg:px-8">
+<div class="flex justify-between items-center h-16 lg:h-20">
+<!-- Logo area -->
+<div class="flex items-center gap-3">
+<img alt="VSS leaf logo" class="w-10 h-10 object-contain rounded-lg drop-shadow-md" onerror="this.src='https://placehold.co/40x40?text=🌿'" src="logo.png"/>
+<div>
+<span class="text-xs font-semibold text-green-700 block leading-tight">green energy · clean
+                            energy</span>
+<span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">
+                            VARAM SUSTAINABLE SOLUTIONS
+                        </span>
+</div>
+</div>
+<!-- Desktop menu -->
+<div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="index.html">Home</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="about.html">About</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="services.html">Services</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="products.html">Products</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="installation.html">Installation</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="projects.html">Projects</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="gallery.html">Gallery</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="contact.html">Contact</a>
+</div>
+<!-- Mobile menu button -->
+<button aria-expanded="false" aria-label="Menu" class="md:hidden text-gray-700 focus:outline-none z-[60] relative" id="menuBtn">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+</div>
+</nav><div class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300" id="mobileMenuOverlay">
+</div><div class="fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out py-20 px-6 flex flex-col space-y-2 overflow-y-auto" id="mobileMenu">
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="index.html">Home</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="about.html">About</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="services.html">Services</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="products.html">Products</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="installation.html">Installation</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="projects.html">Projects</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="gallery.html">Gallery</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="contact.html">Contact</a>
+<a class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-6 text-white transition shadow-lg" href="contact.html" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
+            Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+</a>
+</div><div class="h-16 lg:h-20"></div> <!-- STICKY FULL WIDTH NAVBAR --> <!-- Overlay for mobile menu --> <!-- Mobile menu dropdown (Slide from right) --> <!-- STICKY FULL WIDTH NAVBAR --> <!-- Overlay for mobile menu --> <!-- Mobile menu dropdown (Slide from right) --> <!-- STICKY FULL WIDTH NAVBAR --> <script> document.addEventListener('DOMContentLoaded', function() { const menuBtn = document.getElementById('menuBtn'); const mobileMenu = document.getElementById('mobileMenu'); if (menuBtn && mobileMenu) { menuBtn.addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); }); } }); </script> <!-- Hero Section --> <section class="pt-16 pb-10" style="background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #F57C00 100%);"> <div class="max-w-7xl mx-auto px-6 text-center"> <h1 class="text-4xl md:text-5xl font-bold text-white">Installation Gallery</h1> <div class="w-24 h-1 bg-orange-300 mx-auto mt-4 rounded-full"></div> <p class="mt-6 text-xl text-white/90">A glimpse of our biomass gasifier installations across India</p> </div> </section> <!-- Gallery Filter Section --> <section class="py-8 bg-white"> <div class="max-w-7xl mx-auto px-6"> <div class="flex flex-wrap justify-center gap-3"> <button class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold transition" data-filter="all" style="background: #2E7D32; color: white;">All Photos</button> <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="commercial">Commercial</button> <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="industrial">Industrial</button> <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="institutional">Institutional</button> <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="installation">Installation</button> </div> </div> </section> <!-- Gallery Grid with Actual Photos --> <section class="pb-20 bg-white"> <div class="max-w-7xl mx-auto px-6"> <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="galleryGrid"> <!-- ============================================ --> <!-- ADD YOUR PHOTOS BELOW - COPY AND PASTE FORMAT --> <!-- ============================================ --> <!-- PHOTO 1 - GE 5 Domestic Installation --> <!-- Replace the src path with your actual photo path --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="installation"> <img alt="GE 5 Domestic Gasifier Installation" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p1.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl"> <i class="fas fa-home"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">GE 5 Domestic Gasifier</p> <p class="text-xs">Coimbatore, Tamil Nadu</p> <p class="text-xs mt-1">Upto 3kg rice capacity</p> </div> </div> <!-- PHOTO 2 - GE 10 Tea Shop --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial"> <img alt="GE 10 at Tea Shop" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p1.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl"> <i class="fas fa-mug-hot"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">GE 10 at Tea Shop</p> <p class="text-xs">Madurai, Tamil Nadu</p> <p class="text-xs mt-1">Upto 7kg rice capacity</p> </div> </div> <!-- PHOTO 3 - GE 15 Restaurant --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial"> <img alt="GE 15 at Restaurant" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p2.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl"> <i class="fas fa-utensils"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">GE 15 at Restaurant</p> <p class="text-xs">Chennai, Tamil Nadu</p> <p class="text-xs mt-1">Upto 15kg rice capacity</p> </div> </div> <!-- PHOTO 4 - GE 20 Catering --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial"> <img alt="GE 20 at Catering Unit" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p3.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl"> <i class="fas fa-people-carry"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">GE 20 at Catering Unit</p> <p class="text-xs">Bangalore, Karnataka</p> <p class="text-xs mt-1">Upto 30kg rice capacity</p> </div> </div> <!-- PHOTO 5 - GE 25 Industrial --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="industrial"> <img alt="GE 25 Industrial Gasifier" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p4.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl"> <i class="fas fa-industry"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">GE 25 Industrial Gasifier</p> <p class="text-xs">Pune, Maharashtra</p> <p class="text-xs mt-1">Upto 50kg rice + Oil heating</p> </div> </div> <!-- PHOTO 6 - College Canteen --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="institutional"> <img alt="GE 20 at College Canteen" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p5.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl"> <i class="fas fa-university"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">GE 20 at College Canteen</p> <p class="text-xs">Coimbatore, Tamil Nadu</p> <p class="text-xs mt-1">Serving 500+ students daily</p> </div> </div> <!-- PHOTO 7 - Marriage Hall --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="institutional"> <img alt="GE 25 at Marriage Hall" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p6.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl"> <i class="fas fa-ring"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">GE 25 at Marriage Hall</p> <p class="text-xs">Salem, Tamil Nadu</p> <p class="text-xs mt-1">Mass cooking for 1000+ guests</p> </div> </div> <!-- PHOTO 8 - Installation Team --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="installation"> <img alt="Installation Team at Work" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p7.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl"> <i class="fas fa-hard-hat"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">Installation Team at Work</p> <p class="text-xs">Hyderabad, Telangana</p> <p class="text-xs mt-1">Professional setup &amp; training</p> </div> </div> <!-- PHOTO 9 - Food Truck --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial"> <img alt="GE 10 in Food Truck" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p8.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl"> <i class="fas fa-truck-food"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">GE 10 in Food Truck</p> <p class="text-xs">Kochi, Kerala</p> <p class="text-xs mt-1">Mobile commercial kitchen</p> </div> </div> <!-- PHOTO 10 - Community Kitchen --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="institutional"> <img alt="Community Kitchen" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p9.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl"> <i class="fas fa-hand-holding-heart"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">Community Kitchen</p> <p class="text-xs">Vellore, Tamil Nadu</p> <p class="text-xs mt-1">Serving 200+ meals daily</p> </div> </div> <!-- PHOTO 11 - Bakery --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial"> <img alt="GE 25 at Bakery" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p10.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl"> <i class="fas fa-bread-slice"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">GE 25 at Bakery</p> <p class="text-xs">Mumbai, Maharashtra</p> <p class="text-xs mt-1">Oil heating for snacks</p> </div> </div> <!-- PHOTO 12 - Training Session --> <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="installation"> <img alt="User Training Session" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="static/img/p11.jpeg"/> <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl"> <i class="fas fa-chalkboard-user"></i> </div> <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white"> <p class="text-sm font-semibold">User Training Session</p> <p class="text-xs">Delhi NCR</p> <p class="text-xs mt-1">Operation &amp; maintenance training</p> </div> </div> <!-- ============================================ --> <!-- COPY THE BLOCK ABOVE TO ADD MORE PHOTOS --> <!-- Change: src="YOUR-PHOTO-PATH.jpg" --> <!-- Change: title, location, description --> <!-- Change: data-category for filtering --> <!-- ============================================ --> </div> </div> <!-- Call to Action --> <div class="text-center mt-12"> <p class="text-gray-500 mb-4">High-resolution photographs and case studies available upon request.</p> <a class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition shadow-md" href="contact.html"> <i class="fas fa-download mr-2"></i> Request Gallery Access </a> </div> </section> <!-- Testimonials Section --> <section class="py-16 bg-gray-50"> <div class="max-w-7xl mx-auto px-6"> <div class="text-center mb-12"> <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Client Stories</span> <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">What Our Customers Say</h2> <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div> </div> <div class="grid md:grid-cols-3 gap-8"> <div class="bg-white p-6 rounded-xl shadow-lg"> <i class="fas fa-quote-left text-orange-500 text-2xl mb-4"></i> <p class="text-gray-600">"The GE 20 gasifier has reduced our LPG costs by 65%. Clean flame, no smoke, and excellent support from VARAM team."</p> <div class="mt-4 font-semibold text-gray-800">- Ramesh, Restaurant Owner, Chennai</div> </div> <div class="bg-white p-6 rounded-xl shadow-lg"> <i class="fas fa-quote-left text-orange-500 text-2xl mb-4"></i> <p class="text-gray-600">"We installed GE 25 at our marriage hall. Now we cook for 1000+ guests using agricultural waste. Amazing savings!"</p> <div class="mt-4 font-semibold text-gray-800">- Senthil, Marriage Hall, Salem</div> </div> <div class="bg-white p-6 rounded-xl shadow-lg"> <i class="fas fa-quote-left text-orange-500 text-2xl mb-4"></i> <p class="text-gray-600">"Our college canteen switched to GE 20 gasifier. Clean cooking, lower costs, and students appreciate the sustainable initiative."</p> <div class="mt-4 font-semibold text-gray-800">- Dr. Priya, College Principal, Coimbatore</div> </div> </div> </div> </section> <!-- Footer --> <!-- Gallery Filter Script --> <script> const filterButtons = document.querySelectorAll('.filter-btn'); const galleryItems = document.querySelectorAll('.gallery-item'); filterButtons.forEach(button => { button.addEventListener('click', () => { filterButtons.forEach(btn => { btn.classList.remove('active'); btn.style.background = '#e5e7eb'; btn.style.color = '#374151'; }); button.classList.add('active'); button.style.background = '#2E7D32'; button.style.color = 'white'; const filterValue = button.getAttribute('data-filter'); galleryItems.forEach(item => { if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) { item.style.display = 'block'; } else { item.style.display = 'none'; } }); }); }); </script>
+<!-- ECO-FRIENDLY & SUSTAINABLE ENERGY BOX -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.getElementById('menuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-        });
-    </script>
-
-    <!-- Hero Section -->
-    <section class="pt-16 pb-10" style="background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #F57C00 100%);">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white">Installation Gallery</h1>
-            <div class="w-24 h-1 bg-orange-300 mx-auto mt-4 rounded-full"></div>
-            <p class="mt-6 text-xl text-white/90">A glimpse of our biomass gasifier installations across India</p>
-        </div>
-    </section>
-
-    <!-- Gallery Filter Section -->
-    <section class="py-8 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-wrap justify-center gap-3">
-                <button class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold transition" data-filter="all" style="background: #2E7D32; color: white;">All Photos</button>
-                <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="commercial">Commercial</button>
-                <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="industrial">Industrial</button>
-                <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="institutional">Institutional</button>
-                <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-gray-200 text-gray-700 hover:bg-green-100" data-filter="installation">Installation</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Grid with Actual Photos -->
-    <section class="pb-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="galleryGrid">
-
-                <!-- ============================================ -->
-                <!-- ADD YOUR PHOTOS BELOW - COPY AND PASTE FORMAT -->
-                <!-- ============================================ -->
-
-                <!-- PHOTO 1 - GE 5 Domestic Installation -->
-                <!-- Replace the src path with your actual photo path -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="installation">
-                    <img src="static/img/p1.jpeg" alt="GE 5 Domestic Gasifier Installation" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">GE 5 Domestic Gasifier</p>
-                        <p class="text-xs">Coimbatore, Tamil Nadu</p>
-                        <p class="text-xs mt-1">Upto 3kg rice capacity</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 2 - GE 10 Tea Shop -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <img src="static/img/p1.jpeg" alt="GE 10 at Tea Shop" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
-                        <i class="fas fa-mug-hot"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">GE 10 at Tea Shop</p>
-                        <p class="text-xs">Madurai, Tamil Nadu</p>
-                        <p class="text-xs mt-1">Upto 7kg rice capacity</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 3 - GE 15 Restaurant -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <img src="static/img/p2.jpeg" alt="GE 15 at Restaurant" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">GE 15 at Restaurant</p>
-                        <p class="text-xs">Chennai, Tamil Nadu</p>
-                        <p class="text-xs mt-1">Upto 15kg rice capacity</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 4 - GE 20 Catering -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <img src="static/img/p3.jpeg" alt="GE 20 at Catering Unit" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
-                        <i class="fas fa-people-carry"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">GE 20 at Catering Unit</p>
-                        <p class="text-xs">Bangalore, Karnataka</p>
-                        <p class="text-xs mt-1">Upto 30kg rice capacity</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 5 - GE 25 Industrial -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="industrial">
-                    <img src="static/img/p4.jpeg" alt="GE 25 Industrial Gasifier" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">GE 25 Industrial Gasifier</p>
-                        <p class="text-xs">Pune, Maharashtra</p>
-                        <p class="text-xs mt-1">Upto 50kg rice + Oil heating</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 6 - College Canteen -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="institutional">
-                    <img src="static/img/p5.jpeg" alt="GE 20 at College Canteen" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">GE 20 at College Canteen</p>
-                        <p class="text-xs">Coimbatore, Tamil Nadu</p>
-                        <p class="text-xs mt-1">Serving 500+ students daily</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 7 - Marriage Hall -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="institutional">
-                    <img src="static/img/p6.jpeg" alt="GE 25 at Marriage Hall" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
-                        <i class="fas fa-ring"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">GE 25 at Marriage Hall</p>
-                        <p class="text-xs">Salem, Tamil Nadu</p>
-                        <p class="text-xs mt-1">Mass cooking for 1000+ guests</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 8 - Installation Team -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="installation">
-                    <img src="static/img/p7.jpeg" alt="Installation Team at Work" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
-                        <i class="fas fa-hard-hat"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">Installation Team at Work</p>
-                        <p class="text-xs">Hyderabad, Telangana</p>
-                        <p class="text-xs mt-1">Professional setup & training</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 9 - Food Truck -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <img src="static/img/p8.jpeg" alt="GE 10 in Food Truck" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
-                        <i class="fas fa-truck-food"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">GE 10 in Food Truck</p>
-                        <p class="text-xs">Kochi, Kerala</p>
-                        <p class="text-xs mt-1">Mobile commercial kitchen</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 10 - Community Kitchen -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="institutional">
-                    <img src="static/img/p9.jpeg" alt="Community Kitchen" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">Community Kitchen</p>
-                        <p class="text-xs">Vellore, Tamil Nadu</p>
-                        <p class="text-xs mt-1">Serving 200+ meals daily</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 11 - Bakery -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="commercial">
-                    <img src="static/img/p10.jpeg" alt="GE 25 at Bakery" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-600 text-7xl">
-                        <i class="fas fa-bread-slice"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">GE 25 at Bakery</p>
-                        <p class="text-xs">Mumbai, Maharashtra</p>
-                        <p class="text-xs mt-1">Oil heating for snacks</p>
-                    </div>
-                </div>
-
-                <!-- PHOTO 12 - Training Session -->
-                <div class="gallery-item relative group overflow-hidden rounded-2xl shadow-lg aspect-square cursor-pointer transition hover:scale-105" data-category="installation">
-                    <img src="static/img/p11.jpeg" alt="User Training Session" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hidden w-full h-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-orange-500 text-7xl">
-                        <i class="fas fa-chalkboard-user"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col items-start justify-end p-4 text-white">
-                        <p class="text-sm font-semibold">User Training Session</p>
-                        <p class="text-xs">Delhi NCR</p>
-                        <p class="text-xs mt-1">Operation & maintenance training</p>
-                    </div>
-                </div>
-
-                <!-- ============================================ -->
-                <!-- COPY THE BLOCK ABOVE TO ADD MORE PHOTOS     -->
-                <!-- Change: src="YOUR-PHOTO-PATH.jpg"           -->
-                <!-- Change: title, location, description        -->
-                <!-- Change: data-category for filtering         -->
-                <!-- ============================================ -->
-
-            </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="text-center mt-12">
-            <p class="text-gray-500 mb-4">High-resolution photographs and case studies available upon request.</p>
-            <a href="contact.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition shadow-md">
-                <i class="fas fa-download mr-2"></i> Request Gallery Access
-            </a>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Client Stories</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">What Our Customers Say</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <i class="fas fa-quote-left text-orange-500 text-2xl mb-4"></i>
-                    <p class="text-gray-600">"The GE 20 gasifier has reduced our LPG costs by 65%. Clean flame, no smoke, and excellent support from VARAM team."</p>
-                    <div class="mt-4 font-semibold text-gray-800">- Ramesh, Restaurant Owner, Chennai</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <i class="fas fa-quote-left text-orange-500 text-2xl mb-4"></i>
-                    <p class="text-gray-600">"We installed GE 25 at our marriage hall. Now we cook for 1000+ guests using agricultural waste. Amazing savings!"</p>
-                    <div class="mt-4 font-semibold text-gray-800">- Senthil, Marriage Hall, Salem</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <i class="fas fa-quote-left text-orange-500 text-2xl mb-4"></i>
-                    <p class="text-gray-600">"Our college canteen switched to GE 20 gasifier. Clean cooking, lower costs, and students appreciate the sustainable initiative."</p>
-                    <div class="mt-4 font-semibold text-gray-800">- Dr. Priya, College Principal, Coimbatore</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-12 pb-6">
-        <div class="max-w-7xl mx-auto px-6 text-center text-gray-400 text-sm">
-            <p>© 2025 VARAM SUSTAINABLE — Clean Energy Gasifiers & Biogas Solutions. <i class="fas fa-fire text-orange-400"></i> Powering a greener tomorrow.</p>
-        </div>
-    </footer>
-
-    <!-- Gallery Filter Script -->
-    <script>
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                    btn.style.background = '#e5e7eb';
-                    btn.style.color = '#374151';
-                });
-                button.classList.add('active');
-                button.style.background = '#2E7D32';
-                button.style.color = 'white';
-
-                const filterValue = button.getAttribute('data-filter');
-
-                galleryItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+<section class="py-16 bg-white border-t border-gray-100" id="global-about-us">
+<div class="max-w-6xl mx-auto px-6 lg:px-8 text-center md:text-left">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/3 flex justify-center">
+<div class="w-32 h-32 bg-green-50 rounded-full flex items-center justify-center border-4 border-green-100 shadow-inner">
+<i class="fas fa-leaf text-6xl text-green-600 drop-shadow-sm"></i>
+</div>
+</div>
+<div class="md:w-2/3">
+<span class="text-orange-500 font-bold tracking-wider uppercase text-sm mb-2 block">Our Mission</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">About VSS</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-green-500 to-orange-500 rounded-full mb-6 mx-auto md:mx-0"></div>
+<p class="text-gray-700 text-lg leading-relaxed text-justify md:text-left">
+                            VSS has been operating robustly since 2020, dedicated to carbon‑free, environment‑friendly, energy‑saving, and economically viable products. We manufacture high‑efficiency smokeless biomass stoves that empower households, hotels, and industries to cook clean, safe, and sustainably. As per NFHS-5 (2019-21): 41% of India still rely on biomass for cooking — emitting 340 million tonnes of CO₂ annually. Globally 2.4 billion people lack access to clean cooking solutions, causing significant damage to economy, public health and environment. Indoor air pollution from wood-based cooking causes about 3 million premature deaths annually worldwide, with 0.6 million in India (PTI report Jan 29, 2024).
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-gradient-to-br from-green-50 to-emerald-100 border-t border-green-200">
+<div class="max-w-5xl mx-auto px-6 text-center">
+<div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-green-100 transform hover:scale-[1.01] transition-transform">
+<span class="inline-block px-4 py-1.5 bg-green-100 text-green-800 rounded-full text-sm font-bold tracking-wider mb-4 uppercase">Eco-Friendly &amp; Sustainable Energy</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">Smokeless Biomass Stove</h2>
+<div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full mb-6"></div>
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium">
+                    Next gen clean cooking biomass smokeless stove and biogas. VSS delivers efficient, ecofriendly stoves for homes, hotels, and industries to cook with cleaner and safe fuels.
+                </p>
+<div class="mt-8 flex justify-center">
+<div class="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-2xl shadow-md font-bold text-lg">
+<i class="fas fa-fire-alt text-2xl"></i>
+<span>40% wood saving vs traditional open stove</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-gray-300 py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-700 pb-8">
+<div class="flex items-center gap-2">
+<img alt="VARAM Sustainable Solutions Logo" class="w-10 h-10 object-contain rounded-lg" onerror="this.src='https://placehold.co/40x40?text=🌿'" src="logo.png"/>
+<div>
+<span class="text-xs font-semibold text-green-400 block leading-tight">green energy · clean
+                            energy</span>
+<span class="text-xl font-extrabold text-white tracking-tight">VARAM <span class="text-orange-500">SUSTAINABLE SOLUTIONS</span></span>
+</div>
+</div>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-twitter"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-youtube"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-8">
+<!-- Company Info -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">VARAM SUSTAINABLE SOLUTIONS</h4>
+<p class="text-sm text-gray-400 leading-relaxed">Next gen clean cooking biomass smokeless stove and biogas, VSS delivers efficient ecofriendly stoves for homes, hotels and industries to cook with cleaner and safe fuels | 40% wood saving compared to traditional open stoves.</p>
+<div class="mt-4">
+<p class="text-sm text-gray-400"><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Coimbatore, Tamil Nadu, India</p>
+<p class="text-sm text-gray-400 mt-1"><i class="fas fa-phone-alt text-orange-500 mr-2"></i> +91
+                            98765 43210</p>
+<p class="text-sm text-gray-400 mt-1"><i class="fas fa-envelope text-orange-500 mr-2"></i>
+                            contact@varamsustainable.com</p>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-orange-500 transition" href="index.html">Home</a></li>
+<li><a class="hover:text-orange-500 transition" href="about.html">About Us</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html">Products</a></li>
+<li><a class="hover:text-orange-500 transition" href="services.html">Services</a></li>
+<li><a class="hover:text-orange-500 transition" href="installation.html">Installation</a></li>
+<li><a class="hover:text-orange-500 transition" href="projects.html">Projects</a></li>
+<li><a class="hover:text-orange-500 transition" href="gallery.html">Gallery</a></li>
+<li><a class="hover:text-orange-500 transition" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<!-- Our Solutions -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Clean Cooking Solutions</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-fire-extinguisher text-green-500 w-5 mr-1"></i> Smokeless Biomass
+                                Stoves</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-gas-pump text-amber-500 w-5 mr-1"></i> Biogas Systems</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-home text-green-500 w-5 mr-1"></i> Domestic Cooking Solutions</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-hotel text-orange-500 w-5 mr-1"></i> Commercial &amp; Industrial</a></li>
+</ul>
+</div>
+<!-- Newsletter / Key Stats -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Stay Updated</h4>
+<p class="text-sm text-gray-400 mb-3">Get latest updates on clean cooking solutions, fuel saving
+                        tips, and government schemes.</p>
+<div class="flex">
+<input class="px-3 py-2 rounded-l-lg text-gray-800 text-sm w-full focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Your email" type="email"/>
+<button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-r-lg text-sm font-semibold transition">
+<i class="fas fa-paper-plane"></i>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-3">
+<div class="flex items-center gap-1">
+<i class="fas fa-smog text-green-500 text-sm"></i>
+<span class="text-xs text-gray-400">98% Smoke Free</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-chart-line text-orange-500 text-sm"></i>
+<span class="text-xs text-gray-400">40% Wood Savings</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-leaf text-green-500 text-sm"></i>
+<span class="text-xs text-gray-400">Carbon Free</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-recycle text-amber-500 text-sm"></i>
+<span class="text-xs text-gray-400">Waste to Energy</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 text-sm border-t border-gray-700">
+<span>© 2025 VARAM SUSTAINABLE SOLUTIONS. All rights reserved.</span>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="hover:text-orange-500 transition" href="#">Privacy Policy</a>
+<a class="hover:text-orange-500 transition" href="#">Terms &amp; Conditions</a>
+<a class="hover:text-orange-500 transition" href="#">Careers</a>
+<a class="hover:text-orange-500 transition" href="#">Support</a>
+</div>
+</div>
+</div>
+</footer><script src="js/main.js"></script></body> </html> 

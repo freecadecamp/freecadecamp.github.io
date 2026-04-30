@@ -1,305 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARAM CLEAN COOKING · Services | Smokeless Stoves · Biogasifiers · Pellet Stoves</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Additional custom hover & animation */
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-    </style>
-</head>
-<body>
-    <div id="header"></div>
 
-    <!-- Hero Section with Green + Orange Theme: Reflecting Clean Cooking Solutions -->
-    <section class="pt-20 pb-10" style="background: linear-gradient(135deg, #1e3a1e 0%, #2E7D32 50%, #F57C00 100%);">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white">Clean Cooking Services</h1>
-            <div class="w-24 h-1 bg-orange-300 mx-auto mt-4 rounded-full"></div>
-            <p class="mt-6 text-xl text-white/90 max-w-3xl mx-auto">End-to-end support for smokeless stoves, continuous feeding systems, biogasifiers & pellet stoves — from feasibility to long-term operation and maintenance.</p>
-        </div>
-    </section>
+<html lang="en"> <head> <meta charset="utf-8"/> <meta content="width=device-width, initial-scale=1.0" name="viewport"/> <title>VARAM CLEAN COOKING · Services | Smokeless Stoves · biogas · </title> <script src="https://cdn.tailwindcss.com"></script> <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/> <style> /* Additional custom hover & animation */.service-card { transition: all 0.3s ease; }.service-card:hover { transform: translateY(-5px); } </style> </head> <body><nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-green-200 shadow-sm">
+<div class="w-full px-6 lg:px-8">
+<div class="flex justify-between items-center h-16 lg:h-20">
+<!-- Logo area -->
+<div class="flex items-center gap-3">
+<img alt="VSS leaf logo" class="w-10 h-10 object-contain rounded-lg drop-shadow-md" onerror="this.src='https://placehold.co/40x40?text=🌿'" src="logo.png"/>
+<div>
+<span class="text-xs font-semibold text-green-700 block leading-tight">green energy · clean
+                            energy</span>
+<span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">
+                            VARAM SUSTAINABLE SOLUTIONS
+                        </span>
+</div>
+</div>
+<!-- Desktop menu -->
+<div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="index.html">Home</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="about.html">About</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="services.html">Services</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="products.html">Products</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="installation.html">Installation</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="projects.html">Projects</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="gallery.html">Gallery</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition duration-300" href="contact.html">Contact</a>
+</div>
+<!-- Mobile menu button -->
+<button aria-expanded="false" aria-label="Menu" class="md:hidden text-gray-700 focus:outline-none z-[60] relative" id="menuBtn">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+</div>
+</nav><div class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300" id="mobileMenuOverlay">
+</div><div class="fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out py-20 px-6 flex flex-col space-y-2 overflow-y-auto" id="mobileMenu">
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="index.html">Home</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="about.html">About</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="services.html">Services</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="products.html">Products</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="installation.html">Installation</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="projects.html">Projects</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="gallery.html">Gallery</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="contact.html">Contact</a>
+<a class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-6 text-white transition shadow-lg" href="contact.html" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">
+            Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+</a>
+</div><div class="h-16 lg:h-20"></div> <!-- STICKY FULL WIDTH NAVBAR --> <!-- Overlay for mobile menu --> <!-- Mobile menu dropdown (Slide from right) --> <!-- STICKY FULL WIDTH NAVBAR --> <!-- Overlay for mobile menu --> <!-- Mobile menu dropdown (Slide from right) --> <!-- Hero Section with Green + Orange Theme: Reflecting Clean Cooking Solutions --> <section class="pt-20 pb-10" style="background: linear-gradient(135deg, #1e3a1e 0%, #2E7D32 50%, #F57C00 100%);"> <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center"> <h1 class="text-4xl md:text-5xl font-bold text-white">Clean Cooking Services</h1> <div class="w-24 h-1 bg-orange-300 mx-auto mt-4 rounded-full"></div> <p class="mt-6 text-xl text-white/90 max-w-3xl mx-auto">VSS delivers efficient ecofriendly solution for homes, hotel and industries, cook cleaner safe fuel.</p> </div> </section> <!-- CORE SERVICES - Tailored to New Solutions --> <section class="pb-20 bg-white"> <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-8"> <div class="text-center mb-12"> <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">What We Offer</span> <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Our Core Services</h2> <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div> <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Complete lifecycle support for advanced biomass cooking technologies</p> </div> <div class="grid md:grid-cols-2 gap-8"> <!-- service 1 - Feedstock & Fuel Assessment --> <div class="bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-200 flex items-start gap-5 hover:shadow-lg transition hover:border-green-300 service-card"> <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-700 text-3xl flex-shrink-0"><i class="fas fa-leaf"></i></div> <div><h3 class="text-2xl font-bold">Biomass Fuel Assessment</h3><p class="text-gray-600 mt-2">Analysis of agricultural residues, wood chips, , and organic waste to determine suitability for smokeless stoves, ers, or biogas. We provide fuel sourcing guidance.</p></div> </div> <!-- service 2 - Custom Engineering & Retrofitting --> <div class="bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-200 flex items-start gap-5 hover:shadow-lg transition hover:border-orange-300 service-card"> <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-3xl flex-shrink-0"><i class="fas fa-cogs"></i></div> <div><h3 class="text-2xl font-bold">Stove &amp; System Engineering</h3><p class="text-gray-600 mt-2">Customized design for smokeless stoves, hoppers, biogas digesters, and  burners. 3D modeling and heat efficiency simulations.</p></div> </div> <!-- service 3 - Turnkey Installation --> <div class="bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-200 flex items-start gap-5 hover:shadow-lg transition hover:border-green-300 service-card"> <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-700 text-3xl flex-shrink-0"><i class="fas fa-hard-hat"></i></div> <div><h3 class="text-2xl font-bold">Installation &amp; Commissioning</h3><p class="text-gray-600 mt-2">End-to-end deployment: site survey, civil works, assembly of systems, biogas setup, integration, and performance calibration.</p></div> </div> <!-- service 4 - Training & AMC --> <div class="bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-200 flex items-start gap-5 hover:shadow-lg transition hover:border-orange-300 service-card"> <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-3xl flex-shrink-0"><i class="fas fa-chalkboard-user"></i></div> <div><h3 class="text-2xl font-bold">O&amp;M &amp; User Training</h3><p class="text-gray-600 mt-2">Hands-on training for smokeless stove operation, best practices, biogas maintenance, and controls. 24/7 technical support &amp; AMC plans.</p></div> </div> </div> </div> </section> <!-- CLEAN COOKING SOLUTIONS EXPERTISE (Renamed from Gasifier-Specific) --> <section class="py-20 bg-gray-50"> <div class="max-w-7xl mx-auto px-6 lg:px-8"> <div class="text-center mb-16"> <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Advanced Biomass Cooking Tech</span> <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">Specialized Services by Solution</h2> <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div> <p class="mt-4 text-gray-600">Tailored support for each of our flagship clean cooking categories</p> </div> <div class="grid md:grid-cols-3 gap-8"> <!-- Smokeless Stoves Expertise --> <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition service-card"> <h3 class="text-xl font-bold mb-4">Biomass Smokeless Stoves</h3> <ul class="space-y-3 text-sm text-gray-600"> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Zero-smoke combustion tuning</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Fuel moisture optimization (10-20%)</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Secondary air injection calibration</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Indoor air quality monitoring</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Portable &amp; fixed installations</span></li> </ul> </div> <!-- Stoves Expertise --> <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition service-card"> <h3 class="text-xl font-bold mb-4"> Stoves</h3> <ul class="space-y-3 text-sm text-gray-600"> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>Hopper sizing &amp; automation design</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>Grate &amp; ash removal optimization</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>12+ hour uninterrupted operation setup</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>Integration with existing kitchen systems</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>Thermostat &amp; draft control calibration</span></li> </ul> </div> <!-- biogas & --> <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition service-card"> <h3 class="text-xl font-bold mb-4">biogas &amp; </h3> <ul class="space-y-3 text-sm text-gray-600"> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span>biogas digester sizing (kitchen waste/cow dung)</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span>Methane yield enhancement protocols</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span> automated ignition &amp; feed calibration</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span>Multi-fuel compatibility (, nutshells, agri-waste)</span></li> <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span>Efficiency optimization up to 95%</span></li> </ul> </div> </div> </div> </section> <!-- DEPLOYMENT & ADVISORY SERVICES (Renamed from Stove-Specific) --> <section class="py-20 bg-white"> <div class="max-w-7xl mx-auto px-6 lg:px-8"> <div class="text-center mb-16"> <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">From Concept to Clean Flame</span> <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">Deployment &amp; Advisory Services</h2> <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div> <p class="mt-4 text-gray-600">Expert guidance for households, commercial kitchens, institutions &amp; industries</p> </div> <div class="grid md:grid-cols-2 gap-8"> <!-- Needs Assessment --> <div class="bg-orange-50 p-8 rounded-2xl shadow-lg border border-orange-200 service-card"> <div class="flex items-center gap-4 mb-6"> <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-3xl flex-shrink-0"> <i class="fas fa-clipboard-list"></i> </div> <h3 class="text-2xl font-bold">Clean Cooking Needs Assessment</h3> </div> <p class="text-gray-600 mb-4"> Understanding your cooking volume, fuel access, budget, and smoke elimination goals to recommend the ideal solution: smokeless stove, er, biogas, or. </p> <ul class="space-y-2 text-sm text-gray-700"> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Free kitchen energy audit</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Comparative fuel cost analysis (LPG vs biomass vs biogas)</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Payback period: typically 6-18 months</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Customized solution blueprint</span></li> </ul> </div> <!-- Training & Capacity Building --> <div class="bg-green-50 p-8 rounded-2xl shadow-lg border border-green-200 service-card"> <div class="flex items-center gap-4 mb-6"> <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-700 text-3xl flex-shrink-0"> <i class="fas fa-chalkboard-user"></i> </div> <h3 class="text-2xl font-bold">User Training &amp; Skill Development</h3> </div> <p class="text-gray-600 mb-4"> Comprehensive hands-on programs for cooks, maintenance staff, and supervisors to ensure safe, efficient, and optimal operation of all VARAM clean cooking systems. </p> <ul class="space-y-2 text-sm text-gray-700"> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Smokeless stove ignition &amp; air control</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span> best practices &amp; hopper refill</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>biogas feedstock management &amp; gas usage</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span> digital control &amp; troubleshooting</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Safety protocols &amp; emergency handling</span></li> </ul> </div> <!-- Impact Monitoring & Savings --> <div class="bg-orange-50 p-8 rounded-2xl shadow-lg border border-orange-200 service-card"> <div class="flex items-center gap-4 mb-6"> <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-3xl flex-shrink-0"> <i class="fas fa-chart-line"></i> </div> <h3 class="text-2xl font-bold">Savings &amp; Impact Tracking</h3> </div> <p class="text-gray-600 mb-4"> Quantify fuel reduction, cost savings, and environmental benefits after switching to VARAM clean cooking solutions. Regular reporting dashboards. </p> <ul class="space-y-2 text-sm text-gray-700"> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Monthly fuel consumption tracker</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Cost savings vs LPG/diesel/wood</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Carbon emission reduction certificate (eligible for carbon credits)</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>ROI &amp; payback period verification</span></li> </ul> </div> <!-- Supply Chain & After-Sales --> <div class="bg-green-50 p-8 rounded-2xl shadow-lg border border-green-200 service-card"> <div class="flex items-center gap-4 mb-6"> <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-700 text-3xl flex-shrink-0"> <i class="fas fa-truck-fast"></i> </div> <h3 class="text-2xl font-bold">Logistics &amp; Lifetime Support</h3> </div> <p class="text-gray-600 mb-4"> Reliable delivery, installation, genuine spare parts, and annual maintenance contracts for uninterrupted clean cooking operations. </p> <ul class="space-y-2 text-sm text-gray-700"> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Pan-India dispatch &amp; installation</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Genuine spare parts for all models (smokeless, continuous, biogas, )</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Comprehensive AMC with quarterly servicing</span></li> <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>1-year warranty + extended warranty options</span></li> </ul> </div> </div> </div> </section> <!-- AFTER-SALES SUPPORT SECTION (updated icons & details) --> <section class="py-20 bg-gray-50"> <div class="max-w-7xl mx-auto px-6 lg:px-8"> <div class="text-center mb-12"> <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Always By Your Side</span> <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">After-Sales &amp; Lifetime Care</h2> <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div> <p class="mt-4 text-gray-600">We don’t just sell stoves — we build long-term partnerships for clean cooking success</p> </div> <div class="grid md:grid-cols-4 gap-6"> <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition service-card"> <h3 class="font-bold text-lg mb-2">24/7 Technical Helpline</h3> <p class="text-sm text-gray-600">Phone, WhatsApp &amp; remote diagnostic support for all products</p> </div> <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition service-card"> <h3 class="font-bold text-lg mb-2">Annual Maintenance Contract</h3> <p class="text-sm text-gray-600">Preventive visits, cleaning, tuning &amp; part replacement</p> </div> <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition service-card"> <h3 class="font-bold text-lg mb-2">Genuine Spare Parts</h3> <p class="text-sm text-gray-600">Burner nozzles, grates, hopper parts, biogas valves,  auger</p> </div> <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition service-card"> <h3 class="font-bold text-lg mb-2">Refresher Training</h3> <p class="text-sm text-gray-600">Quarterly online/webinar sessions for new operational staff</p> </div> </div> </div> </section> <!-- ADDITIONAL SERVICE HIGHLIGHT: Customization & Innovation --> <section class="py-16 bg-white"> <div class="max-w-7xl mx-auto px-6 lg:px-8"> <div class="bg-gradient-to-r from-green-50 to-orange-50 rounded-3xl p-8 md:p-12 shadow-lg border border-green-100"> <div class="flex flex-col md:flex-row items-center justify-between gap-8"> <div class="flex items-center gap-6"> <div> <h3 class="text-2xl font-bold text-gray-800">Custom Engineering &amp; R&amp;D Support</h3> <p class="text-gray-600 max-w-xl">Need a specialized smokeless stove for a unique application? Retrofit to an existing chulha? We provide custom fabrication and performance validation.</p> </div> </div> <a class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow-md transition whitespace-nowrap" href="contact.html">Request Custom Solution</a> </div> </div> </div> </section> <!-- Call to Action (Clean Cooking Focused) --> <section class="py-16" style="background: linear-gradient(135deg, #1b4d1b 0%, #c2410c 100%);"> <div class="max-w-4xl mx-auto text-center px-6"> <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Transform Your Cooking?</h2> <p class="text-white/90 text-lg mb-8">Join thousands of happy users who switched to smokeless,, biogas, and by VARAM.</p> <div class="flex flex-wrap gap-4 justify-center"> <a class="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition shadow-lg" href="contact.html">Book Free Consultation</a> <a class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-semibold transition" href="products.html">Explore All Products</a> </div> </div> </section> <!-- optional main.js if needed -->
+<!-- ECO-FRIENDLY & SUSTAINABLE ENERGY BOX -->
 
-    <!-- CORE SERVICES - Tailored to New Solutions -->
-    <section class="pb-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-8">
-            <div class="text-center mb-12">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">What We Offer</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Our Core Services</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Complete lifecycle support for advanced biomass cooking technologies</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- service 1 - Feedstock & Fuel Assessment -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-200 flex items-start gap-5 hover:shadow-lg transition hover:border-green-300 service-card">
-                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-700 text-3xl flex-shrink-0"><i class="fas fa-leaf"></i></div>
-                    <div><h3 class="text-2xl font-bold">Biomass Fuel Assessment</h3><p class="text-gray-600 mt-2">Analysis of agricultural residues, wood chips, pellets, and organic waste to determine suitability for smokeless stoves, continuous feeders, or biogasifiers. We provide fuel sourcing guidance.</p></div>
-                </div>
-                <!-- service 2 - Custom Engineering & Retrofitting -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-200 flex items-start gap-5 hover:shadow-lg transition hover:border-orange-300 service-card">
-                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-3xl flex-shrink-0"><i class="fas fa-cogs"></i></div>
-                    <div><h3 class="text-2xl font-bold">Stove & System Engineering</h3><p class="text-gray-600 mt-2">Customized design for smokeless stoves, continuous feeding hoppers, biogasifier digesters, and pellet burners. 3D modeling and heat efficiency simulations.</p></div>
-                </div>
-                <!-- service 3 - Turnkey Installation -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-200 flex items-start gap-5 hover:shadow-lg transition hover:border-green-300 service-card">
-                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-700 text-3xl flex-shrink-0"><i class="fas fa-hard-hat"></i></div>
-                    <div><h3 class="text-2xl font-bold">Installation & Commissioning</h3><p class="text-gray-600 mt-2">End-to-end deployment: site survey, civil works, assembly of continuous feeding systems, biogasifier setup, pellet stove integration, and performance calibration.</p></div>
-                </div>
-                <!-- service 4 - Training & AMC -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-md border border-gray-200 flex items-start gap-5 hover:shadow-lg transition hover:border-orange-300 service-card">
-                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-3xl flex-shrink-0"><i class="fas fa-chalkboard-user"></i></div>
-                    <div><h3 class="text-2xl font-bold">O&M & User Training</h3><p class="text-gray-600 mt-2">Hands-on training for smokeless stove operation, continuous feeding best practices, biogasifier maintenance, and pellet stove controls. 24/7 technical support & AMC plans.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CLEAN COOKING SOLUTIONS EXPERTISE (Renamed from Gasifier-Specific) -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Advanced Biomass Cooking Tech</span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">Specialized Services by Solution</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-600">Tailored support for each of our flagship clean cooking categories</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Smokeless Stoves Expertise -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition service-card">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-700 text-3xl mb-6">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Biomass Smokeless Stoves</h3>
-                    <ul class="space-y-3 text-sm text-gray-600">
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Zero-smoke combustion tuning</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Fuel moisture optimization (10-20%)</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Secondary air injection calibration</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Indoor air quality monitoring</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5"></i><span>Portable & fixed installations</span></li>
-                    </ul>
-                </div>
-
-                <!-- Continuous Feeding Stoves Expertise -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition service-card">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-3xl mb-6">
-                        <i class="fas fa-infinity"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Continuous Feeding Stoves</h3>
-                    <ul class="space-y-3 text-sm text-gray-600">
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>Hopper sizing & automation design</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>Grate & ash removal optimization</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>12+ hour uninterrupted operation setup</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>Integration with existing kitchen systems</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-orange-500 mt-0.5"></i><span>Thermostat & draft control calibration</span></li>
-                    </ul>
-                </div>
-
-                <!-- Biogasifiers & Pellet Stoves -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition service-card">
-                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 text-3xl mb-6">
-                        <i class="fas fa-recycle"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Biogasifiers & Pellet Stoves</h3>
-                    <ul class="space-y-3 text-sm text-gray-600">
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span>Biogasifier digester sizing (kitchen waste/cow dung)</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span>Methane yield enhancement protocols</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span>Pellet stove automated ignition & feed calibration</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span>Multi-fuel compatibility (pellets, nutshells, agri-waste)</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-amber-500 mt-0.5"></i><span>Efficiency optimization up to 95%</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DEPLOYMENT & ADVISORY SERVICES (Renamed from Stove-Specific) -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">From Concept to Clean Flame</span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">Deployment & Advisory Services</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-600">Expert guidance for households, commercial kitchens, institutions & industries</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Needs Assessment -->
-                <div class="bg-orange-50 p-8 rounded-2xl shadow-lg border border-orange-200 service-card">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-3xl flex-shrink-0">
-                            <i class="fas fa-clipboard-list"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Clean Cooking Needs Assessment</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        Understanding your cooking volume, fuel access, budget, and smoke elimination goals to recommend the ideal solution: smokeless stove, continuous feeder, biogasifier, or pellet stove.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Free kitchen energy audit</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Comparative fuel cost analysis (LPG vs biomass vs biogas)</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Payback period: typically 6-18 months</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Customized solution blueprint</span></li>
-                    </ul>
-                </div>
-
-                <!-- Training & Capacity Building -->
-                <div class="bg-green-50 p-8 rounded-2xl shadow-lg border border-green-200 service-card">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-700 text-3xl flex-shrink-0">
-                            <i class="fas fa-chalkboard-user"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">User Training & Skill Development</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        Comprehensive hands-on programs for cooks, maintenance staff, and supervisors to ensure safe, efficient, and optimal operation of all VARAM clean cooking systems.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Smokeless stove ignition & air control</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Continuous feeding best practices & hopper refill</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Biogasifier feedstock management & gas usage</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Pellet stove digital control & troubleshooting</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Safety protocols & emergency handling</span></li>
-                    </ul>
-                </div>
-
-                <!-- Impact Monitoring & Savings -->
-                <div class="bg-orange-50 p-8 rounded-2xl shadow-lg border border-orange-200 service-card">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-3xl flex-shrink-0">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Savings & Impact Tracking</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        Quantify fuel reduction, cost savings, and environmental benefits after switching to VARAM clean cooking solutions. Regular reporting dashboards.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Monthly fuel consumption tracker</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Cost savings vs LPG/diesel/wood</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>Carbon emission reduction certificate (eligible for carbon credits)</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-orange-500 mt-1"></i><span>ROI & payback period verification</span></li>
-                    </ul>
-                </div>
-
-                <!-- Supply Chain & After-Sales -->
-                <div class="bg-green-50 p-8 rounded-2xl shadow-lg border border-green-200 service-card">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-700 text-3xl flex-shrink-0">
-                            <i class="fas fa-truck-fast"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Logistics & Lifetime Support</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        Reliable delivery, installation, genuine spare parts, and annual maintenance contracts for uninterrupted clean cooking operations.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Pan-India dispatch & installation</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Genuine spare parts for all models (smokeless, continuous, biogasifier, pellet)</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>Comprehensive AMC with quarterly servicing</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-arrow-right text-green-600 mt-1"></i><span>1-year warranty + extended warranty options</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AFTER-SALES SUPPORT SECTION (updated icons & details) -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Always By Your Side</span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">After-Sales & Lifetime Care</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-600">We don’t just sell stoves — we build long-term partnerships for clean cooking success</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition service-card">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-headset text-green-700 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">24/7 Technical Helpline</h3>
-                    <p class="text-sm text-gray-600">Phone, WhatsApp & remote diagnostic support for all products</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition service-card">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-calendar-alt text-orange-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Annual Maintenance Contract</h3>
-                    <p class="text-sm text-gray-600">Preventive visits, cleaning, tuning & part replacement</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition service-card">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-boxes text-green-700 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Genuine Spare Parts</h3>
-                    <p class="text-sm text-gray-600">Burner nozzles, grates, hopper parts, biogas valves, pellets auger</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition service-card">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-sync-alt text-orange-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Refresher Training</h3>
-                    <p class="text-sm text-gray-600">Quarterly online/webinar sessions for new operational staff</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ADDITIONAL SERVICE HIGHLIGHT: Customization & Innovation -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="bg-gradient-to-r from-green-50 to-orange-50 rounded-3xl p-8 md:p-12 shadow-lg border border-green-100">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div class="flex items-center gap-6">
-                        <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center text-orange-500 text-4xl">
-                            <i class="fas fa-microchip"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800">Custom Engineering & R&D Support</h3>
-                            <p class="text-gray-600 max-w-xl">Need a specialized smokeless stove for a unique application? Retrofit continuous feeding to an existing chulha? We provide custom fabrication and performance validation.</p>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow-md transition whitespace-nowrap">Request Custom Solution</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action (Clean Cooking Focused) -->
-    <section class="py-16" style="background: linear-gradient(135deg, #1b4d1b 0%, #c2410c 100%);">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Transform Your Cooking?</h2>
-            <p class="text-white/90 text-lg mb-8">Join thousands of happy users who switched to smokeless, continuous feeding, biogasifier, and pellet stoves by VARAM.</p>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="contact.html" class="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition shadow-lg">Book Free Consultation</a>
-                <a href="products.html" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-semibold transition">Explore All Products</a>
-            </div>
-        </div>
-    </section>
-
-    <div id="footer"></div>
-    <script>
-        // Helper to load header and footer (kept from original)
-        function loadHTML(elementId, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => document.getElementById(elementId).innerHTML = data)
-                .catch(error => console.log('Note: ' + file + ' not available — demo mode'));
-        }
-        loadHTML('header', 'header.html');
-        loadHTML('footer', 'footer.html');
-    </script>
-    <!-- optional main.js if needed -->
-    <script src="js/main.js"></script>
-</body>
-</html>
+<section class="py-16 bg-white border-t border-gray-100" id="global-about-us">
+<div class="max-w-6xl mx-auto px-6 lg:px-8 text-center md:text-left">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/3 flex justify-center">
+<div class="w-32 h-32 bg-green-50 rounded-full flex items-center justify-center border-4 border-green-100 shadow-inner">
+<i class="fas fa-leaf text-6xl text-green-600 drop-shadow-sm"></i>
+</div>
+</div>
+<div class="md:w-2/3">
+<span class="text-orange-500 font-bold tracking-wider uppercase text-sm mb-2 block">Our Mission</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">About VSS</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-green-500 to-orange-500 rounded-full mb-6 mx-auto md:mx-0"></div>
+<p class="text-gray-700 text-lg leading-relaxed text-justify md:text-left">
+                            VSS has been operating robustly since 2020, dedicated to carbon‑free, environment‑friendly, energy‑saving, and economically viable products. We manufacture high‑efficiency smokeless biomass stoves that empower households, hotels, and industries to cook clean, safe, and sustainably. As per NFHS-5 (2019-21): 41% of India still rely on biomass for cooking — emitting 340 million tonnes of CO₂ annually. Globally 2.4 billion people lack access to clean cooking solutions, causing significant damage to economy, public health and environment. Indoor air pollution from wood-based cooking causes about 3 million premature deaths annually worldwide, with 0.6 million in India (PTI report Jan 29, 2024).
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-gradient-to-br from-green-50 to-emerald-100 border-t border-green-200">
+<div class="max-w-5xl mx-auto px-6 text-center">
+<div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-green-100 transform hover:scale-[1.01] transition-transform">
+<span class="inline-block px-4 py-1.5 bg-green-100 text-green-800 rounded-full text-sm font-bold tracking-wider mb-4 uppercase">Eco-Friendly &amp; Sustainable Energy</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">Smokeless Biomass Stove</h2>
+<div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full mb-6"></div>
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium">
+                    Next gen clean cooking biomass smokeless stove and biogas. VSS delivers efficient, ecofriendly stoves for homes, hotels, and industries to cook with cleaner and safe fuels.
+                </p>
+<div class="mt-8 flex justify-center">
+<div class="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-2xl shadow-md font-bold text-lg">
+<i class="fas fa-fire-alt text-2xl"></i>
+<span>40% wood saving vs traditional open stove</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-gray-300 py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-700 pb-8">
+<div class="flex items-center gap-2">
+<img alt="VARAM Sustainable Solutions Logo" class="w-10 h-10 object-contain rounded-lg" onerror="this.src='https://placehold.co/40x40?text=🌿'" src="logo.png"/>
+<div>
+<span class="text-xs font-semibold text-green-400 block leading-tight">green energy · clean
+                            energy</span>
+<span class="text-xl font-extrabold text-white tracking-tight">VARAM <span class="text-orange-500">SUSTAINABLE SOLUTIONS</span></span>
+</div>
+</div>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-twitter"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-youtube"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="hover:text-orange-500 transition text-xl" href="#"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-8">
+<!-- Company Info -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">VARAM SUSTAINABLE SOLUTIONS</h4>
+<p class="text-sm text-gray-400 leading-relaxed">Next gen clean cooking biomass smokeless stove and biogas, VSS delivers efficient ecofriendly stoves for homes, hotels and industries to cook with cleaner and safe fuels | 40% wood saving compared to traditional open stoves.</p>
+<div class="mt-4">
+<p class="text-sm text-gray-400"><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Coimbatore, Tamil Nadu, India</p>
+<p class="text-sm text-gray-400 mt-1"><i class="fas fa-phone-alt text-orange-500 mr-2"></i> +91
+                            98765 43210</p>
+<p class="text-sm text-gray-400 mt-1"><i class="fas fa-envelope text-orange-500 mr-2"></i>
+                            contact@varamsustainable.com</p>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-orange-500 transition" href="index.html">Home</a></li>
+<li><a class="hover:text-orange-500 transition" href="about.html">About Us</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html">Products</a></li>
+<li><a class="hover:text-orange-500 transition" href="services.html">Services</a></li>
+<li><a class="hover:text-orange-500 transition" href="installation.html">Installation</a></li>
+<li><a class="hover:text-orange-500 transition" href="projects.html">Projects</a></li>
+<li><a class="hover:text-orange-500 transition" href="gallery.html">Gallery</a></li>
+<li><a class="hover:text-orange-500 transition" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<!-- Our Solutions -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Clean Cooking Solutions</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-fire-extinguisher text-green-500 w-5 mr-1"></i> Smokeless Biomass
+                                Stoves</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-gas-pump text-amber-500 w-5 mr-1"></i> Biogas Systems</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-home text-green-500 w-5 mr-1"></i> Domestic Cooking Solutions</a></li>
+<li><a class="hover:text-orange-500 transition" href="products.html"><i class="fas fa-hotel text-orange-500 w-5 mr-1"></i> Commercial &amp; Industrial</a></li>
+</ul>
+</div>
+<!-- Newsletter / Key Stats -->
+<div>
+<h4 class="text-white font-semibold text-lg mb-4">Stay Updated</h4>
+<p class="text-sm text-gray-400 mb-3">Get latest updates on clean cooking solutions, fuel saving
+                        tips, and government schemes.</p>
+<div class="flex">
+<input class="px-3 py-2 rounded-l-lg text-gray-800 text-sm w-full focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Your email" type="email"/>
+<button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-r-lg text-sm font-semibold transition">
+<i class="fas fa-paper-plane"></i>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-3">
+<div class="flex items-center gap-1">
+<i class="fas fa-smog text-green-500 text-sm"></i>
+<span class="text-xs text-gray-400">98% Smoke Free</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-chart-line text-orange-500 text-sm"></i>
+<span class="text-xs text-gray-400">40% Wood Savings</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-leaf text-green-500 text-sm"></i>
+<span class="text-xs text-gray-400">Carbon Free</span>
+</div>
+<div class="flex items-center gap-1">
+<i class="fas fa-recycle text-amber-500 text-sm"></i>
+<span class="text-xs text-gray-400">Waste to Energy</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 text-sm border-t border-gray-700">
+<span>© 2025 VARAM SUSTAINABLE SOLUTIONS. All rights reserved.</span>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="hover:text-orange-500 transition" href="#">Privacy Policy</a>
+<a class="hover:text-orange-500 transition" href="#">Terms &amp; Conditions</a>
+<a class="hover:text-orange-500 transition" href="#">Careers</a>
+<a class="hover:text-orange-500 transition" href="#">Support</a>
+</div>
+</div>
+</div>
+</footer><script src="js/main.js"></script> </body> </html> 
