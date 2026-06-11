@@ -222,19 +222,9 @@
             background-position: center;
         }
 
-        .thumb-isha {
-            background: linear-gradient(135deg, #1a2a3a 0%, #2d3d5a 50%, #1a2a4a 100%);
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%231a2a3a" width="400" height="200"/><circle cx="200" cy="90" r="55" fill="%23F57C20" opacity="0.2"/><circle cx="200" cy="90" r="30" fill="%232E7D32" opacity="0.35"/><text x="200" y="170" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">🕉️ Isha Foundation</text></svg>');
-            background-size: cover;
-            background-position: center;
-        }
+        
 
-        .thumb-akshaya {
-            background: linear-gradient(135deg, #2a1a3a 0%, #4a2d5a 50%, #3a1a4a 100%);
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%232a1a3a" width="400" height="200"/><circle cx="140" cy="90" r="35" fill="%23F57C20" opacity="0.3"/><circle cx="260" cy="90" r="35" fill="%232E7D32" opacity="0.35"/><text x="200" y="170" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">💝 Akshaya Patra</text></svg>');
-            background-size: cover;
-            background-position: center;
-        }
+        
 
         /* Video unavailable fallback */
         .video-fallback-msg {
@@ -256,6 +246,7 @@
             display: block;
         }
     </style>
+<link rel="stylesheet" href="varam-enhance.css"/>
 </head>
 <body class="antialiased">
 
@@ -329,7 +320,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-white">Delivered Projects</h1>
             <div class="w-24 h-1 bg-orange-300 mx-auto mt-4 rounded-full"></div>
-            <p class="mt-6 text-xl text-white/90">Real-world installations of smokeless stoves, biogas & commercial kitchens across India</p>
+            <p class="mt-6 text-xl text-white/90">Real-world installations of biogas systems & commercial kitchens across India</p>
         </div>
     </section>
 
@@ -357,28 +348,7 @@
         </div>
     </section>
 
-    <!-- Clean Cooking Solutions Summary -->
-    <section class="py-10 bg-gray-50 border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Our Solutions</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2">Clean Cooking Products Deployed</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-3 rounded-full"></div>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-green-100">
-                    <i class="fas fa-wind text-green-600 text-2xl mb-2"></i>
-                    <p class="font-bold text-gray-800">Smokeless Stoves</p>
-                    <p class="text-xs text-gray-500">GE5 to GE25 Series</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-amber-100">
-                    <i class="fas fa-recycle text-amber-600 text-2xl mb-2"></i>
-                    <p class="font-bold text-gray-800">Biogas</p>
-                    <p class="text-xs text-gray-500">Waste to Energy</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- PROJECTS GRID - All cards with local video support + YouTube button -->
     <section class="pb-20 bg-white">
@@ -390,7 +360,7 @@
                 <p class="mt-4 text-gray-600">Click any project thumbnail to watch the installation video (local MP4) — smokeless stoves, biogas systems in real action</p>
                 <!-- YouTube Button -->
                 <div class="mt-6 flex justify-center">
-                    <a href="https://www.youtube.com/channel/UCYOUR_CHANNEL_ID" target="_blank" rel="noopener noreferrer" class="youtube-btn inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold shadow-lg transition-all text-base md:text-lg">
+                    <a href="https://www.youtube.com/@VaramMart" target="_blank" rel="noopener noreferrer" class="youtube-btn inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold shadow-lg transition-all text-base md:text-lg">
                         <i class="fab fa-youtube text-2xl"></i> For more projects on YouTube <i class="fas fa-external-link-alt ml-1 text-sm"></i>
                     </a>
                 </div>
@@ -626,59 +596,6 @@
         </div>
     </section>
 
-    <!-- Community & Institutional Projects -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Social Impact</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Community & Institutional Projects</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Isha Foundation -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <div class="project-video-container relative h-48 bg-thumb thumb-isha cursor-pointer" onclick="playLocalVideo('static/vid/proj11.mp4', 'Isha Foundation Ashram - Smokeless Cooking')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-om text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between">
-                            <h3 class="font-bold text-xl">Isha Foundation</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <p class="text-sm text-gray-600 mt-2">Ashram kitchen runs on coconut shells & wood chips with smokeless stove technology — sustainable model serving 2000+ meals daily.</p>
-                        <span class="inline-block mt-3 px-3 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Zero-emission kitchen</span>
-                    </div>
-                </div>
-                <!-- Akshaya Patra -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <div class="project-video-container relative h-48 bg-thumb thumb-akshaya cursor-pointer" onclick="playLocalVideo('static/vid/proo11.mp4', 'Akshaya Patra - Midday Meal')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-hand-holding-heart text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between">
-                            <h3 class="font-bold text-xl">Akshaya Patra (Trial)</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <p class="text-sm text-gray-600 mt-2">Midday meal scheme adopted smokeless stove for 3000+ children – reduced fuel cost & clean air for kitchen staff.</p>
-                        <span class="inline-block mt-3 px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Large scale impact</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Environmental Impact -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
@@ -846,5 +763,6 @@
             }
         });
     </script>
+<script src="varam-enhance.js" defer></script>
 </body>
 </html>

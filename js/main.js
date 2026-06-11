@@ -110,7 +110,7 @@ function initCounters() {
                 if (!counter.classList.contains('counted')) {
                     counter.classList.add('counted');
                     let current = 0;
-                    const duration = 1500; // 1.5 seconds
+                    const duration = 2500; // 2.5 seconds
                     const stepTime = 20; // milliseconds per step
                     const steps = duration / stepTime;
                     const increment = target / steps;
