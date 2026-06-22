@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>VARAM CLEAN COOKING · Projects | Smokeless Stoves & Biogas Installations</title>
-    <!-- Tailwind + Font Awesome -->
-    <script src="https://cdn.tailwindcss.com">
-    </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>VARAM CLEAN COOKING · Projects | Smokeless Stoves &amp; Biogas Installations</title>
+<!-- Tailwind + Font Awesome -->
+<script src="https://cdn.tailwindcss.com">
+</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
         /* Video Modal Styles - native HTML5 video player */
         .video-modal {
             display: none;
@@ -246,411 +247,391 @@
             display: block;
         }
     </style>
-<link rel="stylesheet" href="varam-enhance.css"/>
+<link href="varam-enhance.css" rel="stylesheet"/>
 </head>
 <body class="antialiased">
-
-    <!-- STICKY NAVBAR -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-green-200 shadow-sm">
-        <div class="w-full px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 lg:h-20">
-                <div class="flex items-center gap-3">
-                    <!-- SVG Logo (self-contained, no external file needed) -->
-                    <svg class="w-10 h-10 rounded-lg drop-shadow-md" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="40" height="40" rx="8" fill="#2E7D32" />
-                        <path d="M20 8 C14 14 10 20 10 26 C10 31 14 34 20 34 C26 34 30 31 30 26 C30 20 26 14 20 8Z" fill="#4CAF50" />
-                        <path d="M20 12 C16 17 13 22 13 26 C13 29 16 31 20 31 C24 31 27 29 27 26 C27 22 24 17 20 12Z" fill="#81C784" />
-                        <line x1="20" y1="34" x2="20" y2="37" stroke="#5D4037" stroke-width="2" stroke-linecap="round" />
-                        <circle cx="20" cy="20" r="5" fill="#F57C00" opacity="0.8" />
-                    </svg>
-                    <div>
-                        <span class="text-xs font-semibold text-green-700 block leading-tight">green energy · clean energy</span>
-                        <span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">VARAM SUSTAINABLE SOLUTIONS</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
-                    <a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="home.html">Home</a>
-                    <a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="about.html">About</a>
-                    <a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="services.html">Services</a>
-                    <a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="products.html">Products</a>
-                    <a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="installation.html">Installation</a>
-                    <a class="px-3 py-2 rounded-full bg-green-100 text-green-800 font-semibold transition" href="projects.html">Projects</a>
-                    <a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="gallery.html">Gallery</a>
-                    <a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="contact.html">Contact</a>
-                </div>
-                <button aria-expanded="false" aria-label="Menu" class="md:hidden text-gray-700 focus:outline-none z-[60] relative" id="menuBtn">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
-    <div class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300" id="mobileMenuOverlay"></div>
-    <div class="fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out py-20 px-6 flex flex-col space-y-2 overflow-y-auto" id="mobileMenu">
-        <a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="home.html">Home</a>
-        <a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="about.html">About</a>
-        <a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="services.html">Services</a>
-        <a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="products.html">Products</a>
-        <a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="installation.html">Installation</a>
-        <a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="projects.html">Projects</a>
-        <a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="gallery.html">Gallery</a>
-        <a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="contact.html">Contact</a>
-        <a class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-6 text-white transition shadow-lg" href="contact.html" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">Get a Quote <i class="fas fa-arrow-right ml-2"></i></a>
-    </div>
-    <div class="h-16 lg:h-20"></div>
-
-    <!-- VIDEO MODAL (Native HTML5 video player) -->
-    <div class="video-modal" id="videoModal">
-        <div class="video-container">
-            <span class="close-video" onclick="closeVideoModal()">&times;</span>
-            <video controls id="localVideoPlayer" preload="metadata" playsinline>
-                <source id="videoSource" src="" type="video/mp4">
+<!-- STICKY NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-green-200 shadow-sm">
+<div class="w-full px-6 lg:px-8">
+<div class="flex justify-between items-center h-16 lg:h-20">
+<div class="flex items-center gap-3">
+<!-- SVG Logo (self-contained, no external file needed) -->
+<svg class="w-10 h-10 rounded-lg drop-shadow-md" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#2E7D32" height="40" rx="8" width="40"></rect>
+<path d="M20 8 C14 14 10 20 10 26 C10 31 14 34 20 34 C26 34 30 31 30 26 C30 20 26 14 20 8Z" fill="#4CAF50"></path>
+<path d="M20 12 C16 17 13 22 13 26 C13 29 16 31 20 31 C24 31 27 29 27 26 C27 22 24 17 20 12Z" fill="#81C784"></path>
+<line stroke="#5D4037" stroke-linecap="round" stroke-width="2" x1="20" x2="20" y1="34" y2="37"></line>
+<circle cx="20" cy="20" fill="#F57C00" opacity="0.8" r="5"></circle>
+</svg>
+<div>
+<span class="text-xs font-semibold text-green-700 block leading-tight">green energy · clean energy</span>
+<span class="text-xl lg:text-2xl font-extrabold tracking-tight text-gray-800">VARAM SUSTAINABLE SOLUTIONS</span>
+</div>
+</div>
+<div class="hidden md:flex items-center justify-evenly w-full max-w-3xl mx-auto font-medium text-gray-700">
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="home.html">Home</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="about.html">About</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="services.html">Services</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="products.html">Products</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="installation.html">Installation</a>
+<a class="px-3 py-2 rounded-full bg-green-100 text-green-800 font-semibold transition" href="projects.html">Projects</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="gallery.html">Gallery</a>
+<a class="px-3 py-2 rounded-full hover:bg-green-50 hover:text-green-700 transition" href="contact.html">Contact</a>
+</div>
+<button aria-expanded="false" aria-label="Menu" class="md:hidden text-gray-700 focus:outline-none z-[60] relative" id="menuBtn">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+</div>
+</nav>
+<div class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300" id="mobileMenuOverlay"></div>
+<div class="fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out py-20 px-6 flex flex-col space-y-2 overflow-y-auto" id="mobileMenu">
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="home.html">Home</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="about.html">About</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="services.html">Services</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="products.html">Products</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="installation.html">Installation</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="projects.html">Projects</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="gallery.html">Gallery</a>
+<a class="py-2 px-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition" href="contact.html">Contact</a>
+<a class="text-center px-4 py-3 rounded-full text-sm font-semibold mt-6 text-white transition shadow-lg" href="contact.html" style="background: linear-gradient(135deg, #2E7D32, #F57C00);">Get a Quote <i class="fas fa-arrow-right ml-2"></i></a>
+</div>
+<div class="h-16 lg:h-20"></div>
+<!-- VIDEO MODAL (Native HTML5 video player) -->
+<div class="video-modal" id="videoModal">
+<div class="video-container">
+<span class="close-video" onclick="closeVideoModal()">×</span>
+<video controls="" id="localVideoPlayer" playsinline="" preload="metadata">
+<source id="videoSource" src="" type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>
-            <div class="video-fallback-msg" id="videoFallbackMsg">
-                <i class="fas fa-film text-4xl mb-2 block"></i>
-                <p class="font-semibold">📁 Video file not found</p>
-                <p class="text-sm opacity-70 mt-1">Place your MP4 file at the expected path</p>
-                <code class="text-xs bg-gray-800 px-2 py-1 rounded mt-2 inline-block" id="fallbackPath"></code>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="pt-16 pb-10" style="background: linear-gradient(135deg, #1b4d1b 0%, #2E7D32 50%, #F57C00 100%);">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white">Delivered Projects</h1>
-            <div class="w-24 h-1 bg-orange-300 mx-auto mt-4 rounded-full"></div>
-            <p class="mt-6 text-xl text-white/90">Real-world installations of biogas systems & commercial kitchens across India</p>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-4">
-                    <div class="text-3xl md:text-4xl font-black text-green-600">45+</div>
-                    <div class="text-sm text-gray-600">Projects Completed</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl md:text-4xl font-black text-orange-500">22+</div>
-                    <div class="text-sm text-gray-600">Commercial Kitchens</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl md:text-4xl font-black text-green-600">15+</div>
-                    <div class="text-sm text-gray-600">Institutional Clients</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl md:text-4xl font-black text-orange-500">3500+</div>
-                    <div class="text-sm text-gray-600">Meals Served Daily</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- PROJECTS GRID - All cards with local video support + YouTube button -->
-    <section class="pb-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Our Work</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Featured Installations</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-600">Click any project thumbnail to watch the installation video (local MP4) — smokeless stoves, biogas systems in real action</p>
-                <!-- YouTube Button -->
-                <div class="mt-6 flex justify-center">
-                    <a href="https://www.youtube.com/@VaramMart" target="_blank" rel="noopener noreferrer" class="youtube-btn inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold shadow-lg transition-all text-base md:text-lg">
-                        <i class="fab fa-youtube text-2xl"></i> For more projects on YouTube <i class="fas fa-external-link-alt ml-1 text-sm"></i>
-                    </a>
-                </div>
-                <p class="text-xs text-gray-500 mt-2">Replace # with your actual YouTube channel/playlist URL</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- PROJECT 1: Marriage Hall -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
-                    <div class="project-video-container relative h-44 bg-thumb thumb-marriage cursor-pointer" onclick="playLocalVideo('static/vid/proj1.mp4', 'Shri Mahal Marriage Hall - Smokeless Industrial Stove')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-ring text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-xl">Shri Mahal Marriage Hall</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE25 Industrial Stove</span>
-                            <span><i class="fas fa-map-pin"></i> Coimbatore, TN</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Mass cooking for 800+ guests daily. 40% wood saving, zero smoke, eliminates 4 LPG cylinders per event.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">800+ meals/day</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Zero smoke</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJECT 2: College Canteen -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
-                    <div class="project-video-container relative h-44 bg-thumb thumb-college cursor-pointer" onclick="playLocalVideo('static/vid/pro002.mp4', 'PSG College Canteen - Smokeless Commercial Stove')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-university text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-xl">PSG College of Tech</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE20 Smokeless Stove</span>
-                            <span><i class="fas fa-map-pin"></i> Coimbatore, TN</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Canteen serving 500+ students daily. 98% smoke elimination, reduced LPG dependency by 65%.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">500+ meals/day</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">65% LPG saving</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJECT 3: Restaurant -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
-                    <div class="project-video-container relative h-44 bg-thumb thumb-restaurant cursor-pointer" onclick="playLocalVideo('static/vid/pr003.mp4', 'Annapoorna Restaurant - GE15 Smokeless Stove')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-utensils text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-xl">Annapoorna Restaurant</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE15 Smokeless Stove</span>
-                            <span><i class="fas fa-map-pin"></i> Erode, TN</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Fully replaced wood stove with smokeless model, cleaner kitchen & 40% firewood reduction.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">40% wood saving</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">No respiratory issues</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJECT 4: Tea Stall -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
-                    <div class="project-video-container relative h-44 bg-thumb thumb-tea cursor-pointer" onclick="playLocalVideo('static/vid/pro0.mp4', 'Krishna Tea Stall - GE5 Portable Smokeless Stove')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-mug-hot text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-xl">Krishna Tea Stall</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE5 Smokeless Stove</span>
-                            <span><i class="fas fa-map-pin"></i> Madurai, TN</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Tea shop eliminated LPG completely, saves ₹8,000/month. Clean blue flame, zero smoke.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">100% LPG saving</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">₹8k/month saved</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJECT 5: Bakery -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
-                    <div class="project-video-container relative h-44 bg-thumb thumb-bakery cursor-pointer" onclick="playLocalVideo('static/vid/proj3.mp4', 'BestBake Bakery - GE25 Oil Frying System')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-bread-slice text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-xl">BestBake Bakery</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE25 Oil Heating</span>
-                            <span><i class="fas fa-map-pin"></i> Chennai, TN</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Samosa & pakoda production line uses 30L oil capacity. 40% fuel saving, consistent temperature.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">30L oil capacity</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">40% fuel cut</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJECT 6: Biogas Farm -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
-                    <div class="project-video-container relative h-44 bg-thumb thumb-farm cursor-pointer" onclick="playLocalVideo('static/vid/proj5.mp4', 'Greenfield Farm - Biogas 2k System')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-recycle text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-xl">Greenfield Farm</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> Biogas 2k System</span>
-                            <span><i class="fas fa-map-pin"></i> Coimbatore, TN</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Farm-based biogas converting cow dung & kitchen waste into cooking gas. Replaces 2 LPG cylinders monthly.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">2m&sup3; biogas/day</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Zero waste</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJECT 7: Temple Kitchen -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
-                    <div class="project-video-container relative h-44 bg-thumb thumb-temple cursor-pointer" onclick="playLocalVideo('static/vid/proj6.mp4', 'Arulmigu Temple Annadanam - GE20')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-place-of-worship text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-xl">Sri Ranganathar Temple</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE20 Smokeless</span>
-                            <span><i class="fas fa-map-pin"></i> Trichy, TN</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Annadanam kitchen for 1200 devotees daily. Smoke-free environment and reduced firewood use.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">1200+ meals/day</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Clean cooking</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJECT 8: Eco Resort -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
-                    <div class="project-video-container relative h-44 bg-thumb thumb-resort cursor-pointer" onclick="playLocalVideo('static/vid/proj10.mp4', 'Vana Eco Resort - Hybrid Cooking')">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <i class="fas fa-tree text-white text-5xl drop-shadow-lg"></i>
-                        </div>
-                        <div class="play-overlay">
-                            <div class="play-btn-circle"><i class="fas fa-play"></i></div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-xl">Vana Eco Resort</h3>
-                            <span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                            <span><i class="fas fa-tag"></i> GE15 + Biogas 2k</span>
-                            <span><i class="fas fa-map-pin"></i> Wayanad, Kerala</span>
-                        </div>
-                        <p class="mt-3 text-gray-600 text-sm">Resort kitchen runs on smokeless stove + biogas from organic waste – carbon neutral cooking.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">70% LPG offset</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Eco resort</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Environmental Impact -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Environmental Impact</h2>
-            <div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full mb-8"></div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <div class="text-3xl font-bold">350+</div>
-                    <div class="text-gray-600">Tons CO₂ Saved/Year</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold">80+</div>
-                    <div class="text-gray-600">Tons Biomass Used Monthly</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold">₹45L+</div>
-                    <div class="text-gray-600">Annual Fuel Savings</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-16" style="background: linear-gradient(135deg, #1b4d1b 0%, #c2410c 100%);">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Want to See Your Project Here?</h2>
-            <p class="text-white/90 text-lg mb-8">Join our growing list of satisfied customers making the switch to clean, smokeless cooking</p>
-            <a class="inline-block bg-white text-green-800 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold shadow-lg transition" href="contact.html">Start Your Project &rarr;</a>
-        </div>
-    </section>
-
-    <!-- About Footer -->
-    <section class="py-16 bg-white border-t border-gray-100">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center md:text-left">
-            <div class="flex flex-col md:flex-row items-center gap-10">
-                <div class="md:w-1/3 flex justify-center">
-                    <div class="w-32 h-32 bg-green-50 rounded-full flex items-center justify-center border-4 border-green-100 shadow-inner">
-                        <i class="fas fa-leaf text-6xl text-green-600 drop-shadow-sm"></i>
-                    </div>
-                </div>
-                <div class="md:w-2/3">
-                    <span class="text-orange-500 font-bold tracking-wider uppercase text-sm mb-2 block">Our Mission</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">About VSS</h2>
-                    <div class="w-20 h-1 bg-gradient-to-r from-green-500 to-orange-500 rounded-full mb-6 mx-auto md:mx-0"></div>
-                    <p class="text-gray-700 text-lg leading-relaxed">VSS since 2020: carbon‑free, energy‑saving smokeless stoves & biogas. Our GE series empowers households, hotels, industries. Indoor air pollution kills millions – we provide clean cooking solutions that save lives & forests.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">&copy; 2025 VARAM SUSTAINABLE SOLUTIONS. Clean cooking for all.</div>
-    </footer>
-
-    <!-- JavaScript: Local Video Modal + Mobile Menu -->
-    <script>
+<div class="video-fallback-msg" id="videoFallbackMsg">
+<i class="fas fa-film text-4xl mb-2 block"></i>
+<p class="font-semibold">📁 Video file not found</p>
+<p class="text-sm opacity-70 mt-1">Place your MP4 file at the expected path</p>
+<code class="text-xs bg-gray-800 px-2 py-1 rounded mt-2 inline-block" id="fallbackPath"></code>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="pt-16 pb-10" style="background: linear-gradient(135deg, #1b4d1b 0%, #2E7D32 50%, #F57C00 100%);">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+<h1 class="text-4xl md:text-5xl font-bold text-white">Delivered Projects</h1>
+<div class="w-24 h-1 bg-orange-300 mx-auto mt-4 rounded-full"></div>
+<p class="mt-6 text-xl text-white/90">Real-world installations of biogas systems &amp; commercial kitchens across India</p>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-12 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+<div class="p-4">
+<div class="text-3xl md:text-4xl font-black text-green-600">45+</div>
+<div class="text-sm text-gray-600">Projects Completed</div>
+</div>
+<div class="p-4">
+<div class="text-3xl md:text-4xl font-black text-orange-500">22+</div>
+<div class="text-sm text-gray-600">Commercial Kitchens</div>
+</div>
+<div class="p-4">
+<div class="text-3xl md:text-4xl font-black text-green-600">15+</div>
+<div class="text-sm text-gray-600">Institutional Clients</div>
+</div>
+<div class="p-4">
+<div class="text-3xl md:text-4xl font-black text-orange-500">3500+</div>
+<div class="text-sm text-gray-600">Meals Served Daily</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROJECTS GRID - All cards with local video support + YouTube button -->
+<section class="pb-20 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center mb-12">
+<span class="text-orange-500 font-semibold tracking-wider uppercase text-sm">Our Work</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Featured Installations</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full"></div>
+<p class="mt-4 text-gray-600">Click any project thumbnail to watch the installation video (local MP4) — smokeless stoves, biogas systems in real action</p>
+<!-- YouTube Button -->
+<div class="mt-6 flex justify-center">
+<a class="youtube-btn inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold shadow-lg transition-all text-base md:text-lg" href="https://www.youtube.com/@VaramMart" rel="noopener noreferrer" target="_blank">
+<i class="fab fa-youtube text-2xl"></i> For more projects on YouTube <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+</a>
+</div>
+<p class="text-xs text-gray-500 mt-2">Replace # with your actual YouTube channel/playlist URL</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- PROJECT 1: Marriage Hall -->
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+<div class="project-video-container relative h-44 bg-thumb thumb-marriage cursor-pointer" onclick="playLocalVideo('static/vid/proj1.mp4', 'Shri Mahal Marriage Hall - Smokeless Industrial Stove')">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<i class="fas fa-ring text-white text-5xl drop-shadow-lg"></i>
+</div>
+<div class="play-overlay">
+<div class="play-btn-circle"><i class="fas fa-play"></i></div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-xl">Shri Mahal Marriage Hall</h3>
+<span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
+</div>
+<div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
+<span><i class="fas fa-tag"></i> GE25 Industrial Stove</span>
+<span><i class="fas fa-map-pin"></i> Coimbatore, TN</span>
+</div>
+<p class="mt-3 text-gray-600 text-sm">Mass cooking for 800+ guests daily. More Than 80% Fuel Saving vs Traditional Stove, zero smoke, eliminates 4 LPG cylinders per event.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">800+ meals/day</span>
+<span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Zero smoke</span>
+</div>
+</div>
+</div>
+<!-- PROJECT 2: College Canteen -->
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+<div class="project-video-container relative h-44 bg-thumb thumb-college cursor-pointer" onclick="playLocalVideo('static/vid/pro002.mp4', 'PSG College Canteen - Smokeless Commercial Stove')">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<i class="fas fa-university text-white text-5xl drop-shadow-lg"></i>
+</div>
+<div class="play-overlay">
+<div class="play-btn-circle"><i class="fas fa-play"></i></div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-xl">PSG College of Tech</h3>
+<span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
+</div>
+<div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
+<span><i class="fas fa-tag"></i> GE20 Smokeless Stove</span>
+<span><i class="fas fa-map-pin"></i> Coimbatore, TN</span>
+</div>
+<p class="mt-3 text-gray-600 text-sm">Canteen serving 500+ students daily. 98% smoke elimination, reduced LPG dependency by 65%.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">500+ meals/day</span>
+<span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">65% LPG saving</span>
+</div>
+</div>
+</div>
+<!-- PROJECT 3: Restaurant -->
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+<div class="project-video-container relative h-44 bg-thumb thumb-restaurant cursor-pointer" onclick="playLocalVideo('static/vid/pr003.mp4', 'Annapoorna Restaurant - GE15 Smokeless Stove')">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<i class="fas fa-utensils text-white text-5xl drop-shadow-lg"></i>
+</div>
+<div class="play-overlay">
+<div class="play-btn-circle"><i class="fas fa-play"></i></div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-xl">Annapoorna Restaurant</h3>
+<span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
+</div>
+<div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
+<span><i class="fas fa-tag"></i> GE15 Smokeless Stove</span>
+<span><i class="fas fa-map-pin"></i> Erode, TN</span>
+</div>
+<p class="mt-3 text-gray-600 text-sm">Fully replaced wood stove with smokeless model, cleaner kitchen &amp; More Than 80% Fuel Saving vs Traditional Stove.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">More Than 80% Fuel Saving vs Traditional Stove</span>
+<span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">No respiratory issues</span>
+</div>
+</div>
+</div>
+<!-- PROJECT 4: Tea Stall -->
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+<div class="project-video-container relative h-44 bg-thumb thumb-tea cursor-pointer" onclick="playLocalVideo('static/vid/pro0.mp4', 'Krishna Tea Stall - GE5 Portable Smokeless Stove')">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<i class="fas fa-mug-hot text-white text-5xl drop-shadow-lg"></i>
+</div>
+<div class="play-overlay">
+<div class="play-btn-circle"><i class="fas fa-play"></i></div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-xl">Krishna Tea Stall</h3>
+<span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
+</div>
+<div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
+<span><i class="fas fa-tag"></i> GE5 Smokeless Stove</span>
+<span><i class="fas fa-map-pin"></i> Madurai, TN</span>
+</div>
+<p class="mt-3 text-gray-600 text-sm">Tea shop eliminated LPG completely, saves ₹8,000/month. Clean blue flame, zero smoke.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">100% LPG saving</span>
+<span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">₹8k/month saved</span>
+</div>
+</div>
+</div>
+<!-- PROJECT 5: Bakery -->
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+<div class="project-video-container relative h-44 bg-thumb thumb-bakery cursor-pointer" onclick="playLocalVideo('static/vid/proj3.mp4', 'BestBake Bakery - GE25 Oil Frying System')">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<i class="fas fa-bread-slice text-white text-5xl drop-shadow-lg"></i>
+</div>
+<div class="play-overlay">
+<div class="play-btn-circle"><i class="fas fa-play"></i></div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-xl">BestBake Bakery</h3>
+<span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
+</div>
+<div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
+<span><i class="fas fa-tag"></i> GE25 Oil Heating</span>
+<span><i class="fas fa-map-pin"></i> Chennai, TN</span>
+</div>
+<p class="mt-3 text-gray-600 text-sm">Samosa &amp; pakoda production line uses 30L oil capacity. More Than 80% Fuel Saving vs Traditional Stove, consistent temperature.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">30L oil capacity</span>
+<span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">More Than 80% Fuel Saving</span>
+</div>
+</div>
+</div>
+<!-- PROJECT 6: Biogas Farm -->
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+<div class="project-video-container relative h-44 bg-thumb thumb-farm cursor-pointer" onclick="playLocalVideo('static/vid/proj5.mp4', 'Greenfield Farm - Biogas 2k System')">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<i class="fas fa-recycle text-white text-5xl drop-shadow-lg"></i>
+</div>
+<div class="play-overlay">
+<div class="play-btn-circle"><i class="fas fa-play"></i></div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-xl">Greenfield Farm</h3>
+<span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
+</div>
+<div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
+<span><i class="fas fa-tag"></i> Biogas 2k System</span>
+<span><i class="fas fa-map-pin"></i> Coimbatore, TN</span>
+</div>
+<p class="mt-3 text-gray-600 text-sm">Farm-based biogas converting cow dung &amp; kitchen waste into cooking gas. Replaces 2 LPG cylinders monthly.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">2m³ biogas/day</span>
+<span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Zero waste</span>
+</div>
+</div>
+</div>
+<!-- PROJECT 7: Temple Kitchen -->
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+<div class="project-video-container relative h-44 bg-thumb thumb-temple cursor-pointer" onclick="playLocalVideo('static/vid/proj6.mp4', 'Arulmigu Temple Annadanam - GE20')">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<i class="fas fa-place-of-worship text-white text-5xl drop-shadow-lg"></i>
+</div>
+<div class="play-overlay">
+<div class="play-btn-circle"><i class="fas fa-play"></i></div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-xl">Sri Ranganathar Temple</h3>
+<span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
+</div>
+<div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
+<span><i class="fas fa-tag"></i> GE20 Smokeless</span>
+<span><i class="fas fa-map-pin"></i> Trichy, TN</span>
+</div>
+<p class="mt-3 text-gray-600 text-sm">Annadanam kitchen for 1200 devotees daily. Smoke-free environment and reduced firewood use.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">1200+ meals/day</span>
+<span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Clean cooking</span>
+</div>
+</div>
+</div>
+<!-- PROJECT 8: Eco Resort -->
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 project-card">
+<div class="project-video-container relative h-44 bg-thumb thumb-resort cursor-pointer" onclick="playLocalVideo('static/vid/proj10.mp4', 'Vana Eco Resort - Hybrid Cooking')">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<i class="fas fa-tree text-white text-5xl drop-shadow-lg"></i>
+</div>
+<div class="play-overlay">
+<div class="play-btn-circle"><i class="fas fa-play"></i></div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-xl">Vana Eco Resort</h3>
+<span class="local-video-badge"><i class="fas fa-video"></i> MP4</span>
+</div>
+<div class="flex items-center gap-4 mt-2 text-sm text-gray-500">
+<span><i class="fas fa-tag"></i> GE15 + Biogas 2k</span>
+<span><i class="fas fa-map-pin"></i> Wayanad, Kerala</span>
+</div>
+<p class="mt-3 text-gray-600 text-sm">Resort kitchen runs on smokeless stove + biogas from organic waste – carbon neutral cooking.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">More Than 80% LPG offset</span>
+<span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Eco resort</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Environmental Impact -->
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900">Environmental Impact</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mt-4 rounded-full mb-8"></div>
+<div class="grid md:grid-cols-3 gap-8">
+<div>
+<div class="text-3xl font-bold">350+</div>
+<div class="text-gray-600">Tons CO₂ Saved/Year</div>
+</div>
+<div>
+<div class="text-3xl font-bold">80+</div>
+<div class="text-gray-600">Tons Biomass Used Monthly</div>
+</div>
+<div>
+<div class="text-3xl font-bold">₹45L+</div>
+<div class="text-gray-600">Annual Fuel Savings</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="py-16" style="background: linear-gradient(135deg, #1b4d1b 0%, #c2410c 100%);">
+<div class="max-w-4xl mx-auto text-center px-6">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Want to See Your Project Here?</h2>
+<p class="text-white/90 text-lg mb-8">Join our growing list of satisfied customers making the switch to clean, smokeless cooking</p>
+<a class="inline-block bg-white text-green-800 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold shadow-lg transition" href="contact.html">Start Your Project →</a>
+</div>
+</section>
+<!-- About Footer -->
+<section class="py-16 bg-white border-t border-gray-100">
+<div class="max-w-6xl mx-auto px-6 lg:px-8 text-center md:text-left">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/3 flex justify-center">
+<div class="w-32 h-32 bg-green-50 rounded-full flex items-center justify-center border-4 border-green-100 shadow-inner">
+<img alt="VSS Logo" class="w-20 h-20 object-contain rounded-xl" src="/logo.png"/>
+</div>
+</div>
+<div class="md:w-2/3">
+<span class="text-orange-500 font-bold tracking-wider uppercase text-sm mb-2 block">Our Mission</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">About VSS</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-green-500 to-orange-500 rounded-full mb-6 mx-auto md:mx-0"></div>
+<p class="text-gray-700 text-lg leading-relaxed">VSS since 2020: carbon‑free, energy‑saving smokeless stoves &amp; biogas. Our GE series empowers households, hotels, industries. Indoor air pollution kills millions – we provide clean cooking solutions that save lives &amp; forests.</p>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-gray-300 py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">© 2025 VARAM SUSTAINABLE SOLUTIONS. Clean cooking for all.</div>
+</footer>
+<!-- JavaScript: Local Video Modal + Mobile Menu -->
+<script>
         // video modal elements
         const modal = document.getElementById('videoModal');
         const videoPlayer = document.getElementById('localVideoPlayer');
@@ -763,6 +744,6 @@
             }
         });
     </script>
-<script src="varam-enhance.js" defer></script>
+<script defer="" src="varam-enhance.js"></script>
 </body>
 </html>
