@@ -527,6 +527,31 @@
             }
         }
 
+        /* ============ INTRO VIDEO OVERLAY ============ */
+        .intro-video-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.9s ease;
+        }
+
+        .intro-video-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .intro-video-overlay video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* ============ RESPONSIVE ============ */
         @media (max-width: 768px) {
             .company-name {
@@ -641,6 +666,12 @@
 <div class="accent-dot"></div>
 </div>
 </div>
+<!-- ============ INTRO VIDEO OVERLAY ============ -->
+<div class="intro-video-overlay" id="introVideoOverlay">
+<video id="introVideo" muted="" playsinline="" preload="auto">
+<source src="static/intro1.mp4" type="video/mp4"/>
+</video>
+</div>
 <!-- ============ JAVASCRIPT FOR PARTICLES & REDIRECT ============ -->
 <script>
         (function() {
@@ -683,25 +714,50 @@
                 container.appendChild(particle);
             }
 
-            // --- Redirect after 3 seconds with exit animation ---
+            // --- Redirect flow: logo exits -> intro video plays -> fades out -> home.html ---
             const logo = document.getElementById('mainLogo');
+            const videoOverlay = document.getElementById('introVideoOverlay');
+            const video = document.getElementById('introVideo');
 
-            setTimeout(() => {
-                // Add the exit class to trigger the animation
+            let started = false;
+            let finished = false;
+
+            function startVideo() {
+                if (started) return;
+                started = true;
+                videoOverlay.classList.add('show');
+                video.play().catch(function() {
+                    // Autoplay blocked or source missing: go straight to home
+                    finish();
+                });
+            }
+
+            function finish() {
+                if (finished) return;
+                finished = true;
+                videoOverlay.classList.remove('show');
+                setTimeout(function() {
+                    window.location.href = 'home.html';
+                }, 900);
+            }
+
+            function videoEnded() {
+                // Hold the last frame for 2 seconds before fading out
+                setTimeout(finish, 2000);
+            }
+
+            video.addEventListener('ended', videoEnded);
+            video.addEventListener('error', finish);
+
+            setTimeout(function() {
                 logo.classList.add('logo-exit');
-
-                // After the animation ends (0.8s), redirect to home.html
                 logo.addEventListener('animationend', function handler(e) {
                     if (e.animationName === 'logoExit') {
                         logo.removeEventListener('animationend', handler);
-                        window.location.href = 'home.html';
+                        startVideo();
                     }
                 });
-
-                // Fallback: redirect after 1 second in case animationend doesn't fire
-                setTimeout(() => {
-                    window.location.href = 'home.html';
-                }, 1000);
+                setTimeout(startVideo, 1000);
             }, 3000);
         })();
     </script>
